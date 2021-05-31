@@ -1,0 +1,36 @@
+/* ------------------------------- Top Navbar ------------------------------- */
+.navbar {
+  height: 55px;
+  width: 100%;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: darken($color-white, 1%);
+  font-family: $heading-font;
+  font-weight: 600;
+  color: lighten($color-dark-1, 15%);
+
+  &__logo-text {
+    font-size: 30px;
+  }
+
+  &__nav-group {
+    display: flex;
+  }
+
+  &__nav-item {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      color: $color-dark-1;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
