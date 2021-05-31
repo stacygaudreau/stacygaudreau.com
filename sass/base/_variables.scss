@@ -1,0 +1,24 @@
+/* --------------------------------- Colours -------------------------------- */
+// $color-primary: 
+$color-white: #fefefe;
+$color-black: #000000;
+$color-dark-1: #212026;
+$color-dark-2: #373640;
+
+$color-grey: #E0E3E4;
+$color-grey-dark: darken($color-grey, 10%);
+
+$color-primary: #2FAFBF;
+$color-primary-light: lighten($color-primary, 10%);
+$color-primary-dark: darken($color-primary, 10%); 
+
+$color-secondary: #46D6E8;
+$color-secondary-light: lighten($color-secondary, 10%);
+$color-secondary-dark: darken($color-secondary, 10%);
+
+/* ------------------------------ Font Families ----------------------------- */
+$body-font: 'Mulish', sans-serif;
+$heading-font: 'Amiko', sans-serif;
+
+/* ------------------------------- Font Sizes ------------------------------- */
+$default-font-size: 1.8rem;

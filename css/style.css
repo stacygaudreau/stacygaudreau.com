@@ -1,0 +1,35 @@
+/* -------------------------------------------------------------------------- */
+/*                       StacyGaudreau.com Project Sass                       */
+/* -------------------------------------------------------------------------- */
+/* --------------------------------- Colours -------------------------------- */
+/* ------------------------------ Font Families ----------------------------- */
+/* ------------------------------- Font Sizes ------------------------------- */
+/* ---------------------------------- Base ---------------------------------- */
+/* 
+  Typical reset for new project 
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+/* root font size */
+html {
+  /*
+    10px is a nice number to work with for REM calculations
+    default browser size is 16px so we want 62.5% 
+  */
+  font-size: 62.5%; }
+
+/* font/global properties in body selector */
+body {
+  box-sizing: border-box; }
+
+/* ----------------------------- Typography Base ---------------------------- */
+body {
+  font-family: "Mulish", sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 3.3rem; }
