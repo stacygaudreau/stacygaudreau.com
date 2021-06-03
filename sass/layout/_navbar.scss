@@ -9,10 +9,12 @@
   background-color: darken($color-white, 1%);
   font-family: $heading-font;
   font-weight: 600;
-  color: lighten($color-dark-1, 15%);
+  color: lighten($color-dark-1, 25%);
 
   &__logo-text {
+    color: lighten($color-dark-1, 15%);
     font-size: 30px;
+    letter-spacing: -3px;
   }
 
   &__nav-group {
@@ -20,12 +22,12 @@
   }
 
   &__nav-item {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding: 0 1rem;
     text-transform: uppercase;
     cursor: pointer;
     &:hover {
-      color: $color-dark-1;
+      color: $color-primary;
     }
   }
 
