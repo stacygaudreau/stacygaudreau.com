@@ -82,17 +82,81 @@ body {
     font-family: "Mulish", sans-serif;
     color: #040C0D;
     text-align: center;
-    line-height: 50px;
+    line-height: 5rem;
     margin: 7rem; }
     .hero__headline--main {
       font-size: 5.9rem;
       line-height: 7rem; }
     .hero__headline--sub {
+      color: #164248;
+      font-size: 2.5rem;
       font-weight: 400;
-      margin-top: 2.5rem;
-      font-size: 2.5rem; }
+      margin-top: 2.5rem; }
 
-/* ----------------------------- Project Section ---------------------------- */
-.section-project {
+/* ----------------------------- Project Feature ---------------------------- */
+.project {
+  display: flex;
+  justify-content: center;
   background-color: #2e9dac;
-  color: #FAFCFC; }
+  color: #FAFCFC;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  padding: 20rem 10rem; }
+  .project__body {
+    overflow: unset;
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem; }
+  .project__subtitle {
+    font-family: "Amiko", sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #cadfdf; }
+  .project__title {
+    font-size: 6.3rem;
+    font-weight: 600;
+    margin-bottom: 4rem; }
+  .project__description {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    margin-bottom: 4rem; }
+  .project__buttons {
+    display: flex;
+    align-items: center; }
+  .project__image {
+    margin: 0 10rem;
+    filter: grayscale(100%);
+    transform: scale(1);
+    transition: all .5s; }
+    .project__image img {
+      border-radius: 10px; }
+    .project__image:hover {
+      filter: none;
+      transform: scale(1.05); }
+
+/* --------------------------------- Buttons -------------------------------- */
+.btn:link, .btn:visited {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  border-radius: .5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff; }
+
+.btn--orange {
+  background-color: #FF964C; }
+
+.btn--green {
+  background-color: #1ECFB4; }
+
+.btn--blue {
+  background-color: #41BCCC; }
+
+.btn--clustered:last-child {
+  margin-left: 3rem; }
+
+.btn--clustered:first-child {
+  margin-right: 3rem; }

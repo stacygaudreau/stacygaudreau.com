@@ -15,10 +15,10 @@
                 0% 0% no-repeat padding-box; 
   font-family: $body-font;
   font-weight: 400;
-  color: lighten($color-dark-1, 10%);
+  color: lighten($color-black, 10%);
 
   &__logo-text {
-    color: $color-dark-1;
+    color: $color-black;
     font-size: 30px;
     text-transform: uppercase;
     &__last-name {

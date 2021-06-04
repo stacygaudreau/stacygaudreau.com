@@ -1,10 +1,8 @@
 /* --------------------------------- Colours -------------------------------- */
-// $color-primary: 
 $color-white: #FAFCFC;
 $color-pure-white: #ffffff;
-$color-black: #000000;
-$color-dark-1: #040C0D;
-$color-dark-2: #373640;
+$color-black: #040C0D;
+$color-pure-black: #000000;
 
 $color-grey: #E0E3E4;
 $color-grey-light: #F5F7F7;
@@ -14,9 +12,15 @@ $color-primary: #41BCCC;
 $color-primary-light: lighten($color-primary, 10%);
 $color-primary-dark: darken($color-primary, 10%); 
 
-$color-secondary: #46D6E8;
+$color-secondary: #1ECFB4;
 $color-secondary-light: lighten($color-secondary, 10%);
 $color-secondary-dark: darken($color-secondary, 10%);
+
+$color-tertiary: #E6D963;
+$color-tertiary-light: lighten($color-tertiary, 10%);
+$color-tertiary-dark: darken($color-tertiary, 10%);
+
+$color-orange: #FF964C;
 
 /* ------------------------------ Font Families ----------------------------- */
 $body-font: 'Mulish', sans-serif;
