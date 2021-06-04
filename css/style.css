@@ -26,40 +26,73 @@ html {
 /* font/global properties in body selector */
 body {
   box-sizing: border-box;
-  background-color: #fefefe; }
+  background-color: #ffffff; }
 
 /* ----------------------------- Typography Base ---------------------------- */
 body {
   font-family: "Mulish", sans-serif;
-  font-weight: 300;
-  font-size: 1.8rem;
-  line-height: 3.3rem; }
+  font-weight: 400;
+  font-size: 2.4rem; }
 
 /* ------------------------------- Top Navbar ------------------------------- */
 .navbar {
-  height: 55px;
+  height: 80px;
   width: 100%;
   padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fbfbfb;
-  font-family: "Amiko", sans-serif;
-  font-weight: 600;
-  color: #5d5a6b; }
+  background-color: #ffffff;
+  background: linear-gradient(90deg, rgba(245, 247, 247, 0.3) 0%, #ffffff, 50%, rgba(245, 247, 247, 0.3) 100%) 0% 0% no-repeat padding-box;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  color: #103034; }
   .navbar__logo-text {
-    color: #454350;
+    color: #040C0D;
     font-size: 30px;
-    letter-spacing: -3px; }
+    text-transform: uppercase; }
+    .navbar__logo-text__last-name {
+      font-weight: 200; }
   .navbar__nav-group {
     display: flex; }
   .navbar__nav-item {
-    font-size: 1.6rem;
+    font-weight: 400;
+    font-size: 2rem;
     padding: 0 1rem;
-    text-transform: uppercase;
+    text-transform: lowercase;
     cursor: pointer; }
     .navbar__nav-item:hover {
-      color: #2FAFBF; }
+      color: #41BCCC; }
   .navbar a {
     text-decoration: none;
     color: inherit; }
+
+/* ------------------------------ Hero Section ------------------------------ */
+.hero {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .hero__illustration-box {
+    text-align: center; }
+  .hero__illustration {
+    margin-top: 6rem; }
+  .hero__headline {
+    margin: 6rem 0;
+    font-family: "Mulish", sans-serif;
+    color: #040C0D;
+    text-align: center;
+    line-height: 50px;
+    margin: 7rem; }
+    .hero__headline--main {
+      font-size: 5.9rem;
+      line-height: 7rem; }
+    .hero__headline--sub {
+      font-weight: 400;
+      margin-top: 2.5rem;
+      font-size: 2.5rem; }
+
+/* ----------------------------- Project Section ---------------------------- */
+.section-project {
+  background-color: #2e9dac;
+  color: #FAFCFC; }

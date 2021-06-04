@@ -1,14 +1,16 @@
 /* --------------------------------- Colours -------------------------------- */
 // $color-primary: 
-$color-white: #fefefe;
+$color-white: #FAFCFC;
+$color-pure-white: #ffffff;
 $color-black: #000000;
-$color-dark-1: #212026;
+$color-dark-1: #040C0D;
 $color-dark-2: #373640;
 
 $color-grey: #E0E3E4;
+$color-grey-light: #F5F7F7;
 $color-grey-dark: darken($color-grey, 10%);
 
-$color-primary: #2FAFBF;
+$color-primary: #41BCCC;
 $color-primary-light: lighten($color-primary, 10%);
 $color-primary-dark: darken($color-primary, 10%); 
 
@@ -21,4 +23,4 @@ $body-font: 'Mulish', sans-serif;
 $heading-font: 'Amiko', sans-serif;
 
 /* ------------------------------- Font Sizes ------------------------------- */
-$default-font-size: 1.8rem;
+$default-font-size: 2.4rem;
