@@ -181,3 +181,36 @@ body {
 
 .btn--clustered:first-child {
   margin-right: 3rem; }
+
+/* -------------------------- Skill Card Component -------------------------- */
+.card {
+  text-align: center; }
+  .card__heading {
+    font-family: "Amiko", sans-serif;
+    font-size: 2.6rem;
+    line-height: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: .26rem; }
+  .card__body {
+    font-family: "Mulish", sans-serif;
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    font-weight: 300;
+    list-style: none; }
+  .card__body-item {
+    margin: 1.1rem 0; }
+
+/* ---------------------------- About Me Section ---------------------------- */
+.about {
+  margin: 7rem;
+  text-align: center; }
+  .about__body {
+    margin: 2rem 0;
+    font-size: 2.4rem;
+    line-height: 3rem; }
+  .about__heading {
+    font-size: 6.3rem;
+    margin-bottom: 2.5rem; }
+  .about__skills-cards {
+    display: flex;
+    justify-content: space-evenly; }
