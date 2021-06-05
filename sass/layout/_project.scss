@@ -1,14 +1,12 @@
 /* ----------------------------- Project Feature ---------------------------- */
 .project {
-  // overflow: hidden;
   display: flex;
-  justify-content: center;
   background-color: darken($color-primary, 10%);
   color: $color-white;
   clip-path: polygon(
-    0 10%,
+    0 5%,
     100% 0,
-    100% 90%,
+    100% 95%,
     0 100%
   );
   padding: 20rem 10rem;

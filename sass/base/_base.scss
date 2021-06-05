@@ -23,6 +23,8 @@ html {
   
 /* font/global properties in body selector */
 body {
+  max-width: 1920px;
+  margin: 0 auto;
   box-sizing: border-box;
   background-color: $color-pure-white;
 }

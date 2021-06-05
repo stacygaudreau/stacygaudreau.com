@@ -25,6 +25,8 @@ html {
 
 /* font/global properties in body selector */
 body {
+  max-width: 1920px;
+  margin: 0 auto;
   box-sizing: border-box;
   background-color: #ffffff; }
 
@@ -33,6 +35,25 @@ body {
   font-family: "Mulish", sans-serif;
   font-weight: 400;
   font-size: 2.4rem; }
+
+/* ---------------------------- Margin Utilities ---------------------------- */
+.u-m-btm-sm {
+  margin-bottom: 1.5rem; }
+
+.u-m-btm-med {
+  margin-bottom: 3rem; }
+
+.u-m-btm-lg {
+  margin-bottom: 6rem; }
+
+.u-m-top-sm {
+  margin-top: 1.5rem; }
+
+.u-m-top-med {
+  margin-top: 3rem; }
+
+.u-m-top-lg {
+  margin-top: 6rem; }
 
 /* ------------------------------- Top Navbar ------------------------------- */
 .navbar {
@@ -69,7 +90,6 @@ body {
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
-  height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center; }
@@ -92,14 +112,15 @@ body {
       font-size: 2.5rem;
       font-weight: 400;
       margin-top: 2.5rem; }
+  .hero__cta-btn {
+    margin-bottom: 7rem; }
 
 /* ----------------------------- Project Feature ---------------------------- */
 .project {
   display: flex;
-  justify-content: center;
   background-color: #2e9dac;
   color: #FAFCFC;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
   padding: 20rem 10rem; }
   .project__body {
     overflow: unset;
