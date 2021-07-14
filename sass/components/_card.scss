@@ -1,6 +1,9 @@
 /* -------------------------- Skill Card Component -------------------------- */
 .card {
   text-align: center;
+  padding: 3rem;
+  width: 100%;
+
   &__heading {
     font-family: $heading-font;
     font-size: 2.6rem;
@@ -8,14 +11,21 @@
     text-transform: uppercase;
     letter-spacing: .26rem;
   }
+
   &__body {
-    font-family: $body-font;
+    padding: 3rem;
     font-size: 2.2rem;
     line-height: 2.6rem;
     font-weight: 300;
-    list-style: none;
-  }
-  &__body-item {
-    margin: 1.1rem 0;
+
+    ul {
+      list-style: none;
+      li {
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey;
+        }
+      }
+    }
   }
 }

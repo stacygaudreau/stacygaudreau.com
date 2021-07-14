@@ -13,6 +13,10 @@
   }
   &__skills-cards {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    margin-top: 7rem;
+  }
+  &__cta-btn {
+    margin: 7rem 0;
   }
 }
