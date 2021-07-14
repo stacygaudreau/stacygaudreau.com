@@ -6,7 +6,7 @@
 /* ------------------------------- Font Sizes ------------------------------- */
 /* ---------------------------------- Base ---------------------------------- */
 /* 
-  Typical reset for new project 
+  Reset
 */
 *,
 *::after,
@@ -152,7 +152,8 @@ body {
     filter: grayscale(100%);
     transform: scale(1);
     transition: all .5s;
-    text-align: center; }
+    text-align: center;
+    min-width: 50%; }
     .project__image img {
       border-radius: 10px;
       width: 100%; }
