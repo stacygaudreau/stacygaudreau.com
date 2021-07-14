@@ -1,6 +1,8 @@
 /* ----------------------------- Project Feature ---------------------------- */
 .project {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: darken($color-primary, 10%);
   color: $color-white;
   clip-path: polygon(
@@ -8,14 +10,16 @@
     100% 0,
     100% 95%,
     0 100%
-  );
+    );
   padding: 20rem 10rem;
 
+  &__body, &__image {
+    padding: 3rem;
+  }
+
   &__body {
-    overflow: unset;
-    display: flex;
     flex-direction: column;
-    max-width: 60rem;
+    width: 50%;
   }
   
   &__subtitle {
@@ -44,18 +48,19 @@
   }
 
   &__image {
-    margin: 0 10rem;
     filter: grayscale(100%);
     transform: scale(1);
     transition: all .5s;
+    text-align: center;
 
     img {
       border-radius: 10px;
+      width: 100%;
     }
 
     &:hover {
       filter: none;
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
   }
 }

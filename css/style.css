@@ -64,7 +64,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
-  background: linear-gradient(90deg, rgba(245, 247, 247, 0.3) 0%, #ffffff, 50%, rgba(245, 247, 247, 0.3) 100%) 0% 0% no-repeat padding-box;
+  background: linear-gradient(90deg, rgba(245, 247, 247, 0.75) 0%, #ffffff, 50%, rgba(245, 247, 247, 0.75) 100%) 0% 0% no-repeat padding-box;
   font-family: "Mulish", sans-serif;
   font-weight: 400;
   color: #103034; }
@@ -90,9 +90,11 @@ body {
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
+  height: 95vh;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
   .hero__illustration-box {
     text-align: center; }
   .hero__illustration {
@@ -118,15 +120,17 @@ body {
 /* ----------------------------- Project Feature ---------------------------- */
 .project {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #2e9dac;
   color: #FAFCFC;
   clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
   padding: 20rem 10rem; }
+  .project__body, .project__image {
+    padding: 3rem; }
   .project__body {
-    overflow: unset;
-    display: flex;
     flex-direction: column;
-    max-width: 60rem; }
+    width: 50%; }
   .project__subtitle {
     font-family: "Amiko", sans-serif;
     font-weight: 600;
@@ -145,15 +149,16 @@ body {
     display: flex;
     align-items: center; }
   .project__image {
-    margin: 0 10rem;
     filter: grayscale(100%);
     transform: scale(1);
-    transition: all .5s; }
+    transition: all .5s;
+    text-align: center; }
     .project__image img {
-      border-radius: 10px; }
+      border-radius: 10px;
+      width: 100%; }
     .project__image:hover {
       filter: none;
-      transform: scale(1.05); }
+      transform: scale(1.02); }
 
 /* --------------------------------- Buttons -------------------------------- */
 .btn:link, .btn:visited {

@@ -1,10 +1,10 @@
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
-  // height: 95vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
+  justify-content: center;
 
   &__illustration-box {
     text-align: center;

@@ -9,9 +9,9 @@
   background-color: $color-pure-white;
   background: linear-gradient(
                 90deg, 
-                rgba($color-grey-light, .3) 0%,
+                rgba($color-grey-light, 0.75) 0%,
                 $color-pure-white, 50%,
-                rgba($color-grey-light, .3) 100%)
+                rgba($color-grey-light, 0.75) 100%)
                 0% 0% no-repeat padding-box; 
   font-family: $body-font;
   font-weight: 400;
