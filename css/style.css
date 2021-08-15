@@ -50,7 +50,8 @@ body {
   color: #FAFCFC; }
 
 /* --------------------------------- Headers -------------------------------- */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.section-title {
   font-family: ropa-sans-pro, sans-serif;
   font-weight: 400;
   text-transform: uppercase; }
@@ -62,7 +63,20 @@ p {
 
 /* ----------------------------- Section Titles ----------------------------- */
 .section-title {
-  font-size: 6.5rem; }
+  position: relative;
+  margin-top: 15rem; }
+  .section-title__text {
+    font-size: 6.5rem; }
+  .section-title__glyph-effect {
+    top: -2rem;
+    left: -6rem;
+    position: absolute;
+    z-index: -1;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 2px solid red;
+    border-color: #414848; }
 
 /* ---------------------------- Margin Utilities ---------------------------- */
 .u-m-btm-sm {
@@ -119,6 +133,17 @@ p {
 .hero {
   width: 100%;
   height: 100vh; }
+  .hero::before {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    content: '';
+    display: block;
+    background: url("/img/spacebg.png") no-repeat center fixed;
+    opacity: 0.1; }
   .hero__headline {
     width: 75%;
     padding-top: 22rem;
@@ -243,32 +268,45 @@ p {
 .panel {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
-  background-color: rgba(24, 28, 28, 0.5);
+  background-color: rgba(24, 28, 28, 0.82);
   padding: 3.5rem 7rem;
   line-height: 1.77;
   border: 3px solid #414848; }
   .panel__shadow-effect {
     position: absolute;
+    opacity: .1;
+    z-index: -1;
     display: flex;
     justify-content: center;
-    z-index: -1;
-    opacity: .1;
     width: 97.5%;
     height: 100%;
     top: -5%;
     border: 2px solid #a6afaf; }
     .panel__shadow-effect::after {
-      opacity: .4;
       position: absolute;
+      opacity: .4;
       z-index: -2;
       content: '';
       width: 95%;
       height: 100%;
       top: -5%;
       border: 2px solid #a6afaf; }
+
+/* -------------------------------------------------------------------------- */
+/*                              Graphical Glyphs                              */
+/* -------------------------------------------------------------------------- */
+/* -------------------------- Circular 45deg Glyph -------------------------- */
+.circle-glyph {
+  position: absolute;
+  z-index: -1;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 2px solid #414848; }
 
 /* ---------------------------- About Me Section ---------------------------- */
 .about {
@@ -290,4 +328,5 @@ p {
 
 /* ---------------------------- Projects Section ---------------------------- */
 .projects {
-  height: 150vh; }
+  height: 150vh;
+  position: relative; }

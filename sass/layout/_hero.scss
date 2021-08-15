@@ -8,16 +8,16 @@
     // z-index: -1;
   }
   // background image for now
-  // &::before {
-  //   z-index: -1;
-  //   position: absolute;
-  //   width: 100%; height: 100%;
-  //   left: 0; top: 0;
-  //   content: '';
-  //   display: block;
-  //   background: url('/img/spacebg.png') no-repeat center fixed;
-  //   opacity: 0.1;
-  // }
+  &::before {
+    z-index: -1;
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    content: '';
+    display: block;
+    background: url('/img/spacebg.png') no-repeat center fixed;
+    opacity: 0.1;
+  }
 
   &__headline {
     width: 75%;

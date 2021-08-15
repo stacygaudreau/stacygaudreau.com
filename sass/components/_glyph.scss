@@ -1,0 +1,50 @@
+/* -------------------------------------------------------------------------- */
+/*                              Graphical Glyphs                              */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------- Circular 45deg Glyph -------------------------- */
+.circle-glyph {
+  position: absolute;
+  z-index: -1;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 2px solid $panel-border-color;
+
+}
+
+// position: relative;
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// align-items: center;
+// width: 50%;
+// background-color: rgba($color-black, $panel-opacity);
+// padding: 3.5rem 7rem;
+// line-height: 1.77;
+// border: 3px solid $panel-border-color;
+
+// &__shadow-effect {
+//   // 1st shadow line (behind panel)
+//   position: absolute;
+//   opacity: .1;
+//   z-index: -1;
+//   display: flex;
+//   justify-content: center;
+//   width: 100% - $panel-shadow-offset/2; 
+//   height: 100%;
+//   top: -$panel-shadow-offset;
+//   border: 2px solid lighten($panel-border-color, 40%);
+
+//   // 2nd shadow line
+//   &::after {
+//     position: absolute;
+//     opacity: .4;
+//     z-index: -2;
+//     content: '';
+//     width: 100% - $panel-shadow-offset; 
+//     height: 100%;
+//     top: -$panel-shadow-offset;
+//     border: 2px solid lighten($panel-border-color, 40%);
+//   }
+// }
