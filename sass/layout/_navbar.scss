@@ -1,8 +1,11 @@
 /* ------------------------------- Top Navbar ------------------------------- */
 .navbar {
-  height: 64px;
+  position: fixed;
+  // top: 0; left: 0;
+  height: 60px;
   width: 100%;
-  padding: 0 50px;
+  max-width: $max-width;
+  padding: 0 ($main-padding - 1.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;

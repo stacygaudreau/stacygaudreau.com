@@ -4,6 +4,7 @@
 /* --------------------------------- Colours -------------------------------- */
 /* ------------------------------ Font Families ----------------------------- */
 /* ------------------------------- Font Sizes ------------------------------- */
+/* ------------------------------- Dimensions ------------------------------- */
 /* ---------------------------------- Base ---------------------------------- */
 /* 
   Reset
@@ -30,6 +31,9 @@ body {
   box-sizing: border-box;
   background-color: #181C1C;
   color: #FAFCFC; }
+
+main {
+  padding: 0 15rem; }
 
 /* -------------------------------------------------------------------------- */
 /*                                 Typography                                 */
@@ -70,9 +74,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ------------------------------- Top Navbar ------------------------------- */
 .navbar {
-  height: 64px;
+  position: fixed;
+  height: 60px;
   width: 100%;
-  padding: 0 50px;
+  max-width: 1920px;
+  padding: 0 13.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -100,32 +106,28 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-  .hero__illustration-box {
-    text-align: center; }
-  .hero__illustration {
-    margin-top: 6rem; }
+  width: 100%;
+  height: 100vh; }
+  .hero::before {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    content: '';
+    display: block;
+    background: url("/img/spacebg.png") no-repeat center fixed;
+    opacity: 0.1; }
   .hero__headline {
-    margin: 6rem 0;
-    font-family: "Montserrat", sans-serif;
-    color: #181C1C;
-    text-align: center;
-    line-height: 5rem;
-    margin: 7rem; }
-    .hero__headline--main {
-      font-size: 5.9rem;
-      line-height: 7rem; }
-    .hero__headline--sub {
-      color: #3b4545;
-      font-size: 2.5rem;
-      font-weight: 400;
-      margin-top: 2.5rem; }
-  .hero__cta-btn {
-    margin-bottom: 7rem; }
+    width: 75%;
+    padding-top: 22rem;
+    font-size: 13rem;
+    line-height: 13rem;
+    text-transform: uppercase; }
+    .hero__headline em {
+      font-style: normal;
+      color: #06D6C1; }
 
 /* ----------------------------- Project Feature ---------------------------- */
 .project {
@@ -235,3 +237,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 7rem; }
   .about__cta-btn {
     margin: 7rem 0; }
+
+/* ---------------------------- Projects Section ---------------------------- */
+.projects {
+  height: 150vh; }

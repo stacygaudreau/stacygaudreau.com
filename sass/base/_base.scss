@@ -20,10 +20,10 @@ html {
   */
   font-size: 62.5%;
 }
-  
+
 /* font/global properties in body selector */
 body {
-  max-width: 1920px;
+  max-width: $max-width;
   margin: 0 auto;
   box-sizing: border-box;
   background-color: $color-black;
@@ -31,5 +31,5 @@ body {
 }
 
 main {
-  // max-width: 1200px;
+  padding: 0 $main-padding;
 }
