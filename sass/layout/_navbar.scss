@@ -1,25 +1,18 @@
 /* ------------------------------- Top Navbar ------------------------------- */
 .navbar {
-  height: 80px;
+  height: 64px;
   width: 100%;
   padding: 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $color-pure-white;
-  background: linear-gradient(
-                90deg, 
-                rgba($color-grey-light, 0.75) 0%,
-                $color-pure-white, 50%,
-                rgba($color-grey-light, 0.75) 100%)
-                0% 0% no-repeat padding-box; 
-  font-family: $body-font;
+  // background-color: rgba($color-pure-black, .2);
+  font-family: $heading-font;
   font-weight: 400;
-  color: lighten($color-black, 10%);
+  color: $color-white;
 
   &__logo-text {
-    color: $color-black;
-    font-size: 30px;
+    font-size: 32px;
     text-transform: uppercase;
     &__last-name {
       font-weight: 200;
@@ -31,9 +24,9 @@
   }
 
   &__nav-item {
-    font-weight: 400;
+    font-weight: 200;
     font-size: 2rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
     text-transform: lowercase;
     cursor: pointer;
     &:hover {

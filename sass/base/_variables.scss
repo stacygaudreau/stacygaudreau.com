@@ -1,18 +1,18 @@
 /* --------------------------------- Colours -------------------------------- */
 $color-white: #FAFCFC;
 $color-pure-white: #ffffff;
-$color-black: #040C0D;
+$color-black: #181C1C;
 $color-pure-black: #000000;
 
 $color-grey: #E0E3E4;
 $color-grey-light: #F5F7F7;
 $color-grey-dark: darken($color-grey, 10%);
 
-$color-primary: #41BCCC;
+$color-primary: #06D6C1;
 $color-primary-light: lighten($color-primary, 10%);
-$color-primary-dark: darken($color-primary, 10%); 
+$color-primary-dark: darken($color-primary, 10%);  
 
-$color-secondary: #1ECFB4;
+$color-secondary: #3BA9B8;
 $color-secondary-light: lighten($color-secondary, 10%);
 $color-secondary-dark: darken($color-secondary, 10%);
 
@@ -20,11 +20,10 @@ $color-tertiary: #E6D963;
 $color-tertiary-light: lighten($color-tertiary, 10%);
 $color-tertiary-dark: darken($color-tertiary, 10%);
 
-$color-orange: #FF964C;
 
 /* ------------------------------ Font Families ----------------------------- */
-$body-font: 'Mulish', sans-serif;
-$heading-font: 'Amiko', sans-serif;
+$body-font: 'Montserrat', sans-serif;
+$heading-font: ropa-sans-pro, sans-serif;
 
 /* ------------------------------- Font Sizes ------------------------------- */
-$default-font-size: 2.4rem;
+$default-font-size: 2.2rem;
