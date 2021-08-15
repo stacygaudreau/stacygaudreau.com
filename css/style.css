@@ -65,7 +65,7 @@ p {
 /* ----------------------------- Section Titles ----------------------------- */
 .section-title {
   position: relative;
-  margin-top: 15rem; }
+  margin-top: 20rem; }
   .section-title__text {
     font-size: 6.5rem; }
   .section-title__glyph-effect {
@@ -91,7 +91,7 @@ p {
       border-radius: 50%; }
     .section-title__glyph-effect::before {
       position: absolute;
-      opacity: .04;
+      opacity: .03;
       z-index: -3;
       content: '';
       width: 76%;
@@ -258,6 +258,7 @@ p {
 .btn--clustered:first-child {
   margin-right: 3rem; }
 
+/* ---------------------- Rhombus Glyph Button w. Icon ---------------------- */
 /* -------------------------- Skill Card Component -------------------------- */
 .card {
   text-align: center;
@@ -294,9 +295,9 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  background-color: rgba(24, 28, 28, 0.82);
   padding: 3.5rem 7rem;
+  margin: 10rem 7rem;
+  background-color: rgba(24, 28, 28, 0.82);
   line-height: 1.77;
   border: 3px solid #414848; }
   .panel__shadow-effect {
@@ -318,6 +319,11 @@ p {
       height: 100%;
       top: -5%;
       border: 2px solid #a6afaf; }
+  .panel__title {
+    position: absolute;
+    top: -6rem;
+    font-size: 4rem;
+    letter-spacing: .5rem; }
 
 /* -------------------------------------------------------------------------- */
 /*                              Graphical Glyphs                              */
@@ -351,5 +357,10 @@ p {
 
 /* ---------------------------- Projects Section ---------------------------- */
 .projects {
-  height: 150vh;
+  height: 100vh;
+  position: relative; }
+
+/* ----------------------------- Skills Section ----------------------------- */
+.skills {
+  height: 100vh;
   position: relative; }

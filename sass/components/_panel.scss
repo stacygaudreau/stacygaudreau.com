@@ -11,9 +11,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  background-color: rgba($color-black, $panel-opacity);
+  // width: 50%;
   padding: 3.5rem 7rem;
+  margin: 10rem 7rem;
+  background-color: rgba($color-black, $panel-opacity);
   line-height: 1.77;
   border: 3px solid $panel-border-color;
 
@@ -40,5 +41,12 @@
       top: -$panel-shadow-offset;
       border: 2px solid lighten($panel-border-color, 40%);
     }
+  }
+
+  &__title {
+    position: absolute;
+    top: -6rem; 
+    font-size: 4rem;
+    letter-spacing: .5rem;
   }
 }

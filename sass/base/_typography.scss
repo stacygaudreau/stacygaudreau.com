@@ -27,7 +27,7 @@ p {
 /* ----------------------------- Section Titles ----------------------------- */
 .section-title {
   position: relative;
-  margin-top: 15rem;
+  margin-top: $section-begin-margin;
 
   &__text {
     font-size: 6.5rem;
@@ -57,7 +57,7 @@ p {
     }
     &::before {
       position: absolute;
-      opacity: .04;
+      opacity: .03;
       z-index: -3;
       content: '';
       width: 100% - $glyph-circ-offset*2; 
