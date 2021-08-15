@@ -7,6 +7,7 @@ body {
   font-family: $body-font;
   font-weight: 400;
   font-size: $default-font-size;
+  color: $color-white;
 }
 
 /* --------------------------------- Headers -------------------------------- */
@@ -16,6 +17,13 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+/* ------------------------------- Block Text ------------------------------- */
+p {
+  margin: ($default-p-spacing / 2) 0;
+  line-height: 1.5;
+}
+
+/* ----------------------------- Section Titles ----------------------------- */
 .section-title {
   font-size: 6.5rem;
 }

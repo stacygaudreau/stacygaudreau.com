@@ -1,10 +1,14 @@
 /* -------------------------------------------------------------------------- */
 /*                       StacyGaudreau.com Project Sass                       */
 /* -------------------------------------------------------------------------- */
-/* --------------------------------- Colours -------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                  Variables                                 */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------ Base Colours ------------------------------ */
 /* ------------------------------ Font Families ----------------------------- */
 /* ------------------------------- Font Sizes ------------------------------- */
 /* ------------------------------- Dimensions ------------------------------- */
+/* --------------------------------- Panels --------------------------------- */
 /* ---------------------------------- Base ---------------------------------- */
 /* 
   Reset
@@ -42,7 +46,8 @@ main {
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 2.2rem; }
+  font-size: 2.2rem;
+  color: #FAFCFC; }
 
 /* --------------------------------- Headers -------------------------------- */
 h1, h2, h3, h4, h5, h6 {
@@ -50,6 +55,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   text-transform: uppercase; }
 
+/* ------------------------------- Block Text ------------------------------- */
+p {
+  margin: 2.2rem 0;
+  line-height: 1.5; }
+
+/* ----------------------------- Section Titles ----------------------------- */
 .section-title {
   font-size: 6.5rem; }
 
@@ -108,17 +119,6 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
   width: 100%;
   height: 100vh; }
-  .hero::before {
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    content: '';
-    display: block;
-    background: url("/img/spacebg.png") no-repeat center fixed;
-    opacity: 0.1; }
   .hero__headline {
     width: 75%;
     padding-top: 22rem;
@@ -128,6 +128,19 @@ h1, h2, h3, h4, h5, h6 {
     .hero__headline em {
       font-style: normal;
       color: #06D6C1; }
+  .hero__textbox {
+    width: 50%;
+    position: relative;
+    padding-left: 3.3rem;
+    color: #e1eded; }
+    .hero__textbox::after {
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      content: '';
+      border-left: 5px solid #06D6C1;
+      width: 100%;
+      height: 100%; }
 
 /* ----------------------------- Project Feature ---------------------------- */
 .project {
@@ -219,6 +232,43 @@ h1, h2, h3, h4, h5, h6 {
         padding: 1rem; }
         .card__body ul li:not(:last-child) {
           border-bottom: 1px solid #E0E3E4; }
+
+/* -------------------------------------------------------------------------- */
+/*                               Panel Component                              */
+/* -------------------------------------------------------------------------- */
+/*
+  A rectangular panel to contain content with a cool space-y warp 
+    shadow effect on it
+*/
+.panel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background-color: rgba(24, 28, 28, 0.5);
+  padding: 3.5rem 7rem;
+  line-height: 1.77;
+  border: 3px solid #414848; }
+  .panel__shadow-effect {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    opacity: .1;
+    width: 97.5%;
+    height: 100%;
+    top: -5%;
+    border: 2px solid #a6afaf; }
+    .panel__shadow-effect::after {
+      opacity: .4;
+      position: absolute;
+      z-index: -2;
+      content: '';
+      width: 95%;
+      height: 100%;
+      top: -5%;
+      border: 2px solid #a6afaf; }
 
 /* ---------------------------- About Me Section ---------------------------- */
 .about {

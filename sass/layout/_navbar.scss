@@ -2,7 +2,7 @@
 .navbar {
   position: fixed;
   // top: 0; left: 0;
-  height: 60px;
+  height: $navbar-height;
   width: 100%;
   max-width: $max-width;
   padding: 0 ($main-padding - 1.5rem);
