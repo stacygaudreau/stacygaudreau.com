@@ -9,6 +9,7 @@
 /* ------------------------------- Font Sizes ------------------------------- */
 /* ------------------------------- Dimensions ------------------------------- */
 /* --------------------------------- Panels --------------------------------- */
+/* --------------------------------- Glyphs --------------------------------- */
 /* ---------------------------------- Base ---------------------------------- */
 /* 
   Reset
@@ -68,6 +69,7 @@ p {
   .section-title__text {
     font-size: 6.5rem; }
   .section-title__glyph-effect {
+    opacity: 1;
     top: -2rem;
     left: -6rem;
     position: absolute;
@@ -75,8 +77,29 @@ p {
     width: 12rem;
     height: 12rem;
     border-radius: 50%;
-    border: 2px solid red;
-    border-color: #414848; }
+    border: 2px solid #414848; }
+    .section-title__glyph-effect::after {
+      position: absolute;
+      opacity: .08;
+      z-index: -2;
+      content: '';
+      width: 88%;
+      height: 88%;
+      top: -12%;
+      left: -12%;
+      border: 2px solid #a6afaf;
+      border-radius: 50%; }
+    .section-title__glyph-effect::before {
+      position: absolute;
+      opacity: .04;
+      z-index: -3;
+      content: '';
+      width: 76%;
+      height: 76%;
+      top: -24%;
+      left: -24%;
+      border: 2px solid #a6afaf;
+      border-radius: 50%; }
 
 /* ---------------------------- Margin Utilities ---------------------------- */
 .u-m-btm-sm {
