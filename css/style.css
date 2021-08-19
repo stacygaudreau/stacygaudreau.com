@@ -260,19 +260,21 @@ p {
 
 /* ---------------------- Rhombus Glyph Button w. Icon ---------------------- */
 .btn-rhombus {
-  padding-top: 10rem;
-  margin: 3rem;
-  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 8rem;
   font-family: ropa-sans-pro, sans-serif;
   font-size: 4.7rem;
   text-transform: uppercase;
   text-decoration: none;
   color: #FAFCFC;
   text-align: center; }
+  .btn-rhombus:hover .btn-rhombus__shadow-effect {
+    border-color: #06D6C1; }
+    .btn-rhombus:hover .btn-rhombus__shadow-effect::after, .btn-rhombus:hover .btn-rhombus__shadow-effect::before {
+      border: 2px solid #06D6C1; }
   .btn-rhombus img {
     width: 4.7rem;
     transform: rotateZ(45deg); }
