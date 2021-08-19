@@ -259,6 +259,58 @@ p {
   margin-right: 3rem; }
 
 /* ---------------------- Rhombus Glyph Button w. Icon ---------------------- */
+.btn-rhombus {
+  padding-top: 10rem;
+  margin: 3rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: ropa-sans-pro, sans-serif;
+  font-size: 4.7rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FAFCFC;
+  text-align: center; }
+  .btn-rhombus img {
+    width: 4.7rem;
+    transform: rotateZ(45deg); }
+  .btn-rhombus__title {
+    padding-top: 4rem; }
+  .btn-rhombus__shadow-effect {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 12rem;
+    height: 12rem;
+    border: 3px solid #FAFCFC;
+    transform: rotateZ(-45deg); }
+    .btn-rhombus__shadow-effect::after {
+      z-index: -1;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      top: -18%;
+      left: 24%;
+      opacity: .08;
+      content: '';
+      width: 94%;
+      height: 94%;
+      border: 2px solid white; }
+    .btn-rhombus__shadow-effect::before {
+      z-index: -2;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      top: -36%;
+      left: 48%;
+      opacity: .02;
+      content: '';
+      width: 88%;
+      height: 88%;
+      border: 2px solid white; }
+
 /* -------------------------- Skill Card Component -------------------------- */
 .card {
   text-align: center;
