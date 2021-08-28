@@ -374,8 +374,11 @@ p {
       top: -5%;
       border: 2px solid #a6afaf; }
   .panel__title {
+    text-transform: none;
     position: absolute;
-    top: -6rem;
+    align-self: flex-start;
+    top: -7rem;
+    left: 0;
     font-size: 4rem;
     letter-spacing: .5rem; }
 

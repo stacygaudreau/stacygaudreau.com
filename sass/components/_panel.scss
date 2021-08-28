@@ -11,8 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // width: 50%;
-  padding: 3.5rem 7rem;
+  padding: $panel-pad-h $panel-pad-v;
   margin: 10rem 7rem;
   background-color: rgba($color-black, $panel-opacity);
   line-height: 1.77;
@@ -44,8 +43,12 @@
   }
 
   &__title {
+    text-transform: none;
     position: absolute;
-    top: -6rem; 
+    align-self: flex-start;
+    // color: darken($color-white, 10%);
+    top: -$panel-pad-v; 
+    left: 0;
     font-size: 4rem;
     letter-spacing: .5rem;
   }
