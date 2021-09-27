@@ -11,8 +11,10 @@
   &::before {
     z-index: -1;
     position: absolute;
-    width: 100%; height: 100%;
-    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
     content: '';
     display: block;
     background: url('/img/spacebg.png') no-repeat center fixed;
@@ -31,7 +33,6 @@
     }
   }
 
-
   &__textbox {
     width: 50%;
     position: relative;
@@ -41,50 +42,12 @@
     // vertical bar beside textbox
     &::after {
       position: absolute;
-      top: 0; left: 1rem;
+      top: 0;
+      left: 1rem;
       content: '';
       border-left: $textbox-bar-width solid $color-primary;
       width: 100%;
       height: 100%;
     }
   }
-
 }
-
-
-// background-color: red;
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// justify-content: center;
-
-// &__illustration-box {
-//   text-align: center;
-// }
-
-// &__illustration {
-//   margin-top: 6rem;
-// }
-
-// &__headline {
-//   margin: 6rem 0;
-//   font-family: $body-font;
-//   color: $color-black;
-//   text-align: center;
-//   line-height: 5rem;
-//   margin: 7rem;
-//   &--main {
-//     font-size: 5.9rem;
-//     line-height:  7rem;
-//   }
-//   &--sub {
-//     color: lighten($color-black, 15%);
-//     font-size: 2.5rem;
-//     font-weight: 400;
-//     margin-top: 2.5rem;
-//   }
-// }
-
-// &__cta-btn {
-//   margin-bottom: 7rem;
-// }

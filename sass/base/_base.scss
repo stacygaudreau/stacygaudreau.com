@@ -33,3 +33,15 @@ body {
 main {
   padding: 0 $main-padding;
 }
+
+// default anchor link styling
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-primary;
+  text-decoration: none;
+  cursor: pointer;
+}

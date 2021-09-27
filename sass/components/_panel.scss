@@ -2,29 +2,36 @@
 /*                               Panel Component                              */
 /* -------------------------------------------------------------------------- */
 /*
-  A rectangular panel to contain content with a cool space-y warp 
+  A rectangular panel to contain content with a subtle space-y warp 
     shadow effect on it
 */
 .panel {
-  position: relative;
+  padding: $panel-pad-h 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: $panel-pad-h $panel-pad-v;
-  margin: 10rem 7rem;
-  background-color: rgba($color-black, $panel-opacity);
-  line-height: 1.77;
-  border: 3px solid $panel-border-color;
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $panel-pad-v $panel-pad-h;
+    color: $color-grey-light;
+    background-color: rgba($color-black, $panel-opacity);
+    line-height: 1.77;
+    border: 3px solid $panel-border-color;
+  }
 
   &__shadow-effect {
     // 1st shadow line (behind panel)
     position: absolute;
-    opacity: .1;
+    opacity: 0.1;
     z-index: -1;
     display: flex;
     justify-content: center;
-    width: 100% - $panel-shadow-offset/2; 
+    width: 100% - $panel-shadow-offset/2;
     height: 100%;
     top: -$panel-shadow-offset;
     border: 2px solid lighten($panel-border-color, 40%);
@@ -32,10 +39,10 @@
     // 2nd shadow line
     &::after {
       position: absolute;
-      opacity: .4;
+      opacity: 0.4;
       z-index: -2;
       content: '';
-      width: 100% - $panel-shadow-offset; 
+      width: 100% - $panel-shadow-offset;
       height: 100%;
       top: -$panel-shadow-offset;
       border: 2px solid lighten($panel-border-color, 40%);
@@ -43,13 +50,24 @@
   }
 
   &__title {
-    text-transform: none;
-    position: absolute;
-    align-self: flex-start;
-    // color: darken($color-white, 10%);
-    top: -$panel-pad-v; 
-    left: 0;
-    font-size: 4rem;
-    letter-spacing: .5rem;
+    color: $color-white;
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+    margin: 1rem 1.75rem;
+
+    &--for-project {
+      align-self: flex-start;
+      text-transform: none;
+      a {
+        &:after {
+          margin-left: 1.5rem;
+          content: url('/img/i-link-ext.svg');
+        }
+      }
+    }
+
+    &--for-skill-card {
+      align-self: center;
+    }
   }
 }

@@ -1,31 +1,31 @@
 /* -------------------------- Skill Card Component -------------------------- */
-.card {
-  text-align: center;
-  padding: 3rem;
-  width: 100%;
+// .card {
+//   text-align: center;
+//   padding: 3rem;
+//   width: 100%;
 
-  &__heading {
-    font-family: $heading-font;
-    font-size: 2.6rem;
-    line-height: 2.8rem;
-    text-transform: uppercase;
-    letter-spacing: .26rem;
-  }
+//   &__heading {
+//     font-family: $heading-font;
+//     font-size: 2.6rem;
+//     line-height: 2.8rem;
+//     text-transform: uppercase;
+//     letter-spacing: .26rem;
+//   }
 
-  &__body {
-    padding: 3rem;
-    font-size: 2.2rem;
-    line-height: 2.6rem;
-    font-weight: 300;
+//   &__body {
+//     padding: 3rem;
+//     font-size: 2.2rem;
+//     line-height: 2.6rem;
+//     font-weight: 300;
 
-    ul {
-      list-style: none;
-      li {
-        padding: 1rem;
-        &:not(:last-child) {
-          border-bottom: 1px solid $color-grey;
-        }
-      }
-    }
-  }
-}
+//     ul {
+//       list-style: none;
+//       li {
+//         padding: 1rem;
+//         &:not(:last-child) {
+//           border-bottom: 1px solid $color-grey;
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,27 @@
+/* -------------------------------------------------------------------------- */
+/*                                   Mixins                                   */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------ Media Queries ----------------------------- */
+@mixin for-mobile-only {
+  @media (max-width: 599.95px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-down {
+  @media (max-width: 899.95px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-down {
+  @media (max-width: 1199.95px) {
+    @content;
+  }
+}
+@mixin for-laptop-down {
+  @media (max-width: 1799.95px) {
+    @content;
+  }
+}

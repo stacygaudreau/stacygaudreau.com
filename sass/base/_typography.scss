@@ -7,11 +7,16 @@ body {
   font-family: $body-font;
   font-weight: 400;
   font-size: $default-font-size;
-color: $color-white;
+  color: $color-white;
 }
 
 /* --------------------------------- Headers -------------------------------- */
-h1, h2, h3, h4, h5, h6, 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .section-title {
   font-family: $heading-font;
   font-weight: 400;
@@ -27,7 +32,6 @@ p {
 /* ----------------------------- Section Titles ----------------------------- */
 .section-title {
   position: relative;
-  margin-top: $section-begin-margin;
 
   &__text {
     font-size: 6.5rem;
@@ -42,13 +46,13 @@ p {
     width: 12rem;
     height: 12rem;
     border-radius: 50%;
-    border: 2px solid $glyph-color; 
+    border: 2px solid $glyph-color;
     &::after {
       position: absolute;
-      opacity: .08;
+      opacity: 0.08;
       z-index: -2;
       content: '';
-      width: 100% - $glyph-circ-offset; 
+      width: 100% - $glyph-circ-offset;
       height: 100% - $glyph-circ-offset;
       top: -$glyph-circ-offset;
       left: -$glyph-circ-offset;
@@ -57,17 +61,15 @@ p {
     }
     &::before {
       position: absolute;
-      opacity: .03;
+      opacity: 0.03;
       z-index: -3;
       content: '';
-      width: 100% - $glyph-circ-offset*2; 
-      height: 100% - $glyph-circ-offset*2;
-      top: -$glyph-circ-offset*2;
-      left: -$glyph-circ-offset*2;
+      width: 100% - $glyph-circ-offset * 2;
+      height: 100% - $glyph-circ-offset * 2;
+      top: -$glyph-circ-offset * 2;
+      left: -$glyph-circ-offset * 2;
       border: 2px solid lighten($glyph-color, 40%);
       border-radius: 50%;
     }
   }
 }
-
-
