@@ -6,10 +6,17 @@
     shadow effect on it
 */
 .panel {
-  padding: $panel-pad-h 0;
+  padding: $section-begin-margin/2 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  &--with-image {
+    .panel__body {
+      // padding: $panel-pad-v/2;
+      padding: 0;
+    }
+  }
 
   &__body {
     position: relative;
@@ -51,9 +58,9 @@
 
   &__title {
     color: $color-white;
-    font-size: 5rem;
+    font-size: 4.5rem;
     letter-spacing: 0.5rem;
-    margin: 1rem 1.75rem;
+    margin: 1rem 0;
 
     &--for-project {
       align-self: flex-start;
@@ -68,6 +75,31 @@
 
     &--for-skill-card {
       align-self: center;
+    }
+  }
+
+  &__footer-bar {
+    margin-top: $panel-pad-v;
+    margin-bottom: $panel-pad-v;
+    min-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $panel-pad-v;
+    justify-content: space-between;
+    align-items: center;
+
+    &--buttons {
+      display: flex;
+      justify-self: flex-start;
+      align-self: flex-start;
+    }
+
+    &--tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-self: flex-end;
+      justify-content: center;
+      gap: $panel-pad-v/2;
     }
   }
 }

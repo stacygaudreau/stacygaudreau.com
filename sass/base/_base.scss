@@ -38,6 +38,7 @@ main {
 a {
   color: inherit;
   text-decoration: none;
+  transition: all $t-fast;
 }
 
 a:hover {

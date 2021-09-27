@@ -9,12 +9,15 @@ $color-black: #181c1c;
 $color-pure-black: #000000;
 
 $color-grey-light: #eeeeee;
+$color-grey-med: #575757;
+$color-grey-dark: #434343;
 
 // $color-grey: #e0e3e4;
 // $color-grey-light: #f5f7f7;
 // $color-grey-dark: darken($color-grey, 10%);
 
 $color-primary: #06d6c1;
+$color-primary-trans: #22e8ca17;
 $color-primary-light: lighten($color-primary, 10%);
 $color-primary-dark: darken($color-primary, 10%);
 
@@ -39,7 +42,12 @@ $max-width: 1920px;
 $main-padding: 15rem;
 $navbar-height: 60px;
 $textbox-bar-width: 5px;
-$section-begin-margin: 16rem;
+$section-begin-margin: $main-padding;
+
+/* --------------------------------- Speeds --------------------------------- */
+$t-fast: 0.1s;
+$t-med: 0.2s;
+$t-slow: 0.5s;
 
 /* --------------------------------- Panels --------------------------------- */
 $panel-border-color: #414848;

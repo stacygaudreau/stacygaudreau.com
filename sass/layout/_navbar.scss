@@ -1,6 +1,7 @@
 /* ------------------------------- Top Navbar ------------------------------- */
 .navbar {
   position: fixed;
+  z-index: 3;
   // top: 0; left: 0;
   height: $navbar-height;
   width: 100%;
@@ -12,6 +13,7 @@
   // background-color: rgba($color-pure-black, .2);
   font-family: $heading-font;
   font-weight: 400;
+  background-color: rgba($color-pure-black, 0);
   color: $color-white;
 
   &__logo-text {
@@ -40,5 +42,10 @@
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  &--opaque {
+    transition: background-color $t-slow;
+    background-color: rgba(darken($color-black, 1%), 0.98);
   }
 }

@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <div class="navbar__logo-text">
         <a href="#home"
           >Stacy <span class="navbar__logo-text__last-name">Gaudreau</span></a
@@ -65,56 +65,50 @@
           <div class="section-title__glyph-effect"></div>
           <h2 class="section-title__text">Projects</h2>
         </header>
-        <div class="panel">
-          <h3 class="panel__title panel__title--for-project">
-            <a href="#ratemyderp">RateMyDerp!</a>
-          </h3>
-          <div class="panel__body">
-            <div class="panel__shadow-effect"></div>
-            <p>
-              Nisi veniam laborum elit consectetur ex occaecat pariatur tempor
-              deserunt duis pariatur. Qui excepteur voluptate sit deserunt aute
-              nostrud adipisicing labore do sit irure id. Magna aliquip minim
-              officia quis dolor reprehenderit velit. Ex nostrud pariatur sunt
-              nisi in voluptate. Irure consequat id enim voluptate minim nisi
-              amet nisi adipisicing excepteur adipisicing et Lorem. Sunt ex sint
-              aute laboris cupidatat nulla et cillum. Ad labore adipisicing
-              minim reprehenderit velit consectetur aliqua fugiat ad sint
-              occaecat sunt.
-            </p>
-            <p>
-              Commodo non laborum excepteur fugiat est ea voluptate veniam
-              cillum culpa ut nisi. Non anim ex nostrud dolor duis ex amet.
-              Occaecat amet dolor enim sunt dolor labore nisi in ullamco officia
-              incididunt in.
-            </p>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="panel__body">
+        <article class="project">
+          <section class="panel project__panel">
             <h3 class="panel__title panel__title--for-project">
               <a href="#ratemyderp">RateMyDerp!</a>
             </h3>
-            <div class="panel__shadow-effect"></div>
-            <p>
-              Nisi veniam laborum elit consectetur ex occaecat pariatur tempor
-              deserunt duis pariatur. Qui excepteur voluptate sit deserunt aute
-              nostrud adipisicing labore do sit irure id. Magna aliquip minim
-              officia quis dolor reprehenderit velit. Ex nostrud pariatur sunt
-              nisi in voluptate. Irure consequat id enim voluptate minim nisi
-              amet nisi adipisicing excepteur adipisicing et Lorem. Sunt ex sint
-              aute laboris cupidatat nulla et cillum. Ad labore adipisicing
-              minim reprehenderit velit consectetur aliqua fugiat ad sint
-              occaecat sunt.
-            </p>
-            <p>
-              Commodo non laborum excepteur fugiat est ea voluptate veniam
-              cillum culpa ut nisi. Non anim ex nostrud dolor duis ex amet.
-              Occaecat amet dolor enim sunt dolor labore nisi in ullamco officia
-              incididunt in.
-            </p>
+            <div class="panel__body">
+              <div class="panel__shadow-effect"></div>
+              <p>
+                RateMyDerp.com is a full-stack web application. It's an homage
+                to the "Rating Sites" of the early 2000's (HotOrNot, RateMyFace,
+                etc.)
+              </p>
+              <p>
+                Users vote on "derps" that others have submitted in order to see
+                the next image from the database. The site currently has over
+                1000 users, with more than 500 user submissions.
+              </p>
+              <div class="panel__footer-bar">
+                <div class="panel__footer-bar--buttons">
+                  <a
+                    href="http://#code"
+                    class="btn btn--primary panel__footer-bar--buttons"
+                    >Code</a
+                  >
+                </div>
+                <div class="panel__footer-bar--tags">
+                  <span class="info-tag panel__footer-bar--tags">Python</span>
+                  <span class="info-tag panel__footer-bar--tags">Django</span>
+                  <span class="info-tag panel__footer-bar--tags"
+                    >Javascript</span
+                  >
+                  <span class="info-tag panel__footer-bar--tags">Sass</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="project__image">
+            <img
+              src="/img/Image 5-1.png"
+              alt="RateMyDerp project image"
+              srcset=""
+            />
           </div>
-        </div>
+        </article>
       </section>
       <section class="skills">
         <header class="section-title">
@@ -123,6 +117,8 @@
         </header>
       </section>
     </main>
+    <!-- Scripts -->
+    <script src="/js/main.js" defer></script>
   </body>
 </html>
 <!-- <header class="hero">
