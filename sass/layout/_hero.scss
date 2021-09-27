@@ -40,14 +40,14 @@
     color: darken($color-white, 8%);
 
     // vertical bar beside textbox
-    &::after {
-      position: absolute;
-      top: 0;
-      left: 1rem;
-      content: '';
-      border-left: $textbox-bar-width solid $color-primary;
-      width: 100%;
-      height: 100%;
-    }
+    // &::after {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 1rem;
+    //   content: '';
+    //   border-left: $textbox-bar-width solid $color-primary;
+    //   width: 100%;
+    //   height: 100%;
+    // }
   }
 }

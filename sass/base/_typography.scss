@@ -73,3 +73,29 @@ p {
     }
   }
 }
+
+/* ----------------------- Vertical Bar Beside Textbox ---------------------- */
+
+.with-textbar--left {
+  &::after {
+    position: absolute;
+    top: 0;
+    content: '';
+    border-left: $textbox-bar-width solid $color-primary;
+    width: 100%;
+    height: 100%;
+    left: 1rem;
+  }
+}
+
+.with-textbar--right {
+  &::after {
+    position: absolute;
+    top: 0;
+    content: '';
+    border-left: $textbox-bar-width solid $color-primary;
+    width: 100%;
+    height: 100%;
+    left: 102%;
+  }
+}

@@ -120,6 +120,25 @@ p {
       border: 2px solid #a6afaf;
       border-radius: 50%; }
 
+/* ----------------------- Vertical Bar Beside Textbox ---------------------- */
+.with-textbar--left::after {
+  position: absolute;
+  top: 0;
+  content: '';
+  border-left: 5px solid #06d6c1;
+  width: 100%;
+  height: 100%;
+  left: 1rem; }
+
+.with-textbar--right::after {
+  position: absolute;
+  top: 0;
+  content: '';
+  border-left: 5px solid #06d6c1;
+  width: 100%;
+  height: 100%;
+  left: 102%; }
+
 /* ---------------------------- Margin Utilities ---------------------------- */
 .u-m-btm-sm {
   margin-bottom: 1.5rem; }
@@ -205,14 +224,6 @@ p {
     position: relative;
     padding-left: 3.3rem;
     color: #e1eded; }
-    .hero__textbox::after {
-      position: absolute;
-      top: 0;
-      left: 1rem;
-      content: '';
-      border-left: 5px solid #06d6c1;
-      width: 100%;
-      height: 100%; }
 
 /* -------------------------------------------------------------------------- */
 /*                               Project Feature                              */
@@ -419,7 +430,8 @@ p {
       flex-wrap: wrap;
       justify-self: flex-end;
       justify-content: center;
-      gap: 1.75rem; }
+      gap: 1.75rem;
+      opacity: 0.8; }
 
 /* -------------------------------------------------------------------------- */
 /*                              Graphical Glyphs                              */
@@ -469,11 +481,44 @@ p {
 
 /* ---------------------------- Projects Section ---------------------------- */
 .projects {
-  margin-top: 15rem;
-  height: 100vh;
-  position: relative; }
+  margin-top: 15rem; }
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
-  height: 100vh;
-  position: relative; }
+  margin: 15rem 0; }
+  .skills__body {
+    margin-top: 7.5rem;
+    line-height: 1;
+    padding: 2px 2rem;
+    color: #fafcfc;
+    font-size: 2.4rem; }
+    .skills__body--left {
+      margin-left: 5px;
+      border-left: 5px solid #06d6c1; }
+    .skills__body--right {
+      text-align: right;
+      margin-right: 5px;
+      border-right: 5px solid #06d6c1; }
+  .skills__cards {
+    padding: 0 7.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 7.5rem; }
+  .skills__card {
+    width: 33%;
+    font-size: 2.4rem;
+    text-align: center; }
+    .skills__card__title {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 4rem; }
+    .skills__card ul {
+      list-style: none;
+      font-weight: 300;
+      line-height: 1.2; }
+      .skills__card ul li {
+        padding: 1.2rem; }
+
+.hire-me {
+  margin-top: 30rem; }

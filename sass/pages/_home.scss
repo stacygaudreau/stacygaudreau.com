@@ -24,12 +24,65 @@
 /* ---------------------------- Projects Section ---------------------------- */
 .projects {
   margin-top: $section-begin-margin;
-  height: 100vh;
-  position: relative;
 }
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
-  height: 100vh;
-  position: relative;
+  margin: $section-begin-margin 0;
+
+  &__body {
+    margin-top: $section-begin-margin/2;
+    line-height: 1;
+    padding: 2px 2rem;
+    color: $color-white;
+    font-size: 2.4rem;
+    &--left {
+      margin-left: $textbox-bar-width;
+      border-left: $textbox-bar-width solid $color-primary;
+    }
+    &--right {
+      text-align: right;
+      margin-right: $textbox-bar-width;
+      border-right: $textbox-bar-width solid $color-primary;
+    }
+  }
+
+  &__cards {
+    padding: 0 $section-begin-margin/2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: $section-begin-margin/2;
+  }
+
+  &__card {
+    // .panel__body {
+    //   height: 100%;
+    // }
+    width: 33%;
+    font-size: 2.4rem;
+    text-align: center;
+
+    &__title {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 4rem;
+    }
+
+    ul {
+      list-style: none;
+      font-weight: 300;
+      line-height: 1.2;
+      li {
+        padding: 1.2rem;
+        &:not(:last-child) {
+          // border-bottom: 1px solid lighten($color-black, 2%);
+        }
+      }
+    }
+  }
+}
+
+.hire-me {
+  margin-top: $section-begin-margin * 2;
 }

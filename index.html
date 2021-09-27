@@ -39,13 +39,14 @@
       </div>
     </nav>
     <main>
+      <!-- HERO -->
       <header class="hero">
         <div class="hero__bg"></div>
         <section>
           <h1 class="hero__headline">
             I turn ideas into <em>reality</em> with code
           </h1>
-          <div class="hero__textbox">
+          <div class="hero__textbox with-textbar--left">
             <p>I'm a software developer who understands hardware systems</p>
             <p>
               In a past life, I founded an audio synthesizer company and
@@ -60,6 +61,8 @@
           </a>
         </section>
       </header>
+
+      <!-- PROJECTS -->
       <section class="projects">
         <header class="section-title">
           <div class="section-title__glyph-effect"></div>
@@ -110,90 +113,106 @@
           </div>
         </article>
       </section>
+
+      <!-- SKILLS -->
       <section class="skills">
         <header class="section-title">
           <div class="section-title__glyph-effect"></div>
           <h2 class="section-title__text">Skills & Technologies</h2>
         </header>
+        <section class="skills__body skills__body--left">
+          <p>
+            With years of first-hand business experience, I'm especially
+            interested in the finance, business logic and infrastructure
+            monitoring sectors.
+          </p>
+          <p>
+            Some of my favourite languages to work in include Python, Scala,
+            JavaScript and C.
+          </p>
+        </section>
+        <section class="skills__cards">
+          <div class="skills__card panel">
+            <h4 class="skills__card__title panel__title">Web Technologies</h4>
+            <div class="panel__body">
+              <div class="panel__shadow-effect"></div>
+              <ul>
+                <li>Full stack with an emphasis on backend</li>
+                <li>Python, Scala, JavaScript, CSS/Sass and HTML</li>
+                <li>Frameworks including Django, Play, Node and React</li>
+              </ul>
+            </div>
+          </div>
+          <div class="skills__card panel">
+            <h4 class="skills__card__title panel__title">
+              Infrastructure & Ops
+            </h4>
+            <div class="panel__body">
+              <div class="panel__shadow-effect"></div>
+              <ul>
+                <li>Linux, Debian & CentOS/RHEL</li>
+                <li>Servers & network infrastructure</li>
+                <li>
+                  Virtualization & storage technologies including KVM, ZFS and
+                  Ceph
+                </li>
+                <li>Deployment operations & scripting</li>
+              </ul>
+            </div>
+          </div>
+          <div class="skills__card panel">
+            <h4 class="skills__card__title panel__title">Auxiliary Skills</h4>
+            <div class="panel__body">
+              <div class="panel__shadow-effect"></div>
+              <ul>
+                <li>End-to-end product lifecycle & development</li>
+                <li>Financial & business logic</li>
+                <li>Low-level test & debugging</li>
+                <li>Bare-metal ARM driver development in C</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <a
+          href="#projects"
+          class="btn-rhombus"
+          style="float: left; padding-left: 3rem"
+        >
+          <div class="btn-rhombus__shadow-effect">
+            <img src="/img/i-download.svg" alt="see projects" srcset="" />
+          </div>
+          <span class="btn-rhombus__title">Download My CV</span>
+        </a>
+        <section class="skills__body skills__body--right">
+          <p>
+            I'm an avid "homelabber" and operate a moderate sized server rack of
+            compute and storage technology for learning and enjoyment.
+          </p>
+          <p>
+            When I'm not writing code I can be found gardening, hiking and
+            riding motorcycles.
+          </p>
+        </section>
+      </section>
+
+      <!-- Hire Me -->
+      <section class="hire-me">
+        <header class="section-title">
+          <div class="section-title__glyph-effect"></div>
+          <h2 class="section-title__text">Like what you see?</h2>
+        </header>
+        <section class="contact">
+          <div class="panel">
+            <h3 class="panel__title">Let's talk.</h3>
+            <div class="panel__body">
+              <div class="panel__shadow-effect"></div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
+
     <!-- Scripts -->
     <script src="/js/main.js" defer></script>
   </body>
 </html>
-<!-- <header class="hero">
-  <div class="hero__illustration-box">
-    <img src="img/pyramid-illustration.png" alt="" class="hero__illustration">
-  </div>
-  <div class="hero__headline">
-    <h1 class="hero__headline--main">
-      Developer & Hardware Specialist
-    </h1>
-    <h2 class="hero__headline--sub">
-      Hi, I'm Stacy. I build things in code and work with Linux systems.
-    </h2>
-  </div>
-  <a href="#projects" class="btn btn--orange hero__cta-btn">See My Work</a>
-</header>
-<main>
-  <section class="project">
-    <div class="project__body">
-      <h4 class="project__subtitle">Web Application Project</h4>
-      <h3 class="project__title">Rate My Derp!</h3>
-      <p class="project__description">RateMyDerp.com is a web application which is an homage to the "Rating Sites" of the early 2000's (HotOrNot, RateMyFace, etc.). It's a full stack web application built using Python (Django), JavaScript, Sass and HTML. The site currently has over 1000 users, with more than 500 user submissions.</p>
-      <div class="project__buttons">
-        <a href="#" class="btn btn--green btn--clustered">Demo</a>
-        <a href="#" class="btn btn--blue btn--clustered">Docs</a>
-        <a href="#" class="btn btn--blue btn--clustered">Code</a>
-      </div>
-    </div>
-    <div class="project__image">
-      <img src="./img/code.png" alt="project screenshot" srcset="">
-    </div>
-  </section>
-  <section class="about">
-    <h2 class="about__heading">About Me</h2>
-    <p class="about__body">
-      In a past life, I founded an electronics company and developed audio synthesizer hardware. Now I build things in code. 
-    </p>
-    <p class="about__body">
-      When not writing software, I can be found gardening, riding motorcycles and working on a BSc in Computer Science, part time. 
-    </p>
-    <p class="about__body">
-      Here are some of the technologies and skills I am available for.
-    </p>
-    <div class="about__skills-cards">
-      <div class="card">
-        <h3 class="card__heading">Web Applications</h3>
-        <div class="card__body">
-          <ul>
-            <li>Full stack development with an emphasis on backend.</li>
-            <li>Python, JavaScript, CSS/Sass and HTML.</li>
-            <li>Django, Vue.js and Node/Express</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card">
-        <h3 class="card__heading">Servers, Systems and Ops</h3>
-        <div class="card__body">
-          <ul>
-            <li>Linux nerd.</li>
-            <li>Servers and network infrastructure.</li>
-            <li>Virtualization and storage technologies.</li>
-            <li>Deployment operations and scripting.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card">
-        <h3 class="card__heading">Auxiliary Skills</h3>
-        <div class="card__body">
-          <ul>
-            <li>End-to-end product development</li>
-            <li>Financial and business logic</li>
-            <li>Low-level test & debugging</li>
-            <li>Bare-metal embedded driver development in C</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <a href="#download-cv" class="btn btn--orange about__cta-btn">Download My CV</a>-->
