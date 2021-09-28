@@ -206,7 +206,42 @@
             <h3 class="panel__title">Let's talk.</h3>
             <div class="panel__body">
               <div class="panel__shadow-effect"></div>
+              <div class="div contact__links">
+                <a href="#email" class="btn-icon"
+                  ><img src="/img/i-email.svg" alt="Email" srcset="" /> Email
+                  Me</a
+                >
+                <a href="#linkedin" class="btn-icon"
+                  ><img src="/img/i-linkedin.svg" alt="LinkedIn" srcset="" />My
+                  Profile</a
+                >
+              </div>
             </div>
+          </div>
+          <div class="panel">
+            <h3 class="panel__title">Send Message</h3>
+            <form class="panel__body contact__message-form">
+              <div class="panel__shadow-effect"></div>
+              <div class="input__container">
+                <label for="name" class="input__label">Name</label>
+                <input type="text" name="name" id="name" class="input" />
+              </div>
+              <div class="input__container">
+                <label for="email" class="input__label">Email</label>
+                <input type="text" name="email" id="email" class="input" />
+              </div>
+              <div class="input__container">
+                <label for="message" class="input__label">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="30"
+                  rows="5"
+                  class="input"
+                ></textarea>
+              </div>
+              <button class="btn btn--primary">Send</button>
+            </form>
           </div>
         </section>
       </section>

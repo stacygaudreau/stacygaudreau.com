@@ -1,0 +1,44 @@
+/* -------------------------------------------------------------------------- */
+/*                                 Form Input                                 */
+/* -------------------------------------------------------------------------- */
+
+@mixin shrink-label {
+  top: -1.4rem;
+  font-size: 1.2rem;
+  color: $color-white;
+}
+
+.input {
+  &__container {
+    position: relative;
+    width: 100%;
+  }
+
+  display: block;
+  overflow: hidden;
+  resize: vertical;
+  width: 100%;
+  background: none;
+  background-color: $color-black;
+  border-radius: 0.5rem;
+  color: $color-white;
+  font-family: $body-font;
+  font-size: 2.4rem;
+  padding: 2rem 2rem;
+  border: 2px solid $panel-border-color;
+
+  &:focus {
+    outline: none;
+    border: 2px solid lighten($panel-border-color, 40%);
+  }
+
+  &:focus ~ .text-input-label {
+    @include shrink-label();
+  }
+
+  &__label {
+    margin-left: 0.3rem;
+    font-family: $heading-font;
+    font-size: 2.4rem;
+  }
+}
