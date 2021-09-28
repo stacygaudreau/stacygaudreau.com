@@ -17,6 +17,8 @@
   color: $color-white;
 
   &__logo-text {
+    font-family: $heading-font;
+    font-weight: 400;
     font-size: 32px;
     text-transform: uppercase;
     &__last-name {

@@ -174,6 +174,8 @@ p {
   background-color: rgba(0, 0, 0, 0);
   color: #fafcfc; }
   .navbar__logo-text {
+    font-family: ropa-sans-pro, sans-serif;
+    font-weight: 400;
     font-size: 32px;
     text-transform: uppercase; }
     .navbar__logo-text__last-name {
@@ -579,3 +581,36 @@ p {
       gap: 3.5rem; }
     .hire-me .contact .btn {
       margin-top: 1.75rem; }
+
+.footer {
+  position: relative;
+  margin-top: 15rem;
+  padding: 10rem 0;
+  height: 40rem;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem; }
+  .footer::before {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    left: 0;
+    top: 0;
+    display: block;
+    background: url("/img/spacebg.png");
+    opacity: 0.2; }
+  .footer .contact__links {
+    flex-direction: column; }
+  .footer .btn-icon {
+    margin: 1rem 0;
+    font-size: 2rem; }
+    .footer .btn-icon img {
+      width: 2rem; }
+  .footer__copy {
+    font-family: ropa-sans-pro, sans-serif;
+    font-weight: 300;
+    font-size: 2rem; }
