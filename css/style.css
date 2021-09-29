@@ -36,13 +36,14 @@ html {
 
 /* font/global properties in body selector */
 body {
-  max-width: 1920px;
   margin: 0 auto;
   box-sizing: border-box;
   background-color: #181c1c;
   color: #fafcfc; }
 
 main {
+  margin: 0 auto;
+  max-width: 1920px;
   padding: 0 15rem; }
 
 a {
@@ -164,7 +165,6 @@ p {
   z-index: 3;
   height: 60px;
   width: 100%;
-  max-width: 1920px;
   padding: 0 13.5rem;
   display: flex;
   align-items: center;
@@ -201,6 +201,12 @@ p {
 .hero {
   width: 100%;
   height: 100vh; }
+  .hero__grid {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 66% 33%;
+    grid-template-rows: 60px 1fr min-content 1fr min-content 1fr; }
   .hero__bg::before {
     z-index: -1;
     position: absolute;
@@ -212,22 +218,29 @@ p {
     display: block;
     background: url("/img/spacebg.png") no-repeat center fixed;
     opacity: 0.1; }
-  .hero__bg img {
-    margin-top: 300px; }
   .hero__headline {
     width: 75%;
-    padding-top: 22rem;
     font-size: 13rem;
     line-height: 13rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    grid-column: 1 / 3;
+    grid-row: 3 / 4; }
     .hero__headline em {
       font-style: normal;
       color: #06d6c1; }
   .hero__textbox {
-    width: 50%;
+    align-self: flex-start;
+    width: 75%;
     position: relative;
     padding-left: 3.3rem;
-    color: #e1eded; }
+    color: #e1eded;
+    grid-column: 1 / 2;
+    grid-row: 5 / 6; }
+  .hero__cta {
+    justify-self: center;
+    width: 200px;
+    grid-column: 2 / 3;
+    grid-row: 5 / 6; }
 
 /* -------------------------------------------------------------------------- */
 /*                               Project Feature                              */
@@ -311,11 +324,9 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 8rem;
-  font-family: ropa-sans-pro, sans-serif;
-  font-size: 4.7rem;
   text-transform: uppercase;
   text-decoration: none;
+  line-height: 1;
   color: #fafcfc;
   text-align: center; }
   .btn-rhombus:hover .btn-rhombus__shadow-effect {
@@ -326,8 +337,15 @@ p {
     width: 4.7rem;
     transform: rotateZ(45deg); }
   .btn-rhombus__title {
-    padding-top: 4rem; }
+    font-family: ropa-sans-pro, sans-serif;
+    font-size: 4.7rem; }
+    .btn-rhombus__title--below {
+      padding-top: 8rem; }
+    .btn-rhombus__title--above {
+      padding-bottom: 7.7rem; }
   .btn-rhombus__shadow-effect {
+    top: -3rem;
+    margin: 0 3rem 0 3rem;
     position: relative;
     display: flex;
     justify-content: center;

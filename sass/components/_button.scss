@@ -56,11 +56,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 8rem;
-  font-family: $heading-font;
-  font-size: 4.7rem;
   text-transform: uppercase;
   text-decoration: none;
+  line-height: 1;
   color: $color-white;
   text-align: center;
 
@@ -80,11 +78,22 @@
   }
 
   &__title {
-    padding-top: 4rem;
+    font-family: $heading-font;
+    font-size: 4.7rem;
+    &--below {
+      padding-top: 8rem;
+    }
+    &--above {
+      // max-width: 20rem;
+      padding-bottom: 7.7rem;
+    }
+    // max-width: 20rem;
   }
 
   &__shadow-effect {
     // main rhombus box
+    top: -3rem;
+    margin: 0 3rem 0 3rem;
     position: relative;
     display: flex;
     justify-content: center;

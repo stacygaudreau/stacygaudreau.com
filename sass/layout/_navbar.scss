@@ -2,15 +2,12 @@
 .navbar {
   position: fixed;
   z-index: 3;
-  // top: 0; left: 0;
   height: $navbar-height;
   width: 100%;
-  max-width: $max-width;
   padding: 0 ($main-padding - 1.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // background-color: rgba($color-pure-black, .2);
   font-family: $heading-font;
   font-weight: 400;
   background-color: rgba($color-pure-black, 0);

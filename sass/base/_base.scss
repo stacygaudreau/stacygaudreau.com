@@ -23,7 +23,6 @@ html {
 
 /* font/global properties in body selector */
 body {
-  max-width: $max-width;
   margin: 0 auto;
   box-sizing: border-box;
   background-color: $color-black;
@@ -31,6 +30,8 @@ body {
 }
 
 main {
+  margin: 0 auto;
+  max-width: $max-width;
   padding: 0 $main-padding;
 }
 
