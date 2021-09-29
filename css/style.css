@@ -450,6 +450,13 @@ p {
   border-radius: 50%;
   border: 2px solid #414848; }
 
+.triangle-glyph {
+  margin: 3rem;
+  width: 350px;
+  height: 350px; }
+  .triangle-glyph polygon {
+    stroke: green; }
+
 /* -------------------------------------------------------------------------- */
 /*                                  Info Tag                                  */
 /* -------------------------------------------------------------------------- */
@@ -556,6 +563,7 @@ p {
       .skills__card ul li {
         padding: 1.2rem; }
 
+/* ----------------------------- Hire Me Section ---------------------------- */
 .hire-me {
   margin-top: 30rem; }
   .hire-me .panel__title {
@@ -582,16 +590,19 @@ p {
     .hire-me .contact .btn {
       margin-top: 1.75rem; }
 
+/* ----------------------------- Footer Section ----------------------------- */
 .footer {
   position: relative;
   margin-top: 15rem;
   padding: 10rem 0;
-  height: 40rem;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.5rem; }
+  justify-content: center;
+  text-align: center;
+  gap: 3.5rem;
+  font-family: ropa-sans-pro, sans-serif; }
   .footer::before {
     z-index: -1;
     position: absolute;
@@ -603,14 +614,13 @@ p {
     display: block;
     background: url("/img/spacebg.png");
     opacity: 0.2; }
-  .footer .contact__links {
-    flex-direction: column; }
+  .footer__tagline, .footer__copy {
+    font-weight: 200;
+    font-size: 2rem; }
+  .footer__tagline {
+    text-transform: lowercase; }
   .footer .btn-icon {
     margin: 1rem 0;
     font-size: 2rem; }
     .footer .btn-icon img {
       width: 2rem; }
-  .footer__copy {
-    font-family: ropa-sans-pro, sans-serif;
-    font-weight: 300;
-    font-size: 2rem; }

@@ -83,6 +83,7 @@
   }
 }
 
+/* ----------------------------- Hire Me Section ---------------------------- */
 .hire-me {
   margin-top: $section-begin-margin * 2;
 
@@ -120,16 +121,21 @@
   }
 }
 
+/* ----------------------------- Footer Section ----------------------------- */
+
 .footer {
   position: relative;
   margin-top: $section-begin-margin;
   padding: 10rem 0;
-  height: 40rem;
+  // height: 40rem;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: $panel-pad-v;
+  font-family: $heading-font;
 
   &::before {
     z-index: -1;
@@ -144,9 +150,17 @@
     opacity: 0.2;
   }
 
+  &__tagline,
+  &__copy {
+    font-weight: 200;
+    font-size: 2rem;
+  }
+
+  &__tagline {
+    text-transform: lowercase;
+  }
+
   .contact__links {
-    flex-direction: column;
-    // align-items: flex-start;
   }
 
   .btn-icon {
@@ -155,11 +169,5 @@
     img {
       width: 2rem;
     }
-  }
-
-  &__copy {
-    font-family: $heading-font;
-    font-weight: 300;
-    font-size: 2rem;
   }
 }
