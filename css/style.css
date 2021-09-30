@@ -215,8 +215,8 @@ p + p {
     align-items: center;
     height: 100%;
     width: 100%;
-    grid-template-columns: 66% 33%;
-    grid-template-rows: 60px 10% min-content 5% min-content 10%; }
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr min-content min-content 2fr; }
   .hero__bg::before {
     z-index: -1;
     position: absolute;
@@ -229,31 +229,34 @@ p + p {
     background: url("/img/spacebg.png") no-repeat center fixed;
     opacity: 0.1; }
   .hero__headline {
-    width: 66%;
+    width: 85%;
     font-size: 15rem;
+    margin-bottom: 0.25em;
     line-height: 1;
     text-transform: uppercase;
-    grid-column: 1 / 3;
-    grid-row: 3 / 4; }
+    align-self: flex-end;
+    grid-column: 1 / 2;
+    grid-row: 3 / span 1; }
     .hero__headline em {
       font-style: normal;
       color: #06d6c1; }
     @media (max-width: 1799.95px) {
       .hero__headline {
+        width: 100%;
         font-size: 10rem; } }
     @media (max-width: 1199.95px) {
       .hero__headline {
         width: 100%; } }
   .hero__textbox {
-    font-size: 2.2rem;
-    width: 75%;
     position: relative;
+    font-size: 2.2rem;
+    width: 50%;
     padding: 0.5em 0;
     padding-left: 2em;
-    line-height: 2.5;
     color: #dae9e9;
+    align-self: flex-start;
     grid-column: 1 / 2;
-    grid-row: 5 / 6; }
+    grid-row: 4 / span 1; }
     @media (max-width: 1799.95px) {
       .hero__textbox {
         width: 90%;
@@ -262,9 +265,10 @@ p + p {
       .hero__textbox {
         width: 90%; } }
   .hero__cta {
-    justify-self: center;
-    grid-column: 2 / 3;
-    grid-row: 5 / 6; }
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+    align-self: center;
+    justify-self: center; }
     @media (max-width: 1799.95px) {
       .hero__cta .btn--cta {
         font-size: 2.8rem; } }
