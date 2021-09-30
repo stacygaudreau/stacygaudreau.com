@@ -4,38 +4,47 @@
   display: inline-block;
   // text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
+  border: none;
   padding: 0 3rem;
   padding-top: 0.8rem;
   padding-bottom: 0.5rem;
-  // border-radius: 1rem;
   line-height: 1;
   font-family: $heading-font;
+  color: $color-black;
   font-size: 4rem;
   font-weight: 500;
-  background-color: darken($color-black, 1%);
-  border: 3px solid $color-primary;
-  transition: color $t-fast, border-color $t-fast, background-color $t-fast;
   transform: translate(0);
-
-  &:hover {
-    background-color: $color-primary-trans;
-    color: $color-white;
-    border-color: $color-white;
-  }
 
   &:active {
     transform: translate(2px, 2px);
   }
 
-  &--primary {
-    background-color: $color-primary;
+  &:hover {
     color: $color-black;
-    border-color: $color-primary;
   }
 
-  &--inv-primary {
-    color: $color-primary;
-    border-color: $color-primary;
+  &--cta {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    gap: 1.2rem;
+    padding: 2.4rem;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    &:hover {
+      background-color: lighten($color-primary, 5%);
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    &:hover {
+      background-color: lighten($color-secondary, 5%);
+    }
   }
 
   &--clustered {

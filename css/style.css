@@ -237,8 +237,8 @@ p {
     grid-column: 1 / 2;
     grid-row: 5 / 6; }
   .hero__cta {
-    justify-self: center;
-    width: 200px;
+    align-self: center;
+    justify-self: flex-start;
     grid-column: 2 / 3;
     grid-row: 5 / 6; }
 
@@ -284,30 +284,36 @@ p {
   position: relative;
   display: inline-block;
   text-decoration: none;
+  text-align: center;
+  border: none;
   padding: 0 3rem;
   padding-top: 0.8rem;
   padding-bottom: 0.5rem;
   line-height: 1;
   font-family: ropa-sans-pro, sans-serif;
+  color: #181c1c;
   font-size: 4rem;
   font-weight: 500;
-  background-color: #161919;
-  border: 3px solid #06d6c1;
-  transition: color 0.1s, border-color 0.1s, background-color 0.1s;
   transform: translate(0); }
-  .btn:hover {
-    background-color: #22e8ca17;
-    color: #fafcfc;
-    border-color: #fafcfc; }
   .btn:active {
     transform: translate(2px, 2px); }
+  .btn:hover {
+    color: #181c1c; }
+  .btn--cta {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    gap: 1.2rem;
+    padding: 2.4rem; }
   .btn--primary {
-    background-color: #06d6c1;
-    color: #181c1c;
-    border-color: #06d6c1; }
-  .btn--inv-primary {
-    color: #06d6c1;
-    border-color: #06d6c1; }
+    background-color: #06d6c1; }
+    .btn--primary:hover {
+      background-color: #07efd7; }
+  .btn--secondary {
+    background-color: #3ba9b8; }
+    .btn--secondary:hover {
+      background-color: #48b5c4; }
   .btn--clustered:last-child {
     margin-left: 3rem; }
   .btn--clustered:first-child {
@@ -490,8 +496,6 @@ p {
   text-transform: uppercase;
   color: #596363;
   background-color: #1d2121;
-  border-radius: 1rem;
-  border: 2px solid #414848;
   padding: 0rem 1.5rem;
   margin: 0; }
 

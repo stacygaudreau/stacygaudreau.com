@@ -10,8 +10,8 @@
   text-transform: uppercase;
   color: lighten($panel-border-color, 10%);
   background-color: lighten($color-black, 2%);
-  border-radius: 1rem;
-  border: 2px solid $panel-border-color;
+  // border-radius: 1rem;
+  // border: 2px solid darken($panel-border-color, 12%);
   padding: 0rem 1.5rem;
   margin: 0;
 }
