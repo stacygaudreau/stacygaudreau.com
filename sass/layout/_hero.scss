@@ -5,10 +5,11 @@
 
   &__grid {
     display: grid;
+    align-items: center;
     height: 100%;
     width: 100%;
     grid-template-columns: 66% 33%;
-    grid-template-rows: $navbar-height 1fr min-content 1fr min-content 1fr;
+    grid-template-rows: $navbar-height 1fr min-content 0.5fr min-content 1fr;
   }
 
   &__bg {
@@ -27,25 +28,26 @@
   }
 
   &__headline {
-    width: 75%;
-    font-size: 13rem;
-    line-height: 13rem;
+    width: 80%;
+    font-size: 15rem;
+    line-height: 1;
     text-transform: uppercase;
     em {
       font-style: normal;
       color: $color-primary;
     }
-
     grid-column: 1 / 3;
     grid-row: 3 / 4;
   }
 
   &__textbox {
-    align-self: flex-start;
+    font-size: 2.2rem;
     width: 75%;
     position: relative;
-    padding-left: 3.3rem;
-    color: darken($color-white, 8%);
+    padding: 0.5em 0;
+    padding-left: 1.5em;
+    line-height: 2.5;
+    color: darken($color-white, 10%);
 
     grid-column: 1 / 2;
     grid-row: 5 / 6;
@@ -64,8 +66,7 @@
 
   &__cta {
     // padding: 2rem;
-    align-self: center;
-    // justify-self: flex-start;
+    justify-self: center;
     // width: 50%;
     grid-column: 2 / 3;
     grid-row: 5 / 6;

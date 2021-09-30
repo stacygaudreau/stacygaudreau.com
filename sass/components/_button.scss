@@ -1,6 +1,7 @@
 /* --------------------------------- Buttons -------------------------------- */
 .btn {
-  display: flex;
+  display: inline-flex;
+  cursor: pointer;
   font-size: 3.6rem;
   position: relative;
   text-decoration: none;
@@ -39,12 +40,15 @@
   &--secondary {
     padding: 0.25em 0.66em;
   }
+  &--cta,
+  &--primary {
+    &:hover {
+      background-color: $color-primary-highlight;
+    }
+  }
 
   &--primary {
     background-color: $color-primary;
-    &:hover {
-      background-color: lighten($color-primary, 5%);
-    }
   }
 
   &--secondary {

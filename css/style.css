@@ -81,8 +81,10 @@ h6,
 
 /* ------------------------------- Block Text ------------------------------- */
 p {
-  margin: 2.2rem 0;
   line-height: 1.5; }
+
+p + p {
+  margin-top: 1em; }
 
 /* ----------------------------- Section Titles ----------------------------- */
 .section-title {
@@ -204,10 +206,11 @@ p {
   height: 100vh; }
   .hero__grid {
     display: grid;
+    align-items: center;
     height: 100%;
     width: 100%;
     grid-template-columns: 66% 33%;
-    grid-template-rows: 60px 1fr min-content 1fr min-content 1fr; }
+    grid-template-rows: 60px 1fr min-content 0.5fr min-content 1fr; }
   .hero__bg::before {
     z-index: -1;
     position: absolute;
@@ -220,9 +223,9 @@ p {
     background: url("/img/spacebg.png") no-repeat center fixed;
     opacity: 0.1; }
   .hero__headline {
-    width: 75%;
-    font-size: 13rem;
-    line-height: 13rem;
+    width: 80%;
+    font-size: 15rem;
+    line-height: 1;
     text-transform: uppercase;
     grid-column: 1 / 3;
     grid-row: 3 / 4; }
@@ -230,15 +233,17 @@ p {
       font-style: normal;
       color: #06d6c1; }
   .hero__textbox {
-    align-self: flex-start;
+    font-size: 2.2rem;
     width: 75%;
     position: relative;
-    padding-left: 3.3rem;
-    color: #e1eded;
+    padding: 0.5em 0;
+    padding-left: 1.5em;
+    line-height: 2.5;
+    color: #dae9e9;
     grid-column: 1 / 2;
     grid-row: 5 / 6; }
   .hero__cta {
-    align-self: center;
+    justify-self: center;
     grid-column: 2 / 3;
     grid-row: 5 / 6; }
 
@@ -281,7 +286,8 @@ p {
 
 /* --------------------------------- Buttons -------------------------------- */
 .btn {
-  display: flex;
+  display: inline-flex;
+  cursor: pointer;
   font-size: 3.6rem;
   position: relative;
   text-decoration: none;
@@ -310,10 +316,10 @@ p {
       transform: translateY(-1px); }
   .btn--primary, .btn--secondary {
     padding: 0.25em 0.66em; }
+  .btn--cta:hover, .btn--primary:hover {
+    background-color: #07fce4; }
   .btn--primary {
     background-color: #06d6c1; }
-    .btn--primary:hover {
-      background-color: #07efd7; }
   .btn--secondary {
     background-color: #3ba9b8; }
     .btn--secondary:hover {
