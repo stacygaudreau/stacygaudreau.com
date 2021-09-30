@@ -9,7 +9,7 @@
     height: 100%;
     width: 100%;
     grid-template-columns: 66% 33%;
-    grid-template-rows: $navbar-height 1fr min-content 0.5fr min-content 1fr;
+    grid-template-rows: $navbar-height 10% min-content 5% min-content 10%;
   }
 
   &__bg {
@@ -28,7 +28,7 @@
   }
 
   &__headline {
-    width: 80%;
+    width: 66%;
     font-size: 15rem;
     line-height: 1;
     text-transform: uppercase;
@@ -38,6 +38,13 @@
     }
     grid-column: 1 / 3;
     grid-row: 3 / 4;
+
+    @include for-laptop-down {
+      font-size: 10rem;
+    }
+    @include for-tablet-landscape-down {
+      width: 100%;
+    }
   }
 
   &__textbox {
@@ -45,30 +52,34 @@
     width: 75%;
     position: relative;
     padding: 0.5em 0;
-    padding-left: 1.5em;
+    padding-left: 2em;
     line-height: 2.5;
     color: darken($color-white, 10%);
 
     grid-column: 1 / 2;
     grid-row: 5 / 6;
 
-    // vertical bar beside textbox
-    // &::after {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 1rem;
-    //   content: '';
-    //   border-left: $textbox-bar-width solid $color-primary;
-    //   width: 100%;
-    //   height: 100%;
-    // }
+    @include for-laptop-down {
+      width: 90%;
+      font-size: 1.8rem;
+    }
+    @include for-tablet-landscape-down {
+      width: 90%;
+    }
   }
 
   &__cta {
-    // padding: 2rem;
     justify-self: center;
-    // width: 50%;
     grid-column: 2 / 3;
     grid-row: 5 / 6;
+
+    .btn--cta {
+      @include for-laptop-down {
+        font-size: 2.8rem;
+      }
+      @include for-tablet-landscape-down {
+        font-size: 2.4rem;
+      }
+    }
   }
 }

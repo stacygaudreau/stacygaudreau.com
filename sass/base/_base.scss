@@ -34,6 +34,9 @@ main {
   margin: 0 auto;
   max-width: $max-width;
   padding: 0 $main-padding;
+  @include for-laptop-down {
+    padding: 0 $main-padding * 3/4;
+  }
 }
 
 // default anchor link styling

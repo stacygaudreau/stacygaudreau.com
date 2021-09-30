@@ -46,6 +46,9 @@ main {
   margin: 0 auto;
   max-width: 1920px;
   padding: 0 15rem; }
+  @media (max-width: 1799.95px) {
+    main {
+      padding: 0 11.25rem; } }
 
 a {
   color: inherit;
@@ -176,6 +179,9 @@ p + p {
   font-weight: 400;
   background-color: rgba(0, 0, 0, 0);
   color: #fafcfc; }
+  @media (max-width: 1799.95px) {
+    .navbar {
+      padding: 0 11.25rem; } }
   .navbar__logo-text {
     font-family: ropa-sans-pro, sans-serif;
     font-weight: 400;
@@ -210,7 +216,7 @@ p + p {
     height: 100%;
     width: 100%;
     grid-template-columns: 66% 33%;
-    grid-template-rows: 60px 1fr min-content 0.5fr min-content 1fr; }
+    grid-template-rows: 60px 10% min-content 5% min-content 10%; }
   .hero__bg::before {
     z-index: -1;
     position: absolute;
@@ -223,7 +229,7 @@ p + p {
     background: url("/img/spacebg.png") no-repeat center fixed;
     opacity: 0.1; }
   .hero__headline {
-    width: 80%;
+    width: 66%;
     font-size: 15rem;
     line-height: 1;
     text-transform: uppercase;
@@ -232,20 +238,39 @@ p + p {
     .hero__headline em {
       font-style: normal;
       color: #06d6c1; }
+    @media (max-width: 1799.95px) {
+      .hero__headline {
+        font-size: 10rem; } }
+    @media (max-width: 1199.95px) {
+      .hero__headline {
+        width: 100%; } }
   .hero__textbox {
     font-size: 2.2rem;
     width: 75%;
     position: relative;
     padding: 0.5em 0;
-    padding-left: 1.5em;
+    padding-left: 2em;
     line-height: 2.5;
     color: #dae9e9;
     grid-column: 1 / 2;
     grid-row: 5 / 6; }
+    @media (max-width: 1799.95px) {
+      .hero__textbox {
+        width: 90%;
+        font-size: 1.8rem; } }
+    @media (max-width: 1199.95px) {
+      .hero__textbox {
+        width: 90%; } }
   .hero__cta {
     justify-self: center;
     grid-column: 2 / 3;
     grid-row: 5 / 6; }
+    @media (max-width: 1799.95px) {
+      .hero__cta .btn--cta {
+        font-size: 2.8rem; } }
+    @media (max-width: 1199.95px) {
+      .hero__cta .btn--cta {
+        font-size: 2.4rem; } }
 
 /* -------------------------------------------------------------------------- */
 /*                               Project Feature                              */
