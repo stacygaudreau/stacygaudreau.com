@@ -283,12 +283,10 @@ p {
 .btn {
   position: relative;
   display: inline-block;
-  text-transform: uppercase;
   text-decoration: none;
   padding: 0 3rem;
   padding-top: 0.8rem;
   padding-bottom: 0.5rem;
-  border-radius: 1rem;
   line-height: 1;
   font-family: ropa-sans-pro, sans-serif;
   font-size: 4rem;
@@ -304,6 +302,10 @@ p {
   .btn:active {
     transform: translate(2px, 2px); }
   .btn--primary {
+    background-color: #06d6c1;
+    color: #181c1c;
+    border-color: #06d6c1; }
+  .btn--inv-primary {
     color: #06d6c1;
     border-color: #06d6c1; }
   .btn--clustered:last-child {
