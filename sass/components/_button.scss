@@ -1,18 +1,14 @@
 /* --------------------------------- Buttons -------------------------------- */
 .btn {
+  display: flex;
+  font-size: 3.6rem;
   position: relative;
-  display: inline-block;
-  // text-transform: uppercase;
   text-decoration: none;
   text-align: center;
   border: none;
-  padding: 0 3rem;
-  padding-top: 0.8rem;
-  padding-bottom: 0.5rem;
   line-height: 1;
   font-family: $heading-font;
   color: $color-black;
-  font-size: 4rem;
   font-weight: 500;
   transform: translate(0);
 
@@ -25,12 +21,23 @@
   }
 
   &--cta {
-    text-transform: uppercase;
-    display: flex;
+    font-size: 3.6rem;
+    display: inline-flex;
     align-items: center;
-    line-height: 0;
-    gap: 1.2rem;
-    padding: 2.4rem;
+    justify-content: center;
+    gap: 0.5em;
+    text-transform: uppercase;
+    background-color: $color-primary;
+    padding: 0.5em 1em;
+    img {
+      height: 1em;
+      transform: translateY(-1px);
+    }
+  }
+
+  &--primary,
+  &--secondary {
+    padding: 0.25em 0.66em;
   }
 
   &--primary {

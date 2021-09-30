@@ -63,8 +63,10 @@
   }
 
   &__cta {
+    // padding: 2rem;
     align-self: center;
-    justify-self: flex-start;
+    // justify-self: flex-start;
+    // width: 50%;
     grid-column: 2 / 3;
     grid-row: 5 / 6;
   }

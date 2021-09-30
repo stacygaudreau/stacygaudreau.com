@@ -36,6 +36,7 @@ html {
 
 /* font/global properties in body selector */
 body {
+  font-size: 1rem;
   margin: 0 auto;
   box-sizing: border-box;
   background-color: #181c1c;
@@ -238,7 +239,6 @@ p {
     grid-row: 5 / 6; }
   .hero__cta {
     align-self: center;
-    justify-self: flex-start;
     grid-column: 2 / 3;
     grid-row: 5 / 6; }
 
@@ -281,18 +281,15 @@ p {
 
 /* --------------------------------- Buttons -------------------------------- */
 .btn {
+  display: flex;
+  font-size: 3.6rem;
   position: relative;
-  display: inline-block;
   text-decoration: none;
   text-align: center;
   border: none;
-  padding: 0 3rem;
-  padding-top: 0.8rem;
-  padding-bottom: 0.5rem;
   line-height: 1;
   font-family: ropa-sans-pro, sans-serif;
   color: #181c1c;
-  font-size: 4rem;
   font-weight: 500;
   transform: translate(0); }
   .btn:active {
@@ -300,12 +297,19 @@ p {
   .btn:hover {
     color: #181c1c; }
   .btn--cta {
-    text-transform: uppercase;
-    display: flex;
+    font-size: 3.6rem;
+    display: inline-flex;
     align-items: center;
-    line-height: 0;
-    gap: 1.2rem;
-    padding: 2.4rem; }
+    justify-content: center;
+    gap: 0.5em;
+    text-transform: uppercase;
+    background-color: #06d6c1;
+    padding: 0.5em 1em; }
+    .btn--cta img {
+      height: 1em;
+      transform: translateY(-1px); }
+  .btn--primary, .btn--secondary {
+    padding: 0.25em 0.66em; }
   .btn--primary {
     background-color: #06d6c1; }
     .btn--primary:hover {
