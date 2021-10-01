@@ -28,6 +28,7 @@ body {
   box-sizing: border-box;
   background-color: $color-black;
   color: $color-white;
+  overflow-x: hidden;
 }
 
 main {

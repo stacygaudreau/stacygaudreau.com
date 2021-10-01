@@ -12,6 +12,9 @@
   color: $color-black;
   font-weight: 500;
   transform: translate(0);
+  @include for-laptop-down {
+    font-size: 3rem;
+  }
 
   &:active {
     transform: translate(2px, 2px);

@@ -12,6 +12,9 @@
   background-color: lighten($color-black, 2%);
   // border-radius: 1rem;
   // border: 2px solid darken($panel-border-color, 12%);
-  padding: 0rem 1.5rem;
+  padding: 0rem 0.625em;
   margin: 0;
+  @include for-laptop-down {
+    font-size: 2rem;
+  }
 }

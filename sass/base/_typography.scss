@@ -34,19 +34,23 @@ p + p {
 /* ----------------------------- Section Titles ----------------------------- */
 .section-title {
   position: relative;
+  font-size: 1rem;
+  @include for-laptop-down {
+    font-size: 0.8rem;
+  }
 
   &__text {
-    font-size: 6.5rem;
+    font-size: 6.5em;
   }
 
   &__glyph-effect {
     opacity: 1;
-    top: -2rem;
-    left: -6rem;
+    top: -2em;
+    left: -6em;
     position: absolute;
     z-index: -1;
-    width: 12rem;
-    height: 12rem;
+    width: 12em;
+    height: 12em;
     border-radius: 50%;
     border: 2px solid $glyph-color;
     &::after {

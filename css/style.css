@@ -40,7 +40,8 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   background-color: #181c1c;
-  color: #fafcfc; }
+  color: #fafcfc;
+  overflow-x: hidden; }
 
 main {
   margin: 0 auto;
@@ -91,17 +92,21 @@ p + p {
 
 /* ----------------------------- Section Titles ----------------------------- */
 .section-title {
-  position: relative; }
+  position: relative;
+  font-size: 1rem; }
+  @media (max-width: 1799.95px) {
+    .section-title {
+      font-size: 0.8rem; } }
   .section-title__text {
-    font-size: 6.5rem; }
+    font-size: 6.5em; }
   .section-title__glyph-effect {
     opacity: 1;
-    top: -2rem;
-    left: -6rem;
+    top: -2em;
+    left: -6em;
     position: absolute;
     z-index: -1;
-    width: 12rem;
-    height: 12rem;
+    width: 12em;
+    height: 12em;
     border-radius: 50%;
     border: 2px solid #414848; }
     .section-title__glyph-effect::after {
@@ -228,6 +233,8 @@ p + p {
     display: block;
     background: url("/img/spacebg.png") no-repeat center fixed;
     opacity: 0.1; }
+  .hero__headline, .hero__textbox, .hero__cta {
+    grid-column: 1 / span 1; }
   .hero__headline {
     width: 85%;
     font-size: 15rem;
@@ -235,7 +242,6 @@ p + p {
     line-height: 1;
     text-transform: uppercase;
     align-self: flex-end;
-    grid-column: 1 / 2;
     grid-row: 3 / span 1; }
     .hero__headline em {
       font-style: normal;
@@ -246,7 +252,8 @@ p + p {
         font-size: 10rem; } }
     @media (max-width: 1199.95px) {
       .hero__headline {
-        width: 100%; } }
+        width: 90%;
+        font-size: 10rem; } }
   .hero__textbox {
     position: relative;
     font-size: 2.2rem;
@@ -255,7 +262,6 @@ p + p {
     padding-left: 2em;
     color: #dae9e9;
     align-self: flex-start;
-    grid-column: 1 / 2;
     grid-row: 4 / span 1; }
     @media (max-width: 1799.95px) {
       .hero__textbox {
@@ -265,7 +271,6 @@ p + p {
       .hero__textbox {
         width: 90%; } }
   .hero__cta {
-    grid-column: 1 / span 1;
     grid-row: 5 / span 1;
     align-self: center;
     justify-self: center; }
@@ -280,17 +285,21 @@ p + p {
 /*                               Project Feature                              */
 /* -------------------------------------------------------------------------- */
 .project {
+  position: relative;
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 66% auto;
   align-items: center;
-  justify-content: center;
-  gap: 4rem; }
-  .project__panel {
-    width: 66%; }
+  justify-content: space-between; }
   .project__image {
+    width: 200%;
+    margin-left: 5rem;
     z-index: -1;
-    overflow: hidden;
     padding: 0; }
+    .project__image:hover {
+      width: 200%; }
+      .project__image:hover img {
+        width: 200%; }
     .project__image img {
       width: 100%; }
 
@@ -327,6 +336,9 @@ p + p {
   color: #181c1c;
   font-weight: 500;
   transform: translate(0); }
+  @media (max-width: 1799.95px) {
+    .btn {
+      font-size: 3rem; } }
   .btn:active {
     transform: translate(2px, 2px); }
   .btn:hover {
@@ -438,7 +450,11 @@ p + p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  font-size: 1rem; }
+  @media (max-width: 1799.95px) {
+    .panel {
+      font-size: 0.85rem; } }
   .panel--with-image .panel__body {
     padding: 0; }
   .panel__body {
@@ -451,7 +467,10 @@ p + p {
     color: #eeeeee;
     background-color: rgba(24, 28, 28, 0.82);
     line-height: 1.77;
+    font-size: 2.2em;
     border: 3px solid #414848; }
+    .panel__body p {
+      margin-top: 3.5rem; }
   .panel__shadow-effect {
     position: absolute;
     opacity: 0.1;
@@ -473,8 +492,8 @@ p + p {
       border: 2px solid #a6afaf; }
   .panel__title {
     color: #fafcfc;
-    font-size: 4.5rem;
-    letter-spacing: 0.5rem;
+    font-size: 4.5em;
+    letter-spacing: 0.25rem;
     margin: 1rem 0; }
     .panel__title--for-project {
       align-self: flex-start;
@@ -489,7 +508,6 @@ p + p {
     margin-bottom: 3.5rem;
     min-width: 100%;
     display: flex;
-    flex-wrap: wrap;
     gap: 3.5rem;
     justify-content: space-between;
     align-items: center; }
@@ -501,7 +519,7 @@ p + p {
       display: flex;
       flex-wrap: wrap;
       justify-self: flex-end;
-      justify-content: center;
+      justify-content: flex-end;
       gap: 1.75rem;
       opacity: 0.8; }
 
@@ -535,8 +553,11 @@ p + p {
   text-transform: uppercase;
   color: #596363;
   background-color: #1d2121;
-  padding: 0rem 1.5rem;
+  padding: 0rem 0.625em;
   margin: 0; }
+  @media (max-width: 1799.95px) {
+    .info-tag {
+      font-size: 2rem; } }
 
 /* -------------------------------------------------------------------------- */
 /*                                 Form Input                                 */

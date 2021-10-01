@@ -11,10 +11,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
+  @include for-laptop-down {
+    font-size: 0.85rem;
+  }
 
   &--with-image {
     .panel__body {
-      // padding: $panel-pad-v/2;
       padding: 0;
     }
   }
@@ -29,7 +32,11 @@
     color: $color-grey-light;
     background-color: rgba($color-black, $panel-opacity);
     line-height: 1.77;
+    font-size: 2.2em;
     border: 3px solid $panel-border-color;
+    p {
+      margin-top: $panel-pad-v;
+    }
   }
 
   &__shadow-effect {
@@ -59,8 +66,8 @@
 
   &__title {
     color: $color-white;
-    font-size: 4.5rem;
-    letter-spacing: 0.5rem;
+    font-size: 4.5em;
+    letter-spacing: 0.25rem;
     margin: 1rem 0;
 
     &--for-project {
@@ -84,7 +91,7 @@
     margin-bottom: $panel-pad-v;
     min-width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     gap: $panel-pad-v;
     justify-content: space-between;
     align-items: center;
@@ -99,7 +106,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-self: flex-end;
-      justify-content: center;
+      justify-content: flex-end;
       gap: $panel-pad-v/2;
       opacity: 0.8;
     }
