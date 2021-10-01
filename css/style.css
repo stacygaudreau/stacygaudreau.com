@@ -300,17 +300,23 @@ p + p {
   grid-template-columns: 66% auto;
   align-items: center;
   justify-content: space-between; }
+  @media (max-width: 899.95px) {
+    .project {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto); } }
   .project__image {
     width: 200%;
     margin-left: 5rem;
     z-index: -1;
     padding: 0; }
-    .project__image:hover {
-      width: 200%; }
-      .project__image:hover img {
-        width: 200%; }
     .project__image img {
       width: 100%; }
+    @media (max-width: 899.95px) {
+      .project__image {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 7.5rem;
+        grid-row: 1 / span 1; } }
 
 /* -------------------------------------------------------------------------- */
 /*                              Layout Containers                             */
@@ -324,7 +330,7 @@ p + p {
   align-items: center;
   text-align: center;
   padding: 8em 12em; }
-  @media (max-width: 899.95px) and (orientation: portrait) {
+  @media (max-width: 899.95px) {
     .section-container {
       padding: 4em 4em; } }
   @media (max-width: 599.95px) {
@@ -463,6 +469,9 @@ p + p {
   @media (max-width: 1799.95px) {
     .panel {
       font-size: 0.85rem; } }
+  @media (max-width: 899.95px) {
+    .panel {
+      text-align: center; } }
   .panel--with-image .panel__body {
     padding: 0; }
   .panel__body {
@@ -509,6 +518,9 @@ p + p {
       .panel__title--for-project a:after {
         margin-left: 1.5rem;
         content: url("/img/i-link-ext.svg"); }
+      @media (max-width: 899.95px) {
+        .panel__title--for-project {
+          align-self: center; } }
     .panel__title--for-skill-card {
       align-self: center; }
   .panel__footer-bar {
@@ -519,10 +531,20 @@ p + p {
     gap: 3.5rem;
     justify-content: space-between;
     align-items: center; }
+    @media (max-width: 899.95px) {
+      .panel__footer-bar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
     .panel__footer-bar--buttons {
       display: flex;
       justify-self: flex-start;
       align-self: flex-start; }
+      @media (max-width: 899.95px) {
+        .panel__footer-bar--buttons {
+          justify-self: center;
+          align-self: center;
+          order: 2; } }
     .panel__footer-bar--tags {
       display: flex;
       flex-wrap: wrap;
@@ -530,6 +552,10 @@ p + p {
       justify-content: flex-end;
       gap: 1.75rem;
       opacity: 0.8; }
+      @media (max-width: 899.95px) {
+        .panel__footer-bar--tags {
+          justify-content: center;
+          order: 1; } }
 
 /* -------------------------------------------------------------------------- */
 /*                              Graphical Glyphs                              */
@@ -648,12 +674,13 @@ p + p {
     font-size: 1rem; }
     @media (max-width: 1799.95px) {
       .skills__cards {
-        gap: 3.75rem;
-        font-size: 0.85rem; }
+        font-size: 0.85rem;
+        gap: 3.75rem; }
         .skills__cards .panel__body {
           padding: 3.5rem; } }
     @media (max-width: 1199.95px) {
       .skills__cards {
+        font-size: 1rem;
         margin: 3.75rem 0;
         gap: 1.875rem;
         grid-template-columns: auto;

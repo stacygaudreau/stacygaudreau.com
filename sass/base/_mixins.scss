@@ -10,7 +10,7 @@
 }
 
 @mixin for-tablet-portrait-down {
-  @media (max-width: 899.95px) and (orientation: portrait) {
+  @media (max-width: 899.95px) {
     @content;
   }
 }

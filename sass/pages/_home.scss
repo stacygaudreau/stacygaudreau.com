@@ -59,13 +59,14 @@
     gap: $section-begin-margin/2;
     font-size: 1rem;
     @include for-laptop-down {
-      gap: $section-begin-margin/4;
       font-size: 0.85rem;
+      gap: $section-begin-margin/4;
       .panel__body {
         padding: $panel-pad-v;
       }
     }
     @include for-tablet-landscape-down {
+      font-size: 1rem;
       margin: $section-begin-margin / 4 0;
       gap: $section-begin-margin / 8;
       grid-template-columns: auto;
