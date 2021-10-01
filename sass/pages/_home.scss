@@ -29,6 +29,8 @@
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
   margin: $section-begin-margin 0;
+  display: flex;
+  flex-direction: column;
 
   &__body {
     margin-top: $section-begin-margin/2;
@@ -48,25 +50,38 @@
   }
 
   &__cards {
-    padding: 0 $section-begin-margin/2;
-    display: flex;
+    margin: $section-begin-margin/2 0;
+    // padding: 0 $section-begin-margin/2;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
     align-items: flex-start;
-    justify-content: space-between;
     gap: $section-begin-margin/2;
+    font-size: 1rem;
+    @include for-laptop-down {
+      gap: $section-begin-margin/4;
+      font-size: 0.85rem;
+      .panel__body {
+        padding: $panel-pad-v;
+      }
+    }
+    @include for-tablet-landscape-down {
+      margin: $section-begin-margin / 4 0;
+      gap: $section-begin-margin / 8;
+      grid-template-columns: auto;
+      grid-template-rows: repeat(3, 1fr);
+      align-items: center;
+    }
   }
 
   &__card {
-    // .panel__body {
-    //   height: 100%;
-    // }
-    width: 33%;
-    font-size: 2.4rem;
+    font-size: 1em;
     text-align: center;
 
     &__title {
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 4rem;
+      font-size: 3.6em;
     }
 
     ul {
@@ -74,12 +89,17 @@
       font-weight: 300;
       line-height: 1.2;
       li {
-        padding: 1.2rem;
         &:not(:last-child) {
-          // border-bottom: 1px solid lighten($color-black, 2%);
+          padding-bottom: 1em;
+          // border-bottom: 1px solid lighten($color-black, 5%);
         }
       }
     }
+  }
+
+  .btn {
+    margin: $section-begin-margin / 4 0;
+    align-self: center;
   }
 }
 

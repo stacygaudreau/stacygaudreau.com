@@ -6,7 +6,6 @@
     shadow effect on it
 */
 .panel {
-  padding: $section-begin-margin/2 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,12 +27,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: $panel-pad-v $panel-pad-h;
     color: $color-grey-light;
     background-color: rgba($color-black, $panel-opacity);
     line-height: 1.77;
     font-size: 2.2em;
     border: 3px solid $panel-border-color;
+    padding: $panel-pad-v $panel-pad-h;
     p {
       margin-top: $panel-pad-v;
     }
@@ -68,7 +67,7 @@
     color: $color-white;
     font-size: 4.5em;
     letter-spacing: 0.25rem;
-    margin: 1rem 0;
+    margin: $panel-pad-v 0 1rem 0;
 
     &--for-project {
       align-self: flex-start;

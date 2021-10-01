@@ -21,6 +21,11 @@ html {
   font-size: 62.5%;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* font/global properties in body selector */
 body {
   font-size: 1rem;
@@ -28,7 +33,6 @@ body {
   box-sizing: border-box;
   background-color: $color-black;
   color: $color-white;
-  overflow-x: hidden;
 }
 
 main {
@@ -37,6 +41,12 @@ main {
   padding: 0 $main-padding;
   @include for-laptop-down {
     padding: 0 $main-padding * 3/4;
+  }
+  @include for-tablet-landscape-down {
+    padding: 0 $main-padding * 2/4;
+  }
+  @include for-mobile-only {
+    padding: 0 $main-padding * 1/4;
   }
 }
 

@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 3;
   height: $navbar-height;
-  width: 100%;
+  width: 100vw;
   padding: 0 ($main-padding - 1.5rem);
   @include for-laptop-down {
     padding: 0 $main-padding * 3/4;

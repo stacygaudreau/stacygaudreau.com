@@ -34,14 +34,17 @@ html {
   */
   font-size: 62.5%; }
 
+html,
+body {
+  overflow-x: hidden; }
+
 /* font/global properties in body selector */
 body {
   font-size: 1rem;
   margin: 0 auto;
   box-sizing: border-box;
   background-color: #181c1c;
-  color: #fafcfc;
-  overflow-x: hidden; }
+  color: #fafcfc; }
 
 main {
   margin: 0 auto;
@@ -50,6 +53,12 @@ main {
   @media (max-width: 1799.95px) {
     main {
       padding: 0 11.25rem; } }
+  @media (max-width: 1199.95px) {
+    main {
+      padding: 0 7.5rem; } }
+  @media (max-width: 599.95px) {
+    main {
+      padding: 0 3.75rem; } }
 
 a {
   color: inherit;
@@ -175,7 +184,7 @@ p + p {
   position: fixed;
   z-index: 3;
   height: 60px;
-  width: 100%;
+  width: 100vw;
   padding: 0 13.5rem;
   display: flex;
   align-items: center;
@@ -446,7 +455,6 @@ p + p {
     shadow effect on it
 */
 .panel {
-  padding: 7.5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -463,12 +471,12 @@ p + p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3.5rem 7rem;
     color: #eeeeee;
     background-color: rgba(24, 28, 28, 0.82);
     line-height: 1.77;
     font-size: 2.2em;
-    border: 3px solid #414848; }
+    border: 3px solid #414848;
+    padding: 3.5rem 7rem; }
     .panel__body p {
       margin-top: 3.5rem; }
   .panel__shadow-effect {
@@ -494,7 +502,7 @@ p + p {
     color: #fafcfc;
     font-size: 4.5em;
     letter-spacing: 0.25rem;
-    margin: 1rem 0; }
+    margin: 3.5rem 0 1rem 0; }
     .panel__title--for-project {
       align-self: flex-start;
       text-transform: none; }
@@ -614,7 +622,9 @@ p + p {
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
-  margin: 15rem 0; }
+  margin: 15rem 0;
+  display: flex;
+  flex-direction: column; }
   .skills__body {
     margin-top: 7.5rem;
     line-height: 1;
@@ -629,25 +639,42 @@ p + p {
       margin-right: 5px;
       border-right: 5px solid #06d6c1; }
   .skills__cards {
-    padding: 0 7.5rem;
-    display: flex;
+    margin: 7.5rem 0;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 7.5rem; }
+    gap: 7.5rem;
+    font-size: 1rem; }
+    @media (max-width: 1799.95px) {
+      .skills__cards {
+        gap: 3.75rem;
+        font-size: 0.85rem; }
+        .skills__cards .panel__body {
+          padding: 3.5rem; } }
+    @media (max-width: 1199.95px) {
+      .skills__cards {
+        margin: 3.75rem 0;
+        gap: 1.875rem;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center; } }
   .skills__card {
-    width: 33%;
-    font-size: 2.4rem;
+    font-size: 1em;
     text-align: center; }
     .skills__card__title {
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 4rem; }
+      font-size: 3.6em; }
     .skills__card ul {
       list-style: none;
       font-weight: 300;
       line-height: 1.2; }
-      .skills__card ul li {
-        padding: 1.2rem; }
+      .skills__card ul li:not(:last-child) {
+        padding-bottom: 1em; }
+  .skills .btn {
+    margin: 3.75rem 0;
+    align-self: center; }
 
 /* ----------------------------- Hire Me Section ---------------------------- */
 .hire-me {
