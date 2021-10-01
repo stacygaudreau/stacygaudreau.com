@@ -52,6 +52,14 @@
       width: 90%;
       font-size: 10rem;
     }
+    @include for-tablet-portrait-down {
+      width: 100%;
+      font-size: 8rem;
+      margin-bottom: 0.8em;
+    }
+    @include for-mobile-only {
+      font-size: 5rem;
+    }
     grid-row: 3 / span 1;
   }
 
@@ -71,6 +79,13 @@
     @include for-tablet-landscape-down {
       width: 90%;
     }
+    @include for-tablet-portrait-down {
+      font-size: 2.2rem;
+    }
+    @include for-mobile-only {
+      width: 100%;
+      font-size: 1.6rem;
+    }
     grid-row: 4 / span 1;
   }
 
@@ -85,6 +100,9 @@
       @include for-tablet-landscape-down {
         font-size: 2.4rem;
       }
+    }
+    @include for-mobile-only {
+      display: none;
     }
   }
 }

@@ -3,13 +3,13 @@
 /* -------------------------------------------------------------------------- */
 
 .project {
+  margin-top: $section-begin-margin/4;
   position: relative;
   width: 100%;
   display: grid;
   grid-template-columns: 66% auto;
   align-items: center;
   justify-content: space-between;
-  // gap: 4rem;
   @include for-tablet-portrait-down {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);

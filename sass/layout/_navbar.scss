@@ -8,6 +8,14 @@
   @include for-laptop-down {
     padding: 0 $main-padding * 3/4;
   }
+  @include for-tablet-landscape-down {
+    padding: 0 $main-padding * 1/4;
+  }
+  @include for-mobile-only {
+    position: absolute;
+    padding: 0 $main-padding * 1/8;
+    height: $navbar-height * 2/3;
+  }
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,10 +32,19 @@
     &__last-name {
       font-weight: 200;
     }
+    @include for-tablet-portrait-down {
+      font-size: 28px;
+    }
+    @include for-mobile-only {
+      font-size: 22px;
+    }
   }
 
   &__nav-group {
     display: flex;
+    @include for-mobile-only {
+      display: none;
+    }
   }
 
   &__nav-item {
@@ -49,5 +66,36 @@
   &--opaque {
     transition: background-color $t-slow;
     background-color: rgba(darken($color-black, 1%), 0.98);
+  }
+}
+
+/* ------------------------- Mobile Fixed Bottom Nav ------------------------ */
+.nav-mobile {
+  display: none;
+  background-color: $color-primary;
+  z-index: 3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: $main-padding / 10;
+  @include for-mobile-only {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    height: $navbar-height * 1.2;
+  }
+
+  &__item {
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    text-transform: lowercase;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 500;
+    img {
+      width: 20px;
+    }
   }
 }

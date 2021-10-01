@@ -15,6 +15,7 @@
 /*                                   Mixins                                   */
 /* -------------------------------------------------------------------------- */
 /* ------------------------------ Media Queries ----------------------------- */
+/* ----------------------- Center Tablet Portrait Down ---------------------- */
 /* ---------------------------------- Base ---------------------------------- */
 /* 
   Reset
@@ -53,9 +54,13 @@ main {
   @media (max-width: 1799.95px) {
     main {
       padding: 0 11.25rem; } }
-  @media (max-width: 1199.95px) {
+  @media (max-width: 899.95px) {
     main {
-      padding: 0 7.5rem; } }
+      padding: 0 7.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
   @media (max-width: 599.95px) {
     main {
       padding: 0 3.75rem; } }
@@ -102,7 +107,8 @@ p + p {
 /* ----------------------------- Section Titles ----------------------------- */
 .section-title {
   position: relative;
-  font-size: 1rem; }
+  font-size: 1rem;
+  margin-top: 15rem; }
   @media (max-width: 1799.95px) {
     .section-title {
       font-size: 0.8rem; } }
@@ -196,6 +202,14 @@ p + p {
   @media (max-width: 1799.95px) {
     .navbar {
       padding: 0 11.25rem; } }
+  @media (max-width: 1199.95px) {
+    .navbar {
+      padding: 0 3.75rem; } }
+  @media (max-width: 599.95px) {
+    .navbar {
+      position: absolute;
+      padding: 0 1.875rem;
+      height: 40px; } }
   .navbar__logo-text {
     font-family: ropa-sans-pro, sans-serif;
     font-weight: 400;
@@ -203,8 +217,17 @@ p + p {
     text-transform: uppercase; }
     .navbar__logo-text__last-name {
       font-weight: 200; }
+    @media (max-width: 899.95px) {
+      .navbar__logo-text {
+        font-size: 28px; } }
+    @media (max-width: 599.95px) {
+      .navbar__logo-text {
+        font-size: 22px; } }
   .navbar__nav-group {
     display: flex; }
+    @media (max-width: 599.95px) {
+      .navbar__nav-group {
+        display: none; } }
   .navbar__nav-item {
     font-weight: 200;
     font-size: 2rem;
@@ -219,6 +242,33 @@ p + p {
   .navbar--opaque {
     transition: background-color 0.5s;
     background-color: rgba(22, 25, 25, 0.98); }
+
+/* ------------------------- Mobile Fixed Bottom Nav ------------------------ */
+.nav-mobile {
+  display: none;
+  background-color: #06d6c1;
+  z-index: 3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem; }
+  @media (max-width: 599.95px) {
+    .nav-mobile {
+      display: flex;
+      justify-content: space-around;
+      width: 100vw;
+      height: 72px; } }
+  .nav-mobile__item {
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    text-transform: lowercase;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 500; }
+    .nav-mobile__item img {
+      width: 20px; }
 
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
@@ -263,6 +313,14 @@ p + p {
       .hero__headline {
         width: 90%;
         font-size: 10rem; } }
+    @media (max-width: 899.95px) {
+      .hero__headline {
+        width: 100%;
+        font-size: 8rem;
+        margin-bottom: 0.8em; } }
+    @media (max-width: 599.95px) {
+      .hero__headline {
+        font-size: 5rem; } }
   .hero__textbox {
     position: relative;
     font-size: 2.2rem;
@@ -279,6 +337,13 @@ p + p {
     @media (max-width: 1199.95px) {
       .hero__textbox {
         width: 90%; } }
+    @media (max-width: 899.95px) {
+      .hero__textbox {
+        font-size: 2.2rem; } }
+    @media (max-width: 599.95px) {
+      .hero__textbox {
+        width: 100%;
+        font-size: 1.6rem; } }
   .hero__cta {
     grid-row: 5 / span 1;
     align-self: center;
@@ -289,11 +354,15 @@ p + p {
     @media (max-width: 1199.95px) {
       .hero__cta .btn--cta {
         font-size: 2.4rem; } }
+    @media (max-width: 599.95px) {
+      .hero__cta {
+        display: none; } }
 
 /* -------------------------------------------------------------------------- */
 /*                               Project Feature                              */
 /* -------------------------------------------------------------------------- */
 .project {
+  margin-top: 3.75rem;
   position: relative;
   width: 100%;
   display: grid;
@@ -643,14 +712,21 @@ p + p {
     margin: 7rem 0; }
 
 /* ---------------------------- Projects Section ---------------------------- */
-.projects {
-  margin-top: 15rem; }
+@media (max-width: 899.95px) {
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
-  margin: 15rem 0;
   display: flex;
   flex-direction: column; }
+  @media (max-width: 899.95px) {
+    .skills {
+      display: flex;
+      flex-direction: column;
+      align-items: center; } }
   .skills__body {
     margin-top: 7.5rem;
     line-height: 1;
@@ -704,31 +780,36 @@ p + p {
     align-self: center; }
 
 /* ----------------------------- Hire Me Section ---------------------------- */
-.hire-me {
-  margin-top: 30rem; }
-  .hire-me .panel__title {
-    font-size: 4rem;
-    color: #dae9e9;
-    align-self: center;
-    text-transform: none; }
-  .hire-me .contact {
+@media (max-width: 899.95px) {
+  .hire-me {
     display: flex;
     flex-direction: column;
-    align-items: center; }
-    .hire-me .contact__links {
-      display: flex;
-      gap: 7rem;
-      justify-content: space-evenly;
-      align-items: flex-end; }
-    .hire-me .contact__message-form {
-      padding: 7rem 14rem;
-      width: 100rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3.5rem; }
-    .hire-me .contact .btn {
-      margin-top: 1.75rem; }
+    align-items: center; } }
+
+.hire-me .panel__title {
+  font-size: 4rem;
+  color: #dae9e9;
+  align-self: center;
+  text-transform: none; }
+
+.hire-me .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .hire-me .contact__links {
+    display: flex;
+    gap: 7rem;
+    justify-content: space-evenly;
+    align-items: flex-end; }
+  .hire-me .contact__message-form {
+    padding: 7rem 14rem;
+    width: 100rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem; }
+  .hire-me .contact .btn {
+    margin-top: 1.75rem; }
 
 /* ----------------------------- Footer Section ----------------------------- */
 .footer {

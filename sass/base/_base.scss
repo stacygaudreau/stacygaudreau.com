@@ -42,8 +42,12 @@ main {
   @include for-laptop-down {
     padding: 0 $main-padding * 3/4;
   }
-  @include for-tablet-landscape-down {
+  @include for-tablet-portrait-down {
     padding: 0 $main-padding * 2/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   @include for-mobile-only {
     padding: 0 $main-padding * 1/4;

@@ -25,3 +25,13 @@
     @content;
   }
 }
+
+/* ----------------------- Center Tablet Portrait Down ---------------------- */
+
+@mixin centre-on-tablet-portrait-down {
+  @include for-tablet-portrait-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

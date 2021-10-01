@@ -35,8 +35,11 @@ p + p {
 .section-title {
   position: relative;
   font-size: 1rem;
+  margin-top: $section-begin-margin;
   @include for-laptop-down {
     font-size: 0.8rem;
+  }
+  @include for-tablet-portrait-down {
   }
 
   &__text {
