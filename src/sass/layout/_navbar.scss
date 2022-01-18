@@ -6,15 +6,15 @@
   width: 100vw;
   padding: 0 ($main-padding - 1.5rem);
   @include for-laptop-down {
-    padding: 0 $main-padding * 3/4;
+    padding: 0 calc($main-padding * 3 / 4);
   }
   @include for-tablet-landscape-down {
-    padding: 0 $main-padding * 1/4;
+    padding: 0 calc($main-padding * 1 / 4);
   }
   @include for-mobile-only {
     position: absolute;
-    padding: 0 $main-padding * 1/8;
-    height: $navbar-height * 2/3;
+    padding: 0 calc($main-padding * 1 / 8);
+    height: calc($navbar-height * 2 / 3);
   }
   display: flex;
   align-items: center;
@@ -77,7 +77,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: $main-padding / 10;
+  padding: calc($main-padding / 10);
   @include for-mobile-only {
     display: flex;
     justify-content: space-around;

@@ -48,7 +48,7 @@
     z-index: -1;
     display: flex;
     justify-content: center;
-    width: 100% - $panel-shadow-offset / 2;
+    width: 100% - calc($panel-shadow-offset / 2);
     height: 100%;
     top: -$panel-shadow-offset;
     border: 2px solid lighten($panel-border-color, 40%);
@@ -123,7 +123,7 @@
       flex-wrap: wrap;
       justify-self: flex-end;
       justify-content: flex-end;
-      gap: $panel-pad-v/2;
+      gap: calc($panel-pad-v/2);
       opacity: 0.8;
       @include for-tablet-portrait-down {
         justify-content: center;

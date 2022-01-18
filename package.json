@@ -7,6 +7,17 @@
     "build": "parcel build src/*.html",
     "dev": "parcel src/*.html"
   },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "overrideBrowserslist": [
+          "> 1%",
+          "last 4 versions",
+          "ie >= 11"
+        ]
+      }
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@gitlab.com/hibouambigu/stacygaudreau.com.git"
@@ -19,8 +30,10 @@
   "homepage": "https://gitlab.com/hibouambigu/stacygaudreau.com#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1",
+    "autoprefixer": "^10.4.2",
     "parcel": "^2.2.1",
     "parcel-plugin-nuke-dist": "^1.0.1",
+    "postcss": "^8.4.5",
     "sass": "^1.48.0"
   }
 }

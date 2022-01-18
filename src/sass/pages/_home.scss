@@ -34,7 +34,7 @@
   flex-direction: column;
 
   &__body {
-    margin-top: $section-begin-margin/2;
+    margin-top: calc($section-begin-margin/2);
     line-height: 1;
     padding: 2px 2rem;
     color: $color-white;
@@ -51,25 +51,25 @@
   }
 
   &__cards {
-    margin: $section-begin-margin/2 0;
+    margin: calc($section-begin-margin/2) 0;
     // padding: 0 $section-begin-margin/2;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     align-items: flex-start;
-    gap: $section-begin-margin/2;
+    gap: calc($section-begin-margin/2);
     font-size: 1rem;
     @include for-laptop-down {
       font-size: 0.85rem;
-      gap: $section-begin-margin/4;
+      gap: calc($section-begin-margin/4);
       .panel__body {
         padding: $panel-pad-v;
       }
     }
     @include for-tablet-landscape-down {
       font-size: 1rem;
-      margin: $section-begin-margin / 4 0;
-      gap: $section-begin-margin / 8;
+      margin: calc($section-begin-margin / 4) 0;
+      gap: calc($section-begin-margin / 8);
       grid-template-columns: auto;
       grid-template-rows: repeat(3, 1fr);
       align-items: center;
@@ -100,7 +100,7 @@
   }
 
   .btn {
-    margin: $section-begin-margin / 4 0;
+    margin: calc($section-begin-margin / 4) 0;
     align-self: center;
   }
 }
@@ -139,7 +139,7 @@
     }
 
     .btn {
-      margin-top: $panel-pad-v/2;
+      margin-top: calc($panel-pad-v/2);
     }
   }
 }

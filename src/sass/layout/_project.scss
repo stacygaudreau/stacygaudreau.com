@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 
 .project {
-  margin-top: $section-begin-margin/4;
+  margin-top: calc($section-begin-margin/4);
   position: relative;
   width: 100%;
   display: grid;
@@ -13,7 +13,6 @@
   @include for-tablet-portrait-down {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
-    // flex-wrap: wrap;
   }
 
   &__panel {
@@ -32,7 +31,7 @@
     @include for-tablet-portrait-down {
       width: 100%;
       margin-left: 0;
-      margin-top: $section-begin-margin/2;
+      margin-top: calc($section-begin-margin/2);
       grid-row: 1 / span 1;
     }
   }

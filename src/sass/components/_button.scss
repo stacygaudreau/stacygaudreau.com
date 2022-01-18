@@ -137,12 +137,12 @@
       position: absolute;
       display: flex;
       justify-content: center;
-      top: -3 * $glyph-circ-offset/2;
-      left: $glyph-circ-offset * 2;
+      top: -3 * calc($glyph-circ-offset/2);
+      left: calc($glyph-circ-offset * 2);
       opacity: 0.08;
       content: '';
-      width: 100% - $glyph-circ-offset/2;
-      height: 100% - $glyph-circ-offset/2;
+      width: 100% - calc($glyph-circ-offset/2);
+      height: 100% - calc($glyph-circ-offset/2);
       border: 2px solid lighten($color-white, 40%);
     }
 
