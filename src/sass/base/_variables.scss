@@ -30,6 +30,8 @@ $color-tertiary: #e6d963;
 $color-tertiary-light: lighten($color-tertiary, 10%);
 $color-tertiary-dark: darken($color-tertiary, 10%);
 
+$color-blue-bright: #00e0ff;
+
 /* ------------------------------ Font Families ----------------------------- */
 $body-font: 'Montserrat', sans-serif;
 $heading-font: ropa-sans-pro, sans-serif;
@@ -41,7 +43,8 @@ $default-p-spacing: 1em;
 /* ------------------------------- Dimensions ------------------------------- */
 $max-width: 1920px;
 $main-padding: 15rem;
-$navbar-height: 60px;
+$navbar-height: 6rem;
+$mobile-navbar-height: $navbar-height * 1.2;
 $textbox-bar-width: 5px;
 $section-begin-margin: $main-padding;
 
@@ -52,7 +55,7 @@ $t-slow: 0.5s;
 
 /* --------------------------------- Panels --------------------------------- */
 $panel-border-color: #414848;
-$panel-opacity: 0.82;
+$panel-opacity: 1;
 $panel-shadow-offset: 5%;
 $panel-pad-h: 7rem;
 $panel-pad-v: 3.5rem;

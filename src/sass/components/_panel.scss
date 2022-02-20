@@ -17,6 +17,9 @@
   @include for-tablet-portrait-down {
     text-align: center;
   }
+  @include for-mobile-only {
+    font-size: 0.75rem;
+  }
 
   &--with-image {
     .panel__body {
@@ -39,9 +42,16 @@
     p {
       margin-top: $panel-pad-v;
     }
+    @include for-tablet-portrait-down {
+      padding: calc($panel-pad-v / 4) calc($panel-pad-h / 2);
+    }
+    @include for-mobile-only {
+      padding: calc($panel-pad-v / 8) calc($panel-pad-h / 4);
+    }
   }
 
   &__shadow-effect {
+    // visibility: hidden;
     // 1st shadow line (behind panel)
     position: absolute;
     opacity: 0.1;
@@ -71,6 +81,12 @@
     font-size: 4.5em;
     letter-spacing: 0.25rem;
     margin: $panel-pad-v 0 1rem 0;
+    @include for-tablet-portrait-down {
+      margin: calc($panel-pad-v / 4) 0 1rem 0;
+    }
+    @include for-mobile-only {
+      width: 85%;
+    }
 
     &--for-project {
       align-self: flex-start;
@@ -114,7 +130,7 @@
       @include for-tablet-portrait-down {
         justify-self: center;
         align-self: center;
-        order: 2;
+        order: 1;
       }
     }
 
@@ -124,10 +140,9 @@
       justify-self: flex-end;
       justify-content: flex-end;
       gap: calc($panel-pad-v/2);
-      opacity: 0.8;
       @include for-tablet-portrait-down {
         justify-content: center;
-        order: 1;
+        order: 2;
       }
     }
   }

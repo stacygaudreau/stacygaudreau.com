@@ -24,11 +24,13 @@
 /* ---------------------------- Projects Section ---------------------------- */
 .projects {
   @include centre-on-tablet-portrait-down();
+  @include has-minimal-responsive-hz-padding;
 }
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
   @include centre-on-tablet-portrait-down();
+  @include has-minimal-responsive-hz-padding;
   // margin: $section-begin-margin 0;
   display: flex;
   flex-direction: column;
@@ -47,6 +49,12 @@
       text-align: right;
       margin-right: $textbox-bar-width;
       border-right: $textbox-bar-width solid $color-primary;
+    }
+    @include for-tablet-portrait-down {
+      font-size: 2.2rem;
+    }
+    @include for-mobile-only {
+      font-size: 2rem;
     }
   }
 
@@ -77,7 +85,10 @@
   }
 
   &__card {
-    font-size: 1em;
+    font-size: 1rem;
+    @include for-mobile-only {
+      font-size: 0.7rem;
+    }
     text-align: center;
 
     &__title {
@@ -140,57 +151,6 @@
 
     .btn {
       margin-top: calc($panel-pad-v/2);
-    }
-  }
-}
-
-/* ----------------------------- Footer Section ----------------------------- */
-
-.footer {
-  position: relative;
-  margin-top: $section-begin-margin;
-  padding: 10rem 0;
-  // height: 40rem;
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: $panel-pad-v;
-  font-family: $heading-font;
-
-  &::before {
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: '';
-    left: 0;
-    top: 0;
-    display: block;
-    background: url('../img/spacebg.png');
-    opacity: 0.2;
-  }
-
-  &__tagline,
-  &__copy {
-    font-weight: 200;
-    font-size: 2rem;
-  }
-
-  &__tagline {
-    text-transform: lowercase;
-  }
-
-  .contact__links {
-  }
-
-  .btn-icon {
-    margin: 1rem 0;
-    font-size: 2rem;
-    img {
-      width: 2rem;
     }
   }
 }

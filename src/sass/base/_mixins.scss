@@ -34,3 +34,29 @@
     align-items: center;
   }
 }
+
+/* -------------------------- Responsive Hz Padding ------------------------- */
+@mixin has-responsive-hz-padding($laptop-mult, $tablet-mult, $mobile-mult) {
+  padding: 0 $main-padding * 2;
+  @include for-laptop-down {
+    padding: 0 calc($laptop-mult * $main-padding * 3 / 4);
+  }
+  @include for-tablet-portrait-down {
+    padding: 0 calc($tablet-mult * $main-padding * 2 / 4);
+  }
+  @include for-mobile-only {
+    padding: 0 calc($mobile-mult * $main-padding * 1 / 4);
+  }
+}
+
+@mixin has-large-responsive-hz-padding {
+  @include has-responsive-hz-padding(0.5, 0.5, 0.5);
+}
+
+@mixin has-xtra-large-responsive-hz-padding {
+  @include has-responsive-hz-padding(1, 0.5, 0.5);
+}
+
+@mixin has-minimal-responsive-hz-padding {
+  @include has-responsive-hz-padding(0.5, 0.25, 0.125);
+}

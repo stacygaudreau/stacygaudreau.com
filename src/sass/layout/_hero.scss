@@ -1,15 +1,21 @@
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  @include has-large-responsive-hz-padding;
 
   &__grid {
     display: grid;
     align-items: center;
     height: 100%;
+    min-height: 100vh;
     width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: $navbar-height 1fr min-content min-content 2fr;
+    @include for-mobile-only {
+      // add some empty row space for mobile navbar
+      grid-template-rows: calc($navbar-height * 2 / 3) 1fr min-content min-content 1fr $mobile-navbar-height;
+    }
   }
 
   &__bg {

@@ -33,21 +33,12 @@ body {
   box-sizing: border-box;
   background-color: $color-black;
   color: $color-white;
+  // min-height: 100vh;
 }
 
 main {
   margin: 0 auto;
   max-width: $max-width;
-  padding: 0 $main-padding;
-  @include for-laptop-down {
-    padding: 0 calc($main-padding * 3 / 4);
-  }
-  @include for-tablet-portrait-down {
-    padding: 0 calc($main-padding * 2 / 4);
-  }
-  @include for-mobile-only {
-    padding: 0 calc($main-padding * 1 / 4);
-  }
 }
 
 // default anchor link styling

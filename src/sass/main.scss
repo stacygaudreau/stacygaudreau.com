@@ -3,8 +3,6 @@
 /* -------------------------------------------------------------------------- */
 @import 'base/variables';
 @import 'base/mixins';
-@import 'base/functions';
-
 @import 'base/base';
 @import 'base/typography';
 @import 'base/animations';
@@ -14,6 +12,7 @@
 @import 'layout/hero';
 @import 'layout/project';
 @import 'layout/container';
+@import 'layout/footer';
 
 @import 'components/button';
 @import 'components/card';
@@ -23,3 +22,4 @@
 @import 'components/input';
 
 @import 'pages/home';
+@import 'pages/article';
