@@ -137,7 +137,7 @@
       position: absolute;
       display: flex;
       justify-content: center;
-      top: -3 * calc($glyph-circ-offset/2);
+      top: calc(-3 * $glyph-circ-offset/2);
       left: calc($glyph-circ-offset * 2);
       opacity: 0.08;
       content: '';

@@ -1,0 +1,14 @@
+<!-- Ropa Sans Pro Font -->
+<link rel="stylesheet" href="https://use.typekit.net/lqi2wpk.css" />
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+  rel="stylesheet"
+/>
+<!-- Local Stylesheets -->
+<!-- prettier-ignore -->
+{{ $options := (dict "targetPath" "style.css" "enableSourceMap" "true")}} 
+    {{ $styles := resources.Get "sass/main.scss" | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{$styles.Permalink}}" />

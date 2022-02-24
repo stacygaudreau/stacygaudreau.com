@@ -1,0 +1,5 @@
+baseURL = 'https://stacygaudreau.com'
+languageCode = 'en-us'
+title = 'Stacy Gaudreau'
+assetDir = '../src'
+staticDir = '../static'

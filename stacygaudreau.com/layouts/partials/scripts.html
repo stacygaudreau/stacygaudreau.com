@@ -1,0 +1,9 @@
+<!-- Scripts -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
+  defer
+></script>
+<!-- prettier-ignore -->
+{{ $options := (dict "targetPath" "main.js")}}
+{{ $js := resources.Get "js/main.js" | js.Build $options}}
+<script src="{{ $js.Permalink }}" defer></script>
