@@ -34,11 +34,12 @@ body {
   background-color: $color-black;
   color: $color-white;
   // min-height: 100vh;
+  // max-width: $max-width;
 }
 
 main {
   margin: 0 auto;
-  max-width: $max-width;
+  max-width: $content-max-width;
 }
 
 // default anchor link styling

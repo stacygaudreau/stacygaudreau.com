@@ -1,0 +1,35 @@
+{{ define "main" }}
+<main class="article">
+  <div class="article__bg"></div>
+  <!-- Header -->
+  <header class="article__header">
+    <div class="article__categories">
+      {{ range .Params.Categories }}
+      <a href="">{{.}}</a>
+      {{ end }}
+    </div>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+    <div class="article__meta">
+      <div class="article__meta--tags">
+        {{ range .Params.Tags }}
+        <span class="info-tag info-tag--meta">{{.}}</span>
+        {{ end }}
+      </div>
+      <span class="article__meta--date">
+        {{ .Date | time.Format ":date_long" }}
+      </span>
+    </div>
+  </header>
+  <!-- Main Feature Image -->
+  {{ with .Resources.GetMatch "images/main.*" }}
+  <div class="article__image--main">
+    <img src="{{.RelPermalink}}" alt="" />
+  </div>
+  {{ end }}
+  <!-- Content -->
+  {{ .Content }}
+
+  <!-- <div class="article__graphic">beans</div> -->
+</main>
+{{ end }}

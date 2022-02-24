@@ -41,7 +41,8 @@ $default-font-size: 2.2rem;
 $default-p-spacing: 1em;
 
 /* ------------------------------- Dimensions ------------------------------- */
-$max-width: 1920px;
+$content-max-width: 192rem;
+$nav-max-width: 192rem + 1.5rem;
 $main-padding: 15rem;
 $navbar-height: 6rem;
 $mobile-navbar-height: $navbar-height * 1.2;

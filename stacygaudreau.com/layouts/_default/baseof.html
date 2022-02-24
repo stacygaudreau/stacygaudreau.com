@@ -4,10 +4,8 @@
   {{ partial "head.html" . }}
   <body>
     {{ partial "navbar.html" }}
-    <main>
-      {{ block "main" .}} 
-      {{ end }}
-    </main>
+    {{ block "main" .}} 
+    {{ end }}
     {{ partial "footer.html" . }} 
     {{ partial "scripts.html" }}
   </body>

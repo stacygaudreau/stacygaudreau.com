@@ -94,7 +94,7 @@
       a {
         &:after {
           margin-left: 1.5rem;
-          content: url('../img/i-link-ext.svg');
+          content: url('/img/i-link-ext.svg');
         }
       }
       @include for-tablet-portrait-down {
