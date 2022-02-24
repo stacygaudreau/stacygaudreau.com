@@ -40,6 +40,7 @@ body {
 main {
   margin: 0 auto;
   max-width: $content-max-width;
+  @include has-collapsing-hz-padding;
 }
 
 // default anchor link styling

@@ -4,8 +4,9 @@
 
 .article {
   $p-top: 8rem;
-  @include has-xtra-large-responsive-hz-padding;
+  // @include has-xtra-large-responsive-hz-padding;
   font-size: 1rem;
+  max-width: $article-max-width;
 
   &__bg {
     z-index: -1;

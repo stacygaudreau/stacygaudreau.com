@@ -15,6 +15,10 @@
     font-weight: 400;
     background-color: rgba($color-pure-black, 0);
     color: $color-white;
+    @include has-collapsing-hz-padding;
+    @include for-mobile-only {
+      padding: 0 $base-pad-hz / 8;
+    }
   }
 
   &__logo-text {
@@ -30,6 +34,7 @@
     }
     @include for-mobile-only {
       font-size: 22px;
+      margin-right: auto;
     }
   }
 
@@ -60,6 +65,10 @@
     transition: background-color $t-slow;
     background-color: rgba(darken($color-black, 1%), 0.98);
   }
+
+  &--is-article-width {
+    max-width: $article-max-width;
+  }
 }
 
 /* ------------------------- Mobile Fixed Bottom Nav ------------------------ */
@@ -70,7 +79,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: calc($main-padding / 10);
+  padding: $main-padding / 10;
   @include for-mobile-only {
     display: flex;
     justify-content: space-around;
@@ -79,13 +88,14 @@
   }
 
   &__item {
+    font-size: 1.8rem;
+    font-family: $heading-font;
     line-height: 1;
     display: flex;
     flex-direction: column;
     text-transform: lowercase;
     align-items: center;
-    justify-content: space-between;
-    font-size: 1.8rem;
+    gap: 0.3em;
     font-weight: 500;
     img {
       width: 20px;

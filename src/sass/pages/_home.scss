@@ -24,13 +24,13 @@
 /* ---------------------------- Projects Section ---------------------------- */
 .projects {
   @include centre-on-tablet-portrait-down();
-  @include has-minimal-responsive-hz-padding;
+  // @include has-minimal-responsive-hz-padding;
 }
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
   @include centre-on-tablet-portrait-down();
-  @include has-minimal-responsive-hz-padding;
+  // @include has-minimal-responsive-hz-padding;
   // margin: $section-begin-margin 0;
   display: flex;
   flex-direction: column;

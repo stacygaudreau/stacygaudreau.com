@@ -6,6 +6,8 @@
 $color-white: #fafcfc;
 $color-pure-white: #ffffff;
 $color-black: #181c1c;
+$color-black-2: #1b1f1f;
+$color-black-3: lighten($color-black-2, 5%);
 $color-pure-black: #000000;
 
 $color-grey-light: #eeeeee;
@@ -42,8 +44,10 @@ $default-p-spacing: 1em;
 
 /* ------------------------------- Dimensions ------------------------------- */
 $content-max-width: 192rem;
+$article-max-width: 120rem;
 $nav-max-width: 192rem + 1.5rem;
-$main-padding: 15rem;
+$main-padding: 16rem;
+$base-pad-hz: 16rem;
 $navbar-height: 6rem;
 $mobile-navbar-height: $navbar-height * 1.2;
 $textbox-bar-width: 5px;

@@ -2,7 +2,7 @@
 .hero {
   width: 100%;
   min-height: 100vh;
-  @include has-large-responsive-hz-padding;
+  // @include has-large-responsive-hz-padding;
 
   &__grid {
     display: grid;

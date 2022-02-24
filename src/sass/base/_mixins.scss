@@ -35,6 +35,17 @@
   }
 }
 
+/* ---------------------- Collapsing Horizontal Padding --------------------- */
+@mixin has-collapsing-hz-padding {
+  padding: 0 $base-pad-hz;
+  @include for-laptop-down {
+    padding: 0 $base-pad-hz / 2;
+  }
+  @include for-mobile-only {
+    padding: 0 $base-pad-hz / 4;
+  }
+}
+
 /* -------------------------- Responsive Hz Padding ------------------------- */
 @mixin has-responsive-hz-padding($laptop-mult, $tablet-mult, $mobile-mult) {
   padding: 0 $main-padding * 2;
