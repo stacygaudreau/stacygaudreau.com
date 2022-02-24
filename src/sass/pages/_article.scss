@@ -93,7 +93,6 @@
 
   &__image {
     &--main {
-      border: 1px solid white;
       img {
         width: 100%;
       }
@@ -116,5 +115,50 @@
         center,
       $color-white;
     background-size: $dot-space $dot-space;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0.5em 0;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 3.8em;
+  }
+
+  h3 {
+    font-size: 2.4em;
+  }
+
+  h4 {
+    font-size: 2em;
+  }
+
+  h5 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1.6em;
+    line-height: 1.6;
+    margin: 1em 0;
+  }
+
+  .blockquote__title,
+  .codeblock__title {
+    margin-bottom: 0;
+    margin-left: 0.5em;
+  }
+  .blockquote__title {
+    font-size: 1.8em;
+    font-weight: 500;
+  }
+  .codeblock__title {
+    font-family: $mono-font;
+    color: $color-primary-highlight;
+    font-weight: 500;
   }
 }

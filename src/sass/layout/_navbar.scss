@@ -4,6 +4,13 @@
   z-index: 3;
   height: $navbar-height;
   width: 100%;
+  @include for-tablet-portrait-down {
+    height: $navbar-height * 3 / 4;
+  }
+  @include for-mobile-only {
+    height: $navbar-height * 2 / 3;
+    position: absolute;
+  }
   &__content {
     max-width: $nav-max-width;
     margin: 0 auto;

@@ -23,15 +23,18 @@
   </header>
   <!-- Main Feature Image -->
   {{ with .Resources.GetMatch "images/main.*" }}
-  <div class="article__image--main">
+  <div class="article__image--main pane pane--has-image">
     <img src="{{.RelPermalink}}" alt="" />
+    <div class="pane__shadow pane__shadow--corner-b-r"></div>
+    <div class="pane__shadow pane__shadow--corner-b-r"></div>
   </div>
   {{ end }}
   <!-- Content -->
   {{ .Content }}
+  <!-- TOC -->
+  {{ .TableOfContents }}
 
   <div class="pane">
-    Text in pane
     <div class="pane__shadow pane__shadow--corner-t-r"></div>
     <div class="pane__shadow pane__shadow--corner-t-r"></div>
   </div>

@@ -3,3 +3,10 @@ languageCode = 'en-us'
 title = 'Stacy Gaudreau'
 assetDir = '../src'
 staticDir = '../static'
+
+[markup]
+  [markup.tableOfContents]
+    startlevel = 2
+    endLevel = 4
+  [markup.highlight]
+    noClasses=false

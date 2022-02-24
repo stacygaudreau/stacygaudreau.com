@@ -37,6 +37,7 @@ $color-blue-bright: #00e0ff;
 /* ------------------------------ Font Families ----------------------------- */
 $body-font: 'Montserrat', sans-serif;
 $heading-font: ropa-sans-pro, sans-serif;
+$mono-font: 'JetBrains Mono', monospace;
 
 /* ------------------------------- Font Sizes ------------------------------- */
 $default-font-size: 2.2rem;
@@ -52,6 +53,13 @@ $navbar-height: 6rem;
 $mobile-navbar-height: $navbar-height * 1.2;
 $textbox-bar-width: 5px;
 $section-begin-margin: $main-padding;
+
+/* --------------------------- Panes (nee Panels) --------------------------- */
+$pane-delta: 4px;
+$pane-delta-b: 1%;
+$pane-border-w: 1px;
+$pane-border: darken(#414848, 2%);
+$pane-bg: $color-black-2;
 
 /* --------------------------------- Speeds --------------------------------- */
 $t-fast: 0.1s;

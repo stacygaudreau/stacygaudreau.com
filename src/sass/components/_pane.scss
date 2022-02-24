@@ -1,17 +1,26 @@
 /* ----------------------- Rectangular Pane Containers ---------------------- */
 
-.pane {
+@mixin is-bordered-pane {
   position: relative;
-  $delta: 4px;
-  $delta-b: 1%;
-  $border-w: 1px;
-  $border: $panel-border-color;
-  $bg: $color-black-2;
+  border: $pane-border-w solid $pane-border;
+  background-color: $pane-bg;
+}
+
+@mixin has-pane-padding {
+  padding: 2em;
+}
+
+.pane {
   font-size: 1rem;
-  width: 80rem;
-  height: 40rem;
-  border: $border-w solid $border;
-  background-color: $bg;
+  // width: 80rem;
+  // height: 40rem;
+  @include is-bordered-pane;
+  @include has-pane-padding;
+
+  &--has-image {
+    padding: 0;
+  }
+
   &__shadow {
     // a shadow/repetition effect behind the pane
     // 1st shadow pane
@@ -22,9 +31,12 @@
     height: 100%;
     @mixin shadow-layer($n, $x_dir, $y_dir) {
       z-index: -$n;
-      transform: translate($x_dir * $delta * $n, $y_dir * $delta * $n);
-      background-color: darken($bg, $delta-b * $n);
-      border: $border-w solid darken($border, $delta-b * 6 * $n);
+      transform: translate(
+        $x_dir * $pane-delta * $n,
+        $y_dir * $pane-delta * $n
+      );
+      background-color: darken($pane-bg, $pane-delta-b * $n);
+      border: $pane-border-w solid darken($pane-border, $pane-delta-b * 6 * $n);
     }
     @mixin shadow-layer-stack($x_dir, $y_dir) {
       &:nth-of-type(1) {
@@ -49,5 +61,21 @@
     &--corner-t-r {
       @include shadow-layer-stack(1, -1);
     }
+  }
+}
+
+/* ---------------------------- Block Quote Pane ---------------------------- */
+blockquote {
+  @include is-bordered-pane;
+  @include has-pane-padding;
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ---------------------------- Table of Contents --------------------------- */
+#TableOfContents {
+  ul {
+    margin-left: 1.6rem;
   }
 }
