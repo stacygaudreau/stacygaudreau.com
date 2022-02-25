@@ -17,3 +17,16 @@
 .u-m-top-lg {
   margin-top: 6rem;
 }
+
+/* -------------------------------- Max-Width ------------------------------- */
+.has-content-max-w {
+  max-width: $content-max-width;
+}
+
+.has-article-max-w {
+  max-width: $article-max-width;
+}
+
+.has-nav-max-w {
+  max-width: $nav-max-width;
+}

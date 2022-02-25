@@ -10,6 +10,13 @@
   padding: 2em;
 }
 
+@mixin has-collapsing-hz-pane-margin {
+  margin: 0 2rem;
+  @include for-tablet-portrait-down {
+    margin: 0;
+  }
+}
+
 .pane {
   font-size: 1rem;
   // width: 80rem;
@@ -64,12 +71,21 @@
   }
 }
 
-/* ---------------------------- Block Quote Pane ---------------------------- */
-blockquote {
+/* --------------------- Blockquote and Pre(Code) Panes --------------------- */
+blockquote,
+pre {
   @include is-bordered-pane;
   @include has-pane-padding;
   p:last-child {
     margin-bottom: 0;
+  }
+  @include has-collapsing-hz-pane-margin;
+}
+
+pre {
+  @include for-mobile-only {
+    overflow-x: scroll;
+    @include disable-scrollbars;
   }
 }
 

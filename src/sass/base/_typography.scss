@@ -20,16 +20,60 @@ h6,
 .section-title,
 .blockquote__title {
   font-family: $heading-font;
-  font-weight: 400;
   line-height: 1;
+  margin: 0.5em 0;
+  font-weight: 500;
+}
+h2 {
+  font-size: 3.8em;
+}
+h3 {
+  font-size: 2.4em;
+}
+h4 {
+  font-size: 2em;
+}
+h5 {
+  font-size: 1.8em;
 }
 .section-title {
   text-transform: uppercase;
 }
+.blockquote__title,
+.codeblock__title {
+  margin-bottom: 0.25rem;
+  margin-left: 2.5rem;
+  margin-top: 1em;
+  font-weight: 500;
+  @include for-tablet-portrait-down {
+    margin: 0.5rem;
+  }
+}
+
+/* ------------------------------ Block Quotes ------------------------------ */
+.blockquote__title {
+  font-family: $heading-font;
+  font-size: 1.8em;
+}
+
+/* ---------------------------------- Code ---------------------------------- */
+code,
+.codeblock__title {
+  font-family: $mono-font;
+  font-size: 1.6em;
+}
+code {
+  font-weight: 300;
+}
+.codeblock__title {
+  color: $color-primary-highlight;
+}
 
 /* ------------------------------- Block Text ------------------------------- */
 p {
-  line-height: 1.5;
+  font-size: 1.6em;
+  line-height: 1.6;
+  margin: 1em 0;
 }
 p + p {
   margin-top: 1em;

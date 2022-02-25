@@ -3,24 +3,31 @@
 /* -------------------------------------------------------------------------- */
 
 .article {
-  $p-top: 8rem;
+  $p-top: 6rem;
+  $m-right: 3em;
+  $col-w: 70%;
   // @include has-xtra-large-responsive-hz-padding;
   font-size: 1rem;
-  max-width: $article-max-width;
+  // max-width: $article-max-width;
+  &__content,
+  &__header-content {
+    margin: 0 auto;
+    max-width: $article-max-width;
+    @include has-expanding-hz-padding;
+  }
 
   &__bg {
     z-index: -1;
     position: absolute;
-    width: 100%;
-    left: 0;
+    width: 100vw;
     top: 0;
-    content: '';
+    left: 0;
     display: block;
     background: url('../img/spacebg.png') no-repeat center fixed;
     opacity: 0.1;
-    height: 80vh;
+    height: 70%;
     @include for-tablet-portrait-down {
-      height: 60vh;
+      height: 75%;
     }
   }
 
@@ -39,8 +46,15 @@
 
     p {
       font-weight: 300;
-      font-size: 2.4em;
-      width: 70%;
+      font-size: 2.8em;
+      width: $col-w;
+      padding-right: $m-right;
+      @include for-tablet-portrait-down {
+        padding-right: $m-right / 2;
+      }
+      @include for-mobile-only {
+        padding-right: $m-right / 3;
+      }
       line-height: 1.125;
     }
   }
@@ -49,7 +63,7 @@
   &__meta--tags,
   &__meta--date {
     font-size: 1.8em;
-    color: $color-secondary;
+    color: $color-blue-bright;
     font-family: $heading-font;
   }
 
@@ -57,6 +71,7 @@
   &__meta--tags {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
   }
 
   &__categories {
@@ -76,7 +91,7 @@
   &__meta {
     margin-top: 3em;
     margin-bottom: $p-top;
-    width: 70%;
+    width: $col-w;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -89,6 +104,9 @@
         order: 1;
       }
     }
+    &--date {
+      margin-right: $m-right;
+    }
   }
 
   &__image {
@@ -100,65 +118,25 @@
   }
 
   &__graphic {
-    width: 500px;
-    height: 500px;
     $dot-size: 2px;
-    $dot-space: 22px;
-
-    background: linear-gradient(
-          90deg,
-          $color-black ($dot-space - $dot-size),
-          transparent 1%
-        )
-        center,
-      linear-gradient($color-black ($dot-space - $dot-size), transparent 1%)
-        center,
-      $color-white;
+    $dot-space: 40px;
+    $dot-color: $color-secondary;
+    opacity: 0.25;
+    position: absolute;
+    &--right {
+      top: 0;
+      height: 90vh;
+      right: -100vw;
+      left: 70%;
+    }
+    &--left {
+    }
+    z-index: -1;
+    background-image: radial-gradient(
+      circle at $dot-size $dot-size,
+      $dot-color $dot-size,
+      transparent 0
+    );
     background-size: $dot-space $dot-space;
-  }
-
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin: 0.5em 0;
-    font-weight: 500;
-  }
-
-  h2 {
-    font-size: 3.8em;
-  }
-
-  h3 {
-    font-size: 2.4em;
-  }
-
-  h4 {
-    font-size: 2em;
-  }
-
-  h5 {
-    font-size: 1.8em;
-  }
-
-  p {
-    font-size: 1.6em;
-    line-height: 1.6;
-    margin: 1em 0;
-  }
-
-  .blockquote__title,
-  .codeblock__title {
-    margin-bottom: 0;
-    margin-left: 0.5em;
-  }
-  .blockquote__title {
-    font-size: 1.8em;
-    font-weight: 500;
-  }
-  .codeblock__title {
-    font-family: $mono-font;
-    color: $color-primary-highlight;
-    font-weight: 500;
   }
 }
