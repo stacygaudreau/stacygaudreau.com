@@ -9,10 +9,15 @@
   font-size: 1rem;
 
   &__content,
-  &__header-content {
+  &__header-content,
+  &__intro {
     margin: 0 auto;
     max-width: $article-max-width;
     @include has-expanding-hz-padding;
+  }
+
+  &__intro {
+    margin-top: $p-top;
   }
 
   &__bg {

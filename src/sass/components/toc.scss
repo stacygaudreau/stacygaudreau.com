@@ -2,7 +2,15 @@
 /*                              Table of Contents                             */
 /* -------------------------------------------------------------------------- */
 .toc {
-  float: right;
+  font-size: 1rem;
+  header {
+    font-family: $heading-font;
+    font-weight: 500;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+  }
+  padding-left: 4rem;
 }
 
 #TableOfContents {

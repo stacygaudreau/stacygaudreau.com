@@ -26,6 +26,12 @@
   }
 }
 
+@mixin for-xl-screens-only {
+  @media (min-width: 1999.95px) {
+    @content;
+  }
+}
+
 /* ----------------------- Center Tablet Portrait Down ---------------------- */
 @mixin centre-on-tablet-portrait-down {
   @include for-tablet-portrait-down {
@@ -61,6 +67,21 @@
   }
   @include for-mobile-only {
     padding: 0 $base-pad-hz / 8;
+  }
+}
+
+/* ----------------------- Expanding Horizontal Margin ---------------------- */
+// expands for smaller viewport sizes
+@mixin has-expanding-hz-margin {
+  margin: 0;
+  @include for-laptop-down {
+    margin: 0 $base-pad-hz / 4;
+  }
+  @include for-tablet-portrait-down {
+    margin: 0 $base-pad-hz / 4;
+  }
+  @include for-mobile-only {
+    margin: 0 $base-pad-hz / 8;
   }
 }
 

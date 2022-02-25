@@ -33,12 +33,20 @@
       {{ end }}
     </div>
   </header>
-  <section class="article__content">
+  <section class="article__intro">
+    {{ with .Resources.GetMatch "intro.md" }} {{ .Content }} {{ end }}
     <section class="toc pane">
+      <header>
+        <button class="btn btn--icon">
+          <img src="/img/i-linkedin.svg" alt="LinkedIn" />My Profile
+        </button>
+      </header>
       {{ .TableOfContents }}
       <div class="pane__shadow pane__shadow--corner-b-r"></div>
       <div class="pane__shadow pane__shadow--corner-b-r"></div>
     </section>
+  </section>
+  <section class="article__content">
     <!-- Content -->
     {{ .Content }}
   </section>

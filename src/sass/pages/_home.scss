@@ -23,8 +23,8 @@
 
 /* ---------------------------- Projects Section ---------------------------- */
 .projects {
+  max-width: $content-max-width;
   @include centre-on-tablet-portrait-down();
-  // @include has-minimal-responsive-hz-padding;
 }
 
 /* ----------------------------- Skills Section ----------------------------- */

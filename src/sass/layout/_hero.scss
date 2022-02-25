@@ -1,23 +1,108 @@
 /* ------------------------------ Hero Section ------------------------------ */
 .hero {
+  font-size: 1rem;
   width: 100%;
   min-height: 100vh;
-  // @include has-large-responsive-hz-padding;
 
-  &__grid {
-    display: grid;
-    align-items: center;
-    height: 100%;
+  &__content {
+    margin: 0 auto;
     min-height: 100vh;
-    width: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: $navbar-height 1fr min-content min-content 2fr;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    padding: 10%;
+    @include for-xl-screens-only {
+      padding: 10vmin;
+    }
+    @include for-laptop-down {
+      padding: 8rem;
+      padding-top: 8rem;
+    }
     @include for-mobile-only {
-      // add some empty row space for mobile navbar
-      grid-template-rows: calc($navbar-height * 2 / 3) 1fr min-content min-content 1fr $mobile-navbar-height;
+      padding: 2rem + $navbar-height 2rem 2rem + $mobile-navbar-height 2rem;
     }
   }
 
+  &__content-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8rem;
+    @include for-tablet-portrait-down {
+      flex-direction: column;
+      gap: 6rem;
+    }
+    @include for-mobile-only {
+      gap: 2rem;
+    }
+  }
+
+  &__headline {
+    font-size: 15rem;
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+    font-weight: 400;
+    max-width: 75%;
+    em {
+      font-style: normal;
+      color: $color-green-highlight;
+    }
+    margin: 0;
+    @include for-xl-screens-only {
+      max-width: 85%;
+    }
+    @include for-laptop-down {
+      font-size: 11.5em;
+      max-width: 85%;
+    }
+    @include for-mobile-only {
+      max-width: 100%;
+      font-size: 4.8rem;
+    }
+  }
+
+  &__textbox {
+    position: relative;
+    font-size: 1rem;
+    padding: 0.5em 0;
+    padding-left: 2em;
+    color: darken($color-white, 10%);
+    max-width: 70%;
+    p {
+      font-size: 2.2em;
+      margin-left: 0.5em;
+      line-height: 1.5;
+      &:first-of-type {
+        margin-top: 0;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    @include for-laptop-down {
+      max-width: 85%;
+    }
+    @include for-tablet-portrait-down {
+      align-self: flex-start;
+    }
+    @include for-mobile-only {
+      max-width: 100%;
+      font-size: 0.8rem;
+      p {
+        line-height: 1.25;
+      }
+    }
+  }
+
+  &__cta {
+    @include for-mobile-only {
+      display: none;
+    }
+  }
+
+  // space background
   &__bg {
     &::before {
       z-index: -1;
@@ -30,85 +115,6 @@
       display: block;
       background: url('../img/spacebg.png') no-repeat center fixed;
       opacity: 0.1;
-    }
-  }
-
-  &__headline,
-  &__textbox,
-  &__cta {
-    grid-column: 1 / span 1;
-  }
-
-  &__headline {
-    width: 85%;
-    font-size: 15rem;
-    margin-bottom: 0.25em;
-    line-height: 1;
-    text-transform: uppercase;
-    align-self: flex-end;
-    em {
-      font-style: normal;
-      color: $color-primary;
-    }
-    @include for-laptop-down {
-      width: 100%;
-      font-size: 10rem;
-    }
-    @include for-tablet-landscape-down {
-      width: 90%;
-      font-size: 10rem;
-    }
-    @include for-tablet-portrait-down {
-      width: 100%;
-      font-size: 8rem;
-      margin-bottom: 0.8em;
-    }
-    @include for-mobile-only {
-      font-size: 5rem;
-    }
-    grid-row: 3 / span 1;
-  }
-
-  &__textbox {
-    position: relative;
-    font-size: 2.2rem;
-    width: 50%;
-    padding: 0.5em 0;
-    padding-left: 2em;
-    color: darken($color-white, 10%);
-    align-self: flex-start;
-
-    @include for-laptop-down {
-      width: 90%;
-      font-size: 1.8rem;
-    }
-    @include for-tablet-landscape-down {
-      width: 90%;
-    }
-    @include for-tablet-portrait-down {
-      font-size: 2.2rem;
-    }
-    @include for-mobile-only {
-      width: 100%;
-      font-size: 1.6rem;
-    }
-    grid-row: 4 / span 1;
-  }
-
-  &__cta {
-    grid-row: 5 / span 1;
-    align-self: center;
-    justify-self: center;
-    .btn--cta {
-      @include for-laptop-down {
-        font-size: 2.8rem;
-      }
-      @include for-tablet-landscape-down {
-        font-size: 2.4rem;
-      }
-    }
-    @include for-mobile-only {
-      display: none;
     }
   }
 }

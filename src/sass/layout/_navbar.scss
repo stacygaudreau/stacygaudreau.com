@@ -12,7 +12,8 @@
     position: absolute;
   }
   &__content {
-    max-width: $nav-max-width;
+    max-width: $content-max-width;
+    @include has-expanding-hz-padding;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -22,7 +23,6 @@
     font-weight: 400;
     background-color: rgba($color-pure-black, 0);
     color: $color-white;
-    @include has-collapsing-hz-padding;
     @include for-mobile-only {
       padding: 0 $base-pad-hz / 8;
     }

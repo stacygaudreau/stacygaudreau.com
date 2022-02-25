@@ -27,3 +27,14 @@
     // background-color: $color-white-tone;
   }
 }
+
+/* ---------------- Generic Vertical Section Column Container --------------- */
+// has responsive padding, content max-width, centred, etc.
+.section {
+  max-width: $content-max-width;
+  margin: $base-pad-hz/2 auto;
+  &:first-of-type {
+    margin-top: 0;
+  }
+  @include has-expanding-hz-padding;
+}

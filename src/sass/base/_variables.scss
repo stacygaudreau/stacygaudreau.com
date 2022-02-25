@@ -14,10 +14,6 @@ $color-grey-light: #eeeeee;
 $color-grey-med: #575757;
 $color-grey-dark: #434343;
 
-// $color-grey: #e0e3e4;
-// $color-grey-light: #f5f7f7;
-// $color-grey-dark: darken($color-grey, 10%);
-
 $color-primary: #06d6c1;
 $color-primary-highlight: #07fce4;
 $color-primary-trans: #22e8ca17;
@@ -32,7 +28,12 @@ $color-tertiary: #e6d963;
 $color-tertiary-light: lighten($color-tertiary, 10%);
 $color-tertiary-dark: darken($color-tertiary, 10%);
 
+$color-green: #06d6c1;
+$color-green-highlight: #07fce4;
+
+$color-blue: #3ba9b8;
 $color-blue-bright: #00e0ff;
+$color-blue-highlight: $color-blue-bright;
 
 /* ------------------------------ Font Families ----------------------------- */
 $body-font: 'Montserrat', sans-serif;
@@ -44,7 +45,7 @@ $default-font-size: 2.2rem;
 $default-p-spacing: 1em;
 
 /* ------------------------------- Dimensions ------------------------------- */
-$content-max-width: 192rem;
+$content-max-width: 162rem;
 $article-max-width: 120rem;
 $nav-max-width: 192rem + 1.5rem;
 $main-padding: 16rem;

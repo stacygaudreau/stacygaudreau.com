@@ -1,38 +1,32 @@
 {{ define "main" }}
-<!-- HERO -->
 <main>
+  <!-- HERO -->
   <header class="hero">
     <div class="hero__bg"></div>
-    <section class="hero__grid">
+    <section class="hero__content">
       <h1 class="hero__headline">
         I turn ideas into <em>reality</em> with code
       </h1>
-      <div class="hero__textbox with-textbar--left">
-        <p>I'm a software developer who understands hardware systems</p>
-        <p>
-          In a past life, I founded an audio synthesizer company and developed
-          over a dozen consumer electronic devices
-        </p>
-      </div>
-      <div class="hero__cta">
-        <!--<a href="#projects" class="btn-rhombus">
-          <span class="btn-rhombus__title btn-rhombus__title--above"
-            >See My Projects</span
-          >
-          <div class="btn-rhombus__shadow-effect">
-            <img src="./img/i-eye-see.svg" alt="see projects"/>
-          </div>
-        </a>-->
-        <a href="http://#projects" class="btn btn--cta">
-          <img src="./img/i-eye-blk.svg" alt="" />
-          <span>See My Projects</span>
-        </a>
+      <div class="hero__content-row">
+        <div class="hero__textbox with-textbar--left">
+          <p>I'm a software developer who understands hardware systems</p>
+          <p>
+            In a past life, I founded an audio synthesizer company and developed
+            over a dozen consumer electronic devices
+          </p>
+        </div>
+        <div class="hero__cta">
+          <a href="http://#projects" class="btn btn--green btn--large">
+            <img src="/img/i-eye-blk.svg" alt="see my projects" />
+            <span>See My Projects</span>
+          </a>
+        </div>
       </div>
     </section>
   </header>
 
   <!-- PROJECTS -->
-  <section class="projects">
+  <section class="projects section">
     <header class="section-title">
       <div class="section-title__glyph-effect"></div>
       <h2 class="section-title__text">Projects</h2>
@@ -57,7 +51,7 @@
             <div class="panel__footer-bar--buttons">
               <a
                 href="http://#code"
-                class="btn btn--primary panel__footer-bar--buttons"
+                class="btn btn--green panel__footer-bar--buttons"
                 >Code</a
               >
             </div>
@@ -77,7 +71,7 @@
   </section>
 
   <!-- SKILLS -->
-  <section class="skills">
+  <section class="skills section">
     <header class="section-title">
       <div class="section-title__glyph-effect"></div>
       <h2 class="section-title__text">Skills & Technologies</h2>
@@ -131,8 +125,8 @@
         </div>
       </div>
     </section>
-    <a href="#download-cv" class="btn btn--cta">
-      <img src="./img/i-eye-blk.svg" alt="" />
+    <a href="#download-cv" class="btn btn--large btn--green">
+      <img src="./img/i-download.svg" alt="" />
       <span>Download My CV</span>
     </a>
     <section class="skills__body skills__body--right">
@@ -148,7 +142,7 @@
   </section>
 
   <!-- Hire Me -->
-  <section class="hire-me">
+  <section class="hire-me section">
     <header class="section-title">
       <div class="section-title__glyph-effect"></div>
       <h2 class="section-title__text">Like what you see?</h2>
@@ -159,10 +153,10 @@
         <div class="panel__body">
           <div class="panel__shadow-effect"></div>
           <div class="div contact__links">
-            <a href="#email" class="btn-icon"
+            <a href="#email" class="btn btn--text-icon"
               ><img src="./img/i-email.svg" alt="Email" /> Email Me</a
             >
-            <a href="#linkedin" class="btn-icon"
+            <a href="#linkedin" class="btn btn--text-icon"
               ><img src="./img/i-linkedin.svg" alt="LinkedIn" />My Profile</a
             >
           </div>
@@ -190,8 +184,12 @@
               class="input"
             ></textarea>
           </div>
-          <button class="btn btn--primary" type="submit" action="submit">
-            Send
+          <button
+            class="btn btn--green btn--large"
+            type="submit"
+            action="submit"
+          >
+            Send Message
           </button>
         </form>
       </div>
