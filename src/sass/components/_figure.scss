@@ -1,0 +1,26 @@
+/* -------------------------------------------------------------------------- */
+/*                            Image/Diagram Figure                            */
+/* -------------------------------------------------------------------------- */
+
+figure {
+  figcaption {
+    font-family: $heading-font;
+    font-weight: 300;
+    font-size: 1.4em;
+    margin-top: 0.3em;
+  }
+  img {
+    width: 100%;
+  }
+  text-align: right;
+
+  &.right {
+    float: right;
+    text-align: right;
+  }
+
+  &.left {
+    float: left;
+    text-align: left;
+  }
+}

@@ -14,14 +14,15 @@
 @import 'layout/container';
 @import 'layout/footer';
 
+@import 'components/pane';
 @import 'components/button';
 @import 'components/card';
 @import 'components/panel';
 @import 'components/glyph';
 @import 'components/info-tag';
 @import 'components/input';
-@import 'components/pane';
 @import 'components/codeblock';
+@import 'components/figure';
 
 @import 'pages/home';
 @import 'pages/article';

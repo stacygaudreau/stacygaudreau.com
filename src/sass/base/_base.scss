@@ -24,13 +24,13 @@ html {
 html,
 body {
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* font/global properties in body selector */
 body {
   font-size: 1rem;
   margin: 0 auto;
-  box-sizing: border-box;
   background-color: $color-black;
   color: $color-white;
   // min-height: 100vh;
