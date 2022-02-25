@@ -3,6 +3,9 @@
 /* -------------------------------------------------------------------------- */
 
 figure {
+  text-align: right;
+  width: 45%;
+
   figcaption {
     font-family: $heading-font;
     font-weight: 300;
@@ -12,15 +15,45 @@ figure {
   img {
     width: 100%;
   }
-  text-align: right;
 
-  &.right {
-    float: right;
-    text-align: right;
+  &:nth-of-type(odd),
+  &:nth-of-type(even) {
+    margin: 2rem 4rem;
   }
 
-  &.left {
+  &:nth-of-type(odd) {
     float: left;
     text-align: left;
+    margin-left: 0;
   }
+
+  &:nth-of-type(even) {
+    float: right;
+    text-align: right;
+    margin-right: 0;
+  }
+
+  @include for-laptop-down {
+    width: 40%;
+  }
+  @include for-tablet-landscape-down {
+    width: 33%;
+  }
+  @include for-tablet-portrait-down {
+    width: 60%;
+    &:nth-of-type(odd),
+    &:nth-of-type(even) {
+      float: unset;
+      margin: 2rem auto;
+      text-align: center;
+    }
+  }
+  @include for-mobile-only {
+    width: 100%;
+    &:nth-of-type(odd),
+    &:nth-of-type(even) {
+      margin: 2rem auto;
+    }
+  }
+  // }
 }

@@ -46,7 +46,7 @@ Vastness is bearable only through love of brilliant syntheses corpus callosum bi
 
 \ Quote Title
 
-> # This is a big ol quote thingy
+> This is a big ol quote thingy
 >
 > with a title
 
@@ -71,13 +71,19 @@ $ ./my-script.sh Hello World
 
 Tesseract Sea of Tranquility circumnavigated muse about something incredible is waiting to be known rings of Uranus. Star stuff harvesting star light hearts of the stars the only home we've ever known network of wormholes are creatures of the cosmos vastness is bearable only through love? The ash of stellar alchemy two ghostly white figures in coveralls and helmets are softly dancing preserve and cherish that pale blue dot the carbon in our apple pies a mote of dust suspended in a sunbeam with pretty stories for which there's little good evidence.
 
+![An image alt text](./images/1.png 'A caption for an image/figure.')
+
+Star stuff harvesting star light hearts of the stars the only home we've ever known network of wormholes are creatures of the cosmos vastness is bearable only through love?
+
 ### Measurements and Other Stuff
 
 As a patch of light astonishment rich in heavy atoms radio telescope realm of the galaxies colonies? Brain is the seed of intelligence permanence of the stars a mote of dust suspended in a sunbeam Drake Equation with pretty stories for which there's little good evidence paroxysm of global death. Preserve and cherish that pale blue dot muse about network of wormholes extraordinary claims require extraordinary evidence two ghostly white figures in coveralls and helmets are softly dancing bits of moving fluff.
 
 #### Measurement 1
 
-sad;klisal;dsa
+As a patch of light astonishment rich in heavy atoms radio telescope realm of the galaxies colonies? Brain is the seed of intelligence permanence of the stars a mote of dust suspended in a sunbeam Drake Equation with pretty stories for which there's little good evidence paroxysm of global death. Preserve and cherish that pale blue dot muse about network of wormholes extraordinary claims require extraordinary evidence two ghostly white figures in coveralls and helmets are softly dancing bits of moving fluff.
+
+![An image alt text](./images/2.png 'A caption for an image/figure.')
 
 #### Measurement 2
 
@@ -86,7 +92,5 @@ salkjsakljds
 ##### Important
 
 Whatever you do, **don't doodle things** this way, ya doodler!
-
-![An image alt text](./images/1.png 'A caption for an image/figure.')
 
 `single code line`
