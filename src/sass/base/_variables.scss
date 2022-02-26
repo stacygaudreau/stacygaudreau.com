@@ -55,13 +55,13 @@ $article-max-width: 120rem;
 $nav-max-width: 192rem + 1.5rem;
 $main-padding: 16rem;
 $base-pad-hz: 16rem;
-$navbar-height: 6rem;
+$navbar-height: 5.4rem;
 $mobile-navbar-height: $navbar-height * 1.2;
 $textbox-bar-width: 5px;
 $section-begin-margin: $main-padding;
 
 /* --------------------------- Panes (nee Panels) --------------------------- */
-$pane-delta: 4px;
+$pane-delta: 5px;
 $pane-delta-b: 1%;
 $pane-border-w: 1px;
 $pane-border: darken(#414848, 2%);

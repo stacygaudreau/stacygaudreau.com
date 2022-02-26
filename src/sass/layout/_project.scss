@@ -3,52 +3,90 @@
 /* -------------------------------------------------------------------------- */
 
 .project {
+  margin: 4rem 0;
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: 66% 1fr;
-  grid-template-rows: 1fr;
   align-items: center;
-  justify-content: space-between;
-
-  .pane__wrapper {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
+  &:first-of-type {
+    // ensure margin below section title is correct
+    align-items: flex-start;
   }
 
-  @include for-tablet-portrait-down {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
-    margin-top: calc($section-begin-margin / 8);
+  // left-aligned odd projects
+  &:nth-of-type(odd) {
+    grid-template-columns: 66% 1fr;
+    .pane__wrapper {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+    .project__image {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+      margin-left: 1rem;
+      margin-right: 0rem;
+      justify-self: flex-end;
+    }
+    .pane {
+      box-shadow: 12px 1px 22px 0px rgba($color-black, 0.3);
+    }
+  }
+
+  // right-aligned even projects
+  &:nth-of-type(even) {
+    grid-template-columns: 1fr 66%;
+    .pane__wrapper {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+    }
+    .project__image {
+      justify-self: flex-start;
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+      margin-left: 0;
+      margin-right: 1rem;
+    }
+    .pane__title {
+      align-self: flex-end;
+    }
+    .pane {
+      box-shadow: -12px 1px 22px 0px rgba($color-black, 0.3);
+    }
+  }
+
+  // common media queries to both odd & even
+  &:nth-of-type(odd),
+  &:nth-of-type(even) {
+    @include for-tablet-portrait-down {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+      .pane__wrapper {
+        grid-row: 2 / span 1;
+      }
+      .project__image {
+        width: 100%;
+        margin-left: 0;
+        margin-top: calc($section-begin-margin/8);
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+      }
+      .pane__title {
+        align-self: center;
+      }
+    }
   }
 
   .pane {
     font-size: 1.2rem;
-    box-shadow: 12px 1px 22px 0px rgba($color-black, 0.3);
-    &__shadow {
-      opacity: 0.5;
-    }
   }
 
   &__image {
     z-index: -1;
     width: 150%;
     padding: 0;
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-    margin-left: 1rem;
-    margin-right: 0rem;
-    justify-self: flex-end;
 
     img {
       width: 100%;
-    }
-
-    @include for-tablet-portrait-down {
-      width: 100%;
-      margin-left: 0;
-      margin-top: calc($section-begin-margin/8);
-      grid-row: 1 / span 1;
     }
   }
 
@@ -80,28 +118,5 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     gap: 1rem;
-  }
-
-  // reverse-aligned even projects
-  &:nth-of-type(even) {
-    grid-template-columns: 1fr 66%;
-    .pane__wrapper {
-      grid-column: 2 / span 1;
-      grid-row: 1 / span 1;
-    }
-    .project__image {
-      // align-self: center;
-      justify-self: flex-start;
-      grid-row: 1 / span 1;
-      grid-column: 1 / span 1;
-      margin-left: 0;
-      margin-right: 1rem;
-    }
-    .pane__title {
-      align-self: flex-end;
-    }
-    .pane {
-      box-shadow: -12px 1px 22px 0px rgba($color-black, 0.3);
-    }
   }
 }

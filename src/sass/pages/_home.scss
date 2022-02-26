@@ -30,58 +30,72 @@
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
   @include centre-on-tablet-portrait-down();
-  // @include has-minimal-responsive-hz-padding;
-  // margin: $section-begin-margin 0;
   display: flex;
   flex-direction: column;
 
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: $base-pad-hz / 2;
+  }
+
   &__body {
-    margin-top: calc($section-begin-margin/2);
-    line-height: 1;
+    margin: $base-pad-hz / 4 0;
+    font-size: 1rem;
     padding: 2px 2rem;
     color: $color-white;
-    font-size: 2.4rem;
+    p {
+      font-size: 2em;
+      line-height: 1.25;
+    }
     &--left {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 3;
       margin-left: $textbox-bar-width;
-      border-left: $textbox-bar-width solid $color-primary;
+      margin-right: auto;
+      border-left: $textbox-bar-width solid $color-green;
     }
     &--right {
+      grid-row: 3 / span 1;
+      grid-column: 2 / span 2;
       text-align: right;
       margin-right: $textbox-bar-width;
-      border-right: $textbox-bar-width solid $color-primary;
+      margin-left: auto;
+      border-right: $textbox-bar-width solid $color-green;
     }
-    @include for-tablet-portrait-down {
-      font-size: 2.2rem;
-    }
-    @include for-mobile-only {
-      font-size: 2rem;
-    }
+    // @include for-tablet-portrait-down {
+    //   font-size: 2.2rem;
+    // }
+    // @include for-mobile-only {
+    //   font-size: 2rem;
+    // }
   }
 
   &__cards {
-    margin: calc($section-begin-margin/2) 0;
-    // padding: 0 $section-begin-margin/2;
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 3;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     align-items: flex-start;
-    gap: calc($section-begin-margin/2);
+    gap: $base-pad-hz / 2;
     font-size: 1rem;
-    @include for-laptop-down {
-      font-size: 0.85rem;
-      gap: calc($section-begin-margin/4);
-      .panel__body {
-        padding: $panel-pad-v;
-      }
-    }
-    @include for-tablet-landscape-down {
-      font-size: 1rem;
-      margin: calc($section-begin-margin / 4) 0;
-      gap: calc($section-begin-margin / 8);
-      grid-template-columns: auto;
-      grid-template-rows: repeat(3, 1fr);
-      align-items: center;
-    }
+    // @include for-laptop-down {
+    //   font-size: 0.85rem;
+    //   gap: calc($section-begin-margin/4);
+    //   .panel__body {
+    //     padding: $panel-pad-v;
+    //   }
+    // }
+    // @include for-tablet-landscape-down {
+    //   font-size: 1rem;
+    //   margin: calc($section-begin-margin / 4) 0;
+    //   gap: calc($section-begin-margin / 8);
+    //   grid-template-columns: auto;
+    //   grid-template-rows: repeat(3, 1fr);
+    //   align-items: center;
+    // }
   }
 
   &__card {
@@ -94,13 +108,16 @@
     &__title {
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 3.6em;
+      font-size: 2.4em;
+      font-weight: 400;
+      line-height: 1;
     }
 
     ul {
       list-style: none;
       font-weight: 300;
       line-height: 1.2;
+      font-size: 2.2em;
       li {
         &:not(:last-child) {
           padding-bottom: 1em;
@@ -111,8 +128,11 @@
   }
 
   .btn {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
     margin: calc($section-begin-margin / 4) 0;
     align-self: center;
+    justify-self: center;
   }
 }
 

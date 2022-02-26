@@ -72,7 +72,7 @@
 @mixin has-expanding-hz-padding {
   padding: 0;
   @include for-laptop-down {
-    padding: 0 $base-pad-hz / 4;
+    padding: 0 $base-pad-hz / 2;
   }
   @include for-tablet-portrait-down {
     padding: 0 $base-pad-hz / 4;

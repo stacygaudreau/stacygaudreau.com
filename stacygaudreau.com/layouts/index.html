@@ -28,7 +28,7 @@
   <!-- PROJECTS -->
   <section class="projects section">
     <header class="section-title">
-      <div class="section-title__glyph-effect"></div>
+      <div class="halftone halftone--fade-right"></div>
       <h2 class="section-title__text">Projects</h2>
     </header>
     <!-- Project Features List -->
@@ -73,82 +73,64 @@
     </article>
     {{ end }}
   </section>
-
   <!-- SKILLS -->
+  <div class="halftone halftone--fade-left"></div>
+
   <section class="skills section">
     <header class="section-title">
-      <div class="section-title__glyph-effect"></div>
+      <div class="halftone halftone--fade-right"></div>
       <h2 class="section-title__text">Skills & Technologies</h2>
     </header>
-    <section class="skills__body skills__body--left">
-      <p>
-        With years of first-hand business experience, I'm especially interested
-        in the finance, business logic and infrastructure monitoring sectors.
-      </p>
-      <p>
-        Some of my favourite languages to work in include Python, Scala,
-        JavaScript and C.
-      </p>
-    </section>
-    <section class="skills__cards">
-      <div class="skills__card panel">
-        <h4 class="skills__card__title panel__title">Web Technologies</h4>
-        <div class="panel__body">
-          <div class="panel__shadow-effect"></div>
-          <ul>
-            <li>Full stack with an emphasis on backend</li>
-            <li>Python, Scala, JavaScript, CSS/Sass and HTML</li>
-            <li>Frameworks including Django, Play, Node and React</li>
-          </ul>
-        </div>
+    <div class="skills__grid">
+      <div class="skills__body skills__body--left">
+        <p>
+          With years of first-hand business experience, I'm especially
+          interested in the finance, business logic and infrastructure
+          monitoring sectors.
+        </p>
+        <p>
+          Some of my favourite languages to work in include Python, Scala,
+          JavaScript and C.
+        </p>
       </div>
-      <div class="skills__card panel">
-        <h4 class="skills__card__title panel__title">Infrastructure & Ops</h4>
-        <div class="panel__body">
-          <div class="panel__shadow-effect"></div>
-          <ul>
-            <li>Linux, Debian & CentOS/RHEL</li>
-            <li>Servers & network infrastructure</li>
-            <li>
-              Virtualization & storage technologies including KVM, ZFS and Ceph
-            </li>
-            <li>Deployment operations & scripting</li>
-          </ul>
+      <section class="skills__cards">
+        <!-- Skills Cards -->
+        {{ range (where .Site.Pages "Type" "skill") }}
+        <div class="skills__card pane__wrapper">
+          <h4 class="skills__card__title pane__title">{{ .Title }}</h4>
+          <div class="pane">
+            <div class="pane__shadow pane__shadow--corner-t-r"></div>
+            <div class="pane__shadow pane__shadow--corner-t-r"></div>
+            <ul>
+              {{ range .Params.listItems }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
         </div>
+        {{ end }}
+      </section>
+      <a href="#download-cv" class="btn btn--large btn--green">
+        <img src="./img/i-download.svg" alt="" />
+        <span>Download My CV</span>
+      </a>
+      <div class="skills__body skills__body--right">
+        <p>
+          I'm an avid "homelabber" and operate a moderate sized server rack of
+          compute and storage technology for learning and enjoyment.
+        </p>
+        <p>
+          When I'm not writing code I can be found gardening, hiking and riding
+          motorcycles.
+        </p>
       </div>
-      <div class="skills__card panel">
-        <h4 class="skills__card__title panel__title">Auxiliary Skills</h4>
-        <div class="panel__body">
-          <div class="panel__shadow-effect"></div>
-          <ul>
-            <li>End-to-end product lifecycle & development</li>
-            <li>Financial & business logic</li>
-            <li>Low-level test & debugging</li>
-            <li>Bare-metal ARM driver development in C</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <a href="#download-cv" class="btn btn--large btn--green">
-      <img src="./img/i-download.svg" alt="" />
-      <span>Download My CV</span>
-    </a>
-    <section class="skills__body skills__body--right">
-      <p>
-        I'm an avid "homelabber" and operate a moderate sized server rack of
-        compute and storage technology for learning and enjoyment.
-      </p>
-      <p>
-        When I'm not writing code I can be found gardening, hiking and riding
-        motorcycles.
-      </p>
-    </section>
+    </div>
   </section>
 
   <!-- Hire Me -->
   <section class="hire-me section">
     <header class="section-title">
-      <div class="section-title__glyph-effect"></div>
+      <div class="halftone halftone--fade-right"></div>
       <h2 class="section-title__text">Like what you see?</h2>
     </header>
     <section class="contact">
