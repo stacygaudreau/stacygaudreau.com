@@ -32,7 +32,7 @@
 // has responsive padding, content max-width, centred, etc.
 .section {
   max-width: $content-max-width;
-  margin: $base-pad-hz/2 auto;
+  margin: 0 auto;
   &:first-of-type {
     margin-top: 0;
   }

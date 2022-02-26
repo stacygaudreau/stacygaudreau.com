@@ -88,6 +88,11 @@ p + p {
   @include for-laptop-down {
     font-size: 0.8rem;
   }
+  @include for-tablet-portrait-down {
+    margin: 0 auto;
+    margin-top: $base-pad-hz / 2;
+    margin-bottom: $base-pad-hz / 6;
+  }
 
   &__text {
     font-size: 6.5em;

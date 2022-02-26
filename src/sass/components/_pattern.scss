@@ -82,4 +82,15 @@
       );
     }
   }
+  &--fade-hz-right {
+    &:after {
+      background: linear-gradient(
+        90deg,
+        $color-black 0,
+        transparent 3%,
+        $color-black 60%,
+        $color-black 100%
+      );
+    }
+  }
 }

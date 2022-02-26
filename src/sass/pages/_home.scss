@@ -29,19 +29,26 @@
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
-  @include centre-on-tablet-portrait-down();
   display: flex;
   flex-direction: column;
+
+  .section-title {
+    margin-bottom: $base-pad-hz / 4;
+  }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: $base-pad-hz / 2;
+    @include centre-on-tablet-portrait-down();
+    @include for-tablet-portrait-down {
+      gap: $base-pad-hz / 4;
+    }
   }
 
   &__body {
-    margin: $base-pad-hz / 4 0;
+    margin: 0;
     font-size: 1rem;
     padding: 2px 2rem;
     color: $color-white;
@@ -70,6 +77,10 @@
     // @include for-mobile-only {
     //   font-size: 2rem;
     // }
+    @include for-tablet-portrait-down {
+      margin: $base-pad-hz/8 0;
+      font-size: 0.9rem;
+    }
   }
 
   &__cards {
@@ -81,6 +92,12 @@
     align-items: flex-start;
     gap: $base-pad-hz / 2;
     font-size: 1rem;
+    @include for-tablet-portrait-down {
+      li {
+        font-size: 1.6rem;
+      }
+      gap: $base-pad-hz / 8;
+    }
     // @include for-laptop-down {
     //   font-size: 0.85rem;
     //   gap: calc($section-begin-margin/4);
