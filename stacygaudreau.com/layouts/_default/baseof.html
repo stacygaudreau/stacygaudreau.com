@@ -3,7 +3,7 @@
 <html lang="en">
   {{ partial "head.html" . }}
   <body>
-    {{ partial "navbar.html" }}
+    {{ partial "navbar.html" . }}
     {{ block "main" .}} 
     {{ end }}
     {{ partial "footer.html" . }} 

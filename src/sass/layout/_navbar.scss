@@ -12,7 +12,7 @@
     position: absolute;
   }
   &__content {
-    max-width: $content-max-width;
+    max-width: $article-max-width;
     @include has-expanding-hz-padding;
     margin: 0 auto;
     height: 100%;
@@ -25,6 +25,10 @@
     color: $color-white;
     @include for-mobile-only {
       padding: 0 $base-pad-hz / 8;
+    }
+
+    &--is-wider {
+      max-width: $content-max-width;
     }
   }
 

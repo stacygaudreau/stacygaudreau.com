@@ -1,5 +1,8 @@
 <nav class="navbar" id="navbar">
-  <div class="navbar__content">
+  <!-- prettier-ignore -->
+  <div 
+    class="navbar__content {{ if .IsHome  }}navbar__content--is-wider{{ end }}"
+  >
     <h1 class="navbar__logo-text">
       <a href="https://www.stacygaudreau.com"
         >Stacy <span class="navbar__logo-text__last-name">Gaudreau</span></a
@@ -16,6 +19,7 @@
         <a href="#contact">Hire Me</a>
       </div>
     </div>
+    {{ if eq .Type "project" }} is project {{ end }}
   </div>
   <div class="nav-mobile">
     <a href="#project" class="nav-mobile__item">

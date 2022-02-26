@@ -31,111 +31,47 @@
       <div class="section-title__glyph-effect"></div>
       <h2 class="section-title__text">Projects</h2>
     </header>
-    <article class="project">
-      <section class="panel">
-        <h3 class="panel__title panel__title--for-project">
-          <a href="#ratemyderp">RateMyDerp!</a>
-        </h3>
-        <div class="panel__body">
-          <div class="panel__shadow-effect"></div>
-          <p>
-            RateMyDerp.com is a full-stack web application. It's an homage to
-            the "Rating Sites" of the early 2000's (HotOrNot, RateMyFace, etc.)
-          </p>
-          <p>
-            Users vote on "derps" that others have submitted in order to see the
-            next image from the database. The site currently has over 1000
-            users, with more than 500 user submissions.
-          </p>
-          <div class="panel__footer-bar">
-            <div class="panel__footer-bar--buttons">
-              <a
-                href="http://#code"
-                class="btn btn--green panel__footer-bar--buttons"
-                >Code</a
-              >
-            </div>
-            <div class="panel__footer-bar--tags">
-              <span class="info-tag panel__footer-bar--tags">Python</span>
-              <span class="info-tag panel__footer-bar--tags">Django</span>
-              <span class="info-tag panel__footer-bar--tags">Javascript</span>
-              <span class="info-tag panel__footer-bar--tags">Sass</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="project__image">
-        <img src="./img/Image 5-1.png" alt="RateMyDerp project image" />
-      </div>
-    </article>
-    <!-- Project Feature -->
+    <!-- Project Features List -->
+    {{ range (where .Site.Pages "Type" "project") }}
     <article class="project">
       <section class="pane__wrapper">
         <h3 class="pane__title pane__title--for-project">
-          <a href="#ratemyderp" class="">RateMyDerp!</a>
+          <a href="{{ .Params.demoUrl }}" class="">{{ .Params.shortTitle }}</a>
         </h3>
         <div class="pane">
           <div class="pane__shadow pane__shadow--corner-t-l"></div>
           <div class="pane__shadow pane__shadow--corner-t-l"></div>
-          <p>
-            RateMyDerp.com is a full-stack web application. It's an homage to
-            the "Rating Sites" of the early 2000's (HotOrNot, RateMyFace, etc.)
-          </p>
-          <p>
-            Users vote on "derps" that others have submitted in order to see the
-            next image from the database. The site currently has over 1000
-            users, with more than 500 user submissions.
-          </p>
+          <!-- Feature Excerpt Text  -->
+          {{ with .Resources.GetMatch "feature_text.md" }} {{ .Content }} {{ end
+          }}
           <div class="project__meta">
             <div class="project__btns">
-              <a href="" class="btn btn--small btn--green">Documentation</a>
-              <a href="" class="btn btn--small btn--blue">Code</a>
+              <a href="{{ .Permalink }}" class="btn btn--small btn--green"
+                >Documentation</a
+              >
+              <a href="{{ .Params.codeUrl }}" class="btn btn--small btn--blue"
+                >Code</a
+              >
             </div>
             <div class="project__tags">
-              <span class="info-tag info-tag--light">Python</span>
-              <span class="info-tag info-tag--light">Django</span>
-              <span class="info-tag info-tag--light">Javascript</span>
-              <span class="info-tag info-tag--light">Sass</span>
+              {{ range .Params.stack }}
+              <span class="info-tag info-tag--light">{{ . }}</span>
+              {{ end }}
             </div>
           </div>
         </div>
       </section>
-      <!-- <section class="panel">
-        <h3 class="panel__title panel__title--for-project">
-          <a href="#ratemyderp">RateMyDerp!</a>
-        </h3>
-        <div class="panel__body">
-          <div class="panel__shadow-effect"></div>
-          <p>
-            RateMyDerp.com is a full-stack web application. It's an homage to
-            the "Rating Sites" of the early 2000's (HotOrNot, RateMyFace, etc.)
-          </p>
-          <p>
-            Users vote on "derps" that others have submitted in order to see the
-            next image from the database. The site currently has over 1000
-            users, with more than 500 user submissions.
-          </p>
-          <div class="panel__footer-bar">
-            <div class="panel__footer-bar--buttons">
-              <a
-                href="http://#code"
-                class="btn btn--green panel__footer-bar--buttons"
-                >Code</a
-              >
-            </div>
-            <div class="panel__footer-bar--tags">
-              <span class="info-tag panel__footer-bar--tags">Python</span>
-              <span class="info-tag panel__footer-bar--tags">Django</span>
-              <span class="info-tag panel__footer-bar--tags">Javascript</span>
-              <span class="info-tag panel__footer-bar--tags">Sass</span>
-            </div>
-          </div>
-        </div>
-      </section> -->
       <div class="project__image">
-        <img src="/img/Image 5-1.png" alt="RateMyDerp project image" />
+        <!-- prettier-ignore -->
+        <img 
+          {{ with .Resources.GetMatch "images/feature.*" }}
+            src="{{.RelPermalink}}" 
+          {{ end }} 
+          alt="{{ .Params.shortTitle }} project image" 
+        />
       </div>
     </article>
+    {{ end }}
   </section>
 
   <!-- SKILLS -->
