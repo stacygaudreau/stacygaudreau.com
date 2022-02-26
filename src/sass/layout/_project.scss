@@ -16,9 +16,6 @@
     margin-top: calc($section-begin-margin / 8);
   }
 
-  &__panel {
-  }
-
   &__image {
     width: 200%;
     margin-left: 5rem;
@@ -35,5 +32,35 @@
       margin-top: calc($section-begin-margin/8);
       grid-row: 1 / span 1;
     }
+  }
+
+  &__meta {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2em;
+    gap: 3em;
+    @include for-tablet-portrait-down {
+      gap: 2em;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 2rem;
+    @include for-tablet-portrait-down {
+      order: 2;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }

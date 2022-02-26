@@ -19,14 +19,72 @@
 
 .pane {
   font-size: 1rem;
-  // width: 80rem;
-  // height: 40rem;
   @include is-bordered-pane;
   @include has-pane-padding;
+
+  p {
+    // only margin between adjacent <p>
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
 
   &--has-image {
     padding: 0;
     line-height: 0;
+  }
+
+  &__title {
+    line-height: 0.5;
+    font-size: 3em;
+    letter-spacing: 1px;
+    font-weight: 500;
+
+    &--for-project {
+      position: relative;
+      align-self: flex-start;
+      a {
+        &:after {
+          @include is-svg-content-resizeable-as-bg('/img/i-link-ext.svg');
+          width: 0.6em;
+          height: 0.6em;
+          margin-left: 0.4em;
+        }
+      }
+      @include for-tablet-portrait-down {
+        align-self: center;
+      }
+      &:before {
+        // horizontal animated rule under anchor text
+        z-index: -1;
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        background-color: $color-green-dark;
+        height: 1px;
+        width: 0%;
+        transition: width $t-fast ease-out;
+      }
+      &:hover,
+      &:active {
+        &:before {
+          width: 85%;
+        }
+      }
+      &:active {
+        @include transform-button-down;
+      }
+    }
   }
 
   &__shadow {

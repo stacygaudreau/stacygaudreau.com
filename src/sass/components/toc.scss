@@ -4,16 +4,21 @@
 .toc {
   font-size: 1rem;
   header {
-    font-family: $heading-font;
-    font-weight: 500;
-    font-size: 1.8em;
     display: flex;
     align-items: center;
   }
   padding-left: 4rem;
+  .btn {
+    font-size: 1.8rem;
+    img {
+      height: 0.3em;
+    }
+    padding: 0;
+  }
 }
 
 #TableOfContents {
+  margin-top: 0.5em;
   font-size: 1.6em;
   font-family: $heading-font;
   ul {

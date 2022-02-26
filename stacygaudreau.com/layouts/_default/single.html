@@ -37,13 +37,13 @@
     {{ with .Resources.GetMatch "intro.md" }} {{ .Content }} {{ end }}
     <section class="toc pane">
       <header>
-        <button class="btn btn--icon">
-          <img src="/img/i-linkedin.svg" alt="LinkedIn" />My Profile
-        </button>
+        <a class="btn btn--text-icon btn--small">
+          <img src="/img/i-caret-down.svg" alt="LinkedIn" />Table of Contents
+        </a>
       </header>
       {{ .TableOfContents }}
-      <div class="pane__shadow pane__shadow--corner-b-r"></div>
-      <div class="pane__shadow pane__shadow--corner-b-r"></div>
+      <div class="pane__shadow pane__shadow--corner-t-l"></div>
+      <div class="pane__shadow pane__shadow--corner-t-l"></div>
     </section>
   </section>
   <section class="article__content">

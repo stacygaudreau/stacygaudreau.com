@@ -8,10 +8,8 @@
   font-size: 2.4rem;
   font-family: $heading-font;
   text-transform: uppercase;
-  color: lighten($panel-border-color, 10%);
-  background-color: lighten($color-black, 2%);
-  // border-radius: 1rem;
-  // border: 2px solid darken($panel-border-color, 12%);
+  color: $color-panel-2;
+  background-color: $color-black-2;
   padding: 0rem 0.625em;
   margin: 0;
   @include for-laptop-down {
@@ -25,9 +23,14 @@
   }
 
   &--meta {
-    // color: $color-secondary;
     font-size: 1.8rem;
     text-transform: none;
+    font-weight: 400;
+  }
+
+  &--light {
+    background-color: $color-black-3;
+    color: $color-panel-2;
     font-weight: 400;
   }
 }

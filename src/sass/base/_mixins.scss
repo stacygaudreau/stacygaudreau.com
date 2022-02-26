@@ -32,6 +32,18 @@
   }
 }
 
+/* ---------------------- SVG Icon After Pseudoelement ---------------------- */
+@mixin is-svg-content-resizeable-as-bg($image_url) {
+  $default-size: 2rem;
+  content: '';
+  background-image: url($image_url);
+  background-size: cover;
+  position: relative;
+  display: inline-block;
+  width: $default-size;
+  height: $default-size;
+}
+
 /* ----------------------- Center Tablet Portrait Down ---------------------- */
 @mixin centre-on-tablet-portrait-down {
   @include for-tablet-portrait-down {
