@@ -3,14 +3,35 @@
 /* -------------------------------------------------------------------------- */
 
 .project {
-  margin: 4rem 0;
+  $offset: 4rem;
+  $img-halftone-w: 50%;
+  $pane-halftone-w: 25%;
+
+  @mixin fade-halftone-hz($dir) {
+    &:after {
+      background: linear-gradient(
+        $dir * 90deg,
+        transparent 0,
+        $color-black 85%,
+        $color-black 100%
+      );
+    }
+  }
+  @mixin halftone-fade-l-to-r() {
+    @include fade-halftone-hz(1);
+  }
+  @mixin halftone-fade-r-to-l() {
+    @include fade-halftone-hz(-1);
+  }
+
+  margin: $base-pad-hz/2 0;
   position: relative;
   width: 100%;
   display: grid;
   align-items: center;
-  &:first-of-type {
-    // ensure margin below section title is correct
-    align-items: flex-start;
+
+  @include for-mobile-only {
+    margin: $base-pad-hz/4 0;
   }
 
   .pane {
@@ -41,11 +62,33 @@
     }
   }
 
+  .halftone {
+    position: absolute;
+    z-index: -2;
+    height: 90%;
+    padding: 4rem;
+    top: -$offset/2;
+    &:nth-of-type(1) {
+      left: -$offset;
+    }
+    &:nth-of-type(2) {
+      right: -$offset;
+    }
+    @include for-mobile-only {
+      display: none;
+    }
+  }
+
   &__btns {
     display: flex;
     gap: 2rem;
     @include for-tablet-portrait-down {
-      order: 2;
+      margin-bottom: $base-pad-hz/8;
+    }
+    @include for-mobile-only {
+      gap: 2rem;
+      flex-direction: column;
+      margin-bottom: $base-pad-hz/16;
     }
   }
 
@@ -54,6 +97,8 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     gap: 1rem;
+    @include for-mobile-only {
+    }
   }
 
   // left-aligned odd projects
@@ -72,6 +117,16 @@
     }
     .pane {
       box-shadow: 12px 1px 22px 0px rgba($color-black, 0.3);
+    }
+    .halftone {
+      &:nth-of-type(1) {
+        width: $pane-halftone-w;
+        @include halftone-fade-l-to-r();
+      }
+      &:nth-of-type(2) {
+        width: $img-halftone-w;
+        @include halftone-fade-r-to-l();
+      }
     }
   }
 
@@ -94,6 +149,23 @@
     }
     .pane {
       box-shadow: -12px 1px 22px 0px rgba($color-black, 0.3);
+      text-align: right;
+    }
+    .halftone {
+      &:nth-of-type(1) {
+        width: $img-halftone-w;
+        @include halftone-fade-l-to-r();
+      }
+      &:nth-of-type(2) {
+        width: $pane-halftone-w;
+        @include halftone-fade-r-to-l();
+      }
+    }
+    .project__btns {
+      order: 2;
+    }
+    .project__tags {
+      justify-content: flex-start;
     }
   }
 
@@ -116,6 +188,15 @@
       }
       .pane__title {
         align-self: center;
+      }
+      .pane {
+        text-align: center;
+      }
+      .project__btns {
+        order: 2;
+      }
+      .project__tags {
+        justify-content: center;
       }
     }
   }

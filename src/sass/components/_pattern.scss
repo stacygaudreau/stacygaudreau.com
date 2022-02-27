@@ -3,6 +3,8 @@
 /* -------------------------------------------------------------------------- */
 
 .halftone {
+  width: 100px;
+  height: 100px;
   @mixin halftone-pattern-bg($rad, $dx, $dy, $color) {
     background-image: radial-gradient(
       circle at $rad $rad,
@@ -17,7 +19,7 @@
   // width: 50rem;
   // height: 50rem;
 
-  @include halftone-pattern-bg(0.2rem, 1.6rem, 1.6rem, $dot-color);
+  @include halftone-pattern-bg(0.2rem, 2rem, 2rem, $dot-color);
 
   &:after {
     content: '';
@@ -87,10 +89,44 @@
       background: linear-gradient(
         90deg,
         $color-black 0,
-        transparent 3%,
-        $color-black 60%,
+        transparent 0.1%,
+        $color-black 85%,
         $color-black 100%
       );
+    }
+    &.halftone--light {
+      &:after {
+        background: linear-gradient(
+          90deg,
+          $color-black-2 0,
+          transparent 0.1%,
+          $color-black-2 85%,
+          $color-black-2 100%
+        );
+      }
+    }
+    &.halftone--dark {
+      &:after {
+        background: linear-gradient(
+          90deg,
+          $color-black-dark 0,
+          transparent 0.1%,
+          $color-black-dark 85%,
+          $color-black-dark 100%
+        );
+      }
+    }
+  }
+  &--card {
+    &.halftone--dark {
+      &:after {
+        background: radial-gradient(
+          circle at center,
+          transparent 0,
+          $color-black-dark 70%,
+          $color-black-dark 100%
+        );
+      }
     }
   }
 }

@@ -6,6 +6,8 @@
 $color-white: #fafcfc;
 $color-pure-white: #ffffff;
 $color-black: #181c1c;
+$color-black-light: lighten($color-black, 3%);
+$color-black-dark: darken($color-black, 3%);
 $color-black-2: #1b1f1f;
 $color-black-3: lighten($color-black-2, 3%);
 $color-pure-black: #000000;

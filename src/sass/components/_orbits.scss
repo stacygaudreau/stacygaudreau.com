@@ -1,0 +1,16 @@
+/* -------------------------------------------------------------------------- */
+/*                          Orbits Background Graphic                         */
+/* -------------------------------------------------------------------------- */
+
+.orbits {
+  z-index: -1;
+  position: absolute;
+  height: 120%;
+  width: 120%;
+  background-size: cover;
+
+  background-image: url('/img/orbits.svg');
+  background-repeat: no-repeat;
+  &:before {
+  }
+}

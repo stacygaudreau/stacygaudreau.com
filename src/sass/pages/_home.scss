@@ -29,8 +29,30 @@
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
+  &__wrapper {
+    $clip-skew: 5%;
+    position: relative;
+    clip-path: polygon(0 0, 100% $clip-skew, 100% 100%, 0 100%-$clip-skew);
+    background-color: $color-black-dark;
+    max-width: 192rem;
+    margin: 0 auto;
+    padding-bottom: $base-pad-hz;
+  }
+
   display: flex;
   flex-direction: column;
+  position: relative;
+  // &:before {
+  //   z-index: -4;
+  //   position: absolute;
+  //   content: '';
+  //   width: 192rem;
+  //   height: 100%;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   clip-path: polygon(0 0, 100 50%, 50% 100%);
+  // }
 
   .section-title {
     margin-bottom: $base-pad-hz / 4;
@@ -84,6 +106,7 @@
   }
 
   &__cards {
+    position: relative;
     grid-row: 2 / span 1;
     grid-column: 1 / span 3;
     display: grid;
@@ -98,25 +121,20 @@
       }
       gap: $base-pad-hz / 8;
     }
-    // @include for-laptop-down {
-    //   font-size: 0.85rem;
-    //   gap: calc($section-begin-margin/4);
-    //   .panel__body {
-    //     padding: $panel-pad-v;
-    //   }
-    // }
-    // @include for-tablet-landscape-down {
-    //   font-size: 1rem;
-    //   margin: calc($section-begin-margin / 4) 0;
-    //   gap: calc($section-begin-margin / 8);
-    //   grid-template-columns: auto;
-    //   grid-template-rows: repeat(3, 1fr);
-    //   align-items: center;
-    // }
+    .halftone {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      width: 150%;
+      height: 150%;
+      z-index: -5;
+    }
   }
 
   &__card {
     font-size: 1rem;
+    position: relative;
     @include for-mobile-only {
       font-size: 0.7rem;
     }

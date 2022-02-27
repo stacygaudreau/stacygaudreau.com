@@ -1,4 +1,4 @@
-baseURL = 'https://stacygaudreau.com'
+baseURL = ''
 languageCode = 'en-us'
 title = 'Stacy Gaudreau'
 assetDir = '../src'

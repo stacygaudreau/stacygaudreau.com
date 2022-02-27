@@ -11,4 +11,4 @@
 <!-- prettier-ignore -->
 {{ $options := (dict "targetPath" "style.css" "enableSourceMap" "true")}} 
     {{ $styles := resources.Get "sass/main.scss" | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{$styles.Permalink}}" />
+<link rel="stylesheet" href="{{$styles.RelPermalink}}" />

@@ -6,4 +6,4 @@
 <!-- prettier-ignore -->
 {{ $options := (dict "targetPath" "main.js")}}
 {{ $js := resources.Get "js/main.js" | js.Build $options}}
-<script src="{{ $js.Permalink }}" defer></script>
+<script src="{{ $js.RelPermalink }}" defer></script>
