@@ -64,6 +64,9 @@ window.addEventListener('DOMContentLoaded', e => {
   navBar = document.getElementById('navbar');
   window.onscroll = scrollHandler;
   replaceBlockquoteTitles();
+  if (scrollY > 0) {
+    setScrollTrue();
+  }
 });
 
 // /* ---------------------------- Open Nav Pulldown --------------------------- */
@@ -87,10 +90,13 @@ window.addEventListener('DOMContentLoaded', e => {
 // }
 
 /* ----------------------------- Scroll Handler ----------------------------- */
+function setScrollTrue() {
+  if (!state.isScrolled) navBar.classList.add('navbar--opaque');
+  state.isScrolled = true;
+}
 function scrollHandler() {
   if (scrollY > 0) {
-    if (!state.isScrolled) navBar.classList.add('navbar--opaque');
-    state.isScrolled = true;
+    setScrollTrue();
   } else {
     navBar.classList.remove('navbar--opaque');
     state.isScrolled = false;

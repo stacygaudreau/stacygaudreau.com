@@ -1,0 +1,18 @@
+cards:
+  - heading: 'Web Technologies'
+    skills:
+      - 'Full stack with an emphasis on backend'
+      - 'Python, Scala, JavaScript, CSS/Sass and HTML'
+      - 'Frameworks including Django, Play, Node and React'
+  - heading: 'Infrastructure & Ops'
+    skills:
+      - 'Linux, Debian & CentOS/RHEL'
+      - 'Servers & network infrastructure'
+      - 'Virtualization & storage technologies including KVM, ZFS and Ceph'
+      - 'Deployment operations & scripting'
+  - heading: 'Auxiliary Skills'
+    skills:
+      - 'End-to-end product lifecycle & development'
+      - 'Financial & business logic'
+      - 'Low-level test & debugging'
+      - 'Bare-metal ARM driver development in C'

@@ -99,15 +99,16 @@
         </div>
         <section class="skills__cards">
           <!-- Skills Cards -->
-          {{ range (where .Site.Pages "Type" "skill") }}
+          {{ range .Site.Data.skills.cards.cards }}
+
           <div class="skills__card pane__wrapper">
             <div class="halftone halftone--card halftone--dark"></div>
-            <h4 class="skills__card__title pane__title">{{ .Title }}</h4>
+            <h4 class="skills__card__title pane__title">{{ .heading }}</h4>
             <div class="pane">
               <div class="pane__shadow pane__shadow--corner-t-r"></div>
               <div class="pane__shadow pane__shadow--corner-t-r"></div>
               <ul>
-                {{ range .Params.listItems }}
+                {{ range .skills }}
                 <li>{{ . }}</li>
                 {{ end }}
               </ul>

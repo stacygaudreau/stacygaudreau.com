@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Stacy Gaudreau'
 assetDir = '../src'
 staticDir = '../static'
+disableKinds = ['skill']
 
 [markup]
   [markup.tableOfContents]
