@@ -26,6 +26,8 @@ h6,
 }
 h2 {
   font-size: 3.8em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 h3 {
   font-size: 2.4em;
@@ -42,12 +44,9 @@ h5 {
 .blockquote__title,
 .codeblock__title {
   margin-bottom: 0.25rem;
-  margin-left: 2.5rem;
+  margin-left: 1.5rem;
   margin-top: 1em;
   font-weight: 500;
-  @include for-tablet-portrait-down {
-    margin: 0.5rem;
-  }
 }
 
 /* ------------------------------ Block Quotes ------------------------------ */
@@ -74,6 +73,9 @@ p {
   font-size: 1.6em;
   line-height: 1.5;
   margin: 0.5em 0;
+  &:last-of-type {
+    margin-bottom: 1.5em;
+  }
 }
 p + p {
   margin-top: 1em;
