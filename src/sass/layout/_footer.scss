@@ -2,6 +2,7 @@
 
 .footer {
   position: relative;
+  width: 100%;
   margin-top: $base-pad-hz;
   padding: $base-pad-hz;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
@@ -10,7 +11,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: $panel-pad-v;
+  gap: $base-pad-hz / 6;
   font-family: $heading-font;
   &::before {
     z-index: -1;
@@ -35,12 +36,8 @@
     text-transform: lowercase;
   }
 
-  .btn-icon {
-    margin: 1rem 0;
-    font-size: 2rem;
-    img {
-      width: 2rem;
-    }
+  .btn--text-icon {
+    padding: 0.5rem;
   }
 
   @include for-tablet-portrait-down {
@@ -50,6 +47,7 @@
   @include for-mobile-only {
     padding: $base-pad-hz / 4;
     padding-top: $base-pad-hz / 2;
-    padding-bottom: $base-pad-hz;
+    padding-bottom: $base-pad-hz / 2;
+    gap: $base-pad-hz / 16;
   }
 }
