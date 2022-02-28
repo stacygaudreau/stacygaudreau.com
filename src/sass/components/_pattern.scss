@@ -21,6 +21,10 @@
 
   @include halftone-pattern-bg(0.2rem, 2rem, 2rem, $dot-color);
 
+  &--wide {
+    @include halftone-pattern-bg(0.2rem, 4rem, 4rem, $dot-color);
+  }
+
   &:after {
     content: '';
     position: absolute;

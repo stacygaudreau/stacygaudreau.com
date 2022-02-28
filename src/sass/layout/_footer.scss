@@ -42,4 +42,14 @@
       width: 2rem;
     }
   }
+
+  @include for-tablet-portrait-down {
+    padding: $base-pad-hz / 2;
+  }
+
+  @include for-mobile-only {
+    padding: $base-pad-hz / 4;
+    padding-top: $base-pad-hz / 2;
+    padding-bottom: $base-pad-hz;
+  }
 }

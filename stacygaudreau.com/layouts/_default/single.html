@@ -3,6 +3,10 @@
   <!-- Header -->
   <header class="article__header">
     <div class="article__bg"></div>
+    <div class="article__graphics">
+      <div class="halftone halftone--wide"></div>
+      <div class="halftone halftone--wide"></div>
+    </div>
     <div class="article__header-content">
       <div class="article__categories">
         {{ range .Params.Categories }}
@@ -21,8 +25,8 @@
           {{ .Date | time.Format ":date_long" }}
         </span>
       </div>
-      <div class="article__graphic article__graphic--right"></div>
-      <div class="article__graphic article__graphic--left"></div>
+      <!-- <div class="article__graphic article__graphic--right"></div>
+      <div class="article__graphic article__graphic--left"></div> -->
       <!-- Main Feature Image -->
       {{ with .Resources.GetMatch "images/main.*" }}
       <div class="article__image--main pane pane--has-image">
