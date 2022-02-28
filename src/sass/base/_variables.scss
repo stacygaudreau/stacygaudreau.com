@@ -4,6 +4,7 @@
 
 /* ------------------------------ Base Colours ------------------------------ */
 $color-white: #fafcfc;
+$color-grey-text: darken($color-white, 10%);
 $color-pure-white: #ffffff;
 $color-black: #181c1c;
 $color-black-light: lighten($color-black, 3%);

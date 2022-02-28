@@ -2,9 +2,8 @@
 
 .footer {
   position: relative;
-  margin-top: $section-begin-margin;
-  padding: 10rem 0;
-  // height: 40rem;
+  margin-top: $base-pad-hz;
+  padding: $base-pad-hz;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
@@ -13,7 +12,6 @@
   text-align: center;
   gap: $panel-pad-v;
   font-family: $heading-font;
-
   &::before {
     z-index: -1;
     position: absolute;
@@ -35,9 +33,6 @@
 
   &__tagline {
     text-transform: lowercase;
-  }
-
-  .contact__links {
   }
 
   .btn-icon {

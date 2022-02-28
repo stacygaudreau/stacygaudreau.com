@@ -23,41 +23,31 @@
 
 /* ---------------------------- Projects Section ---------------------------- */
 .projects {
-  max-width: $content-max-width;
   @include centre-on-tablet-portrait-down();
 }
 
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
+  @mixin clip-polygon($skew) {
+    clip-path: polygon(0 0, 100% $skew, 100% 100%, 0 100%-$skew);
+  }
   &__wrapper {
-    $clip-skew: 5%;
     position: relative;
-    clip-path: polygon(0 0, 100% $clip-skew, 100% 100%, 0 100%-$clip-skew);
     background-color: $color-black-dark;
     max-width: 192rem;
     margin: 0 auto;
-    padding-bottom: $base-pad-hz;
+    padding-bottom: $base-pad-hz / 4;
+    padding-top: $base-pad-hz / 4;
+    @include clip-polygon(5%);
+    @include for-mobile-only {
+      @include clip-polygon(2.5%);
+    }
   }
-
   display: flex;
   flex-direction: column;
-  position: relative;
-  // &:before {
-  //   z-index: -4;
-  //   position: absolute;
-  //   content: '';
-  //   width: 192rem;
-  //   height: 100%;
-  //   top: 0;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  //   clip-path: polygon(0 0, 100 50%, 50% 100%);
-  // }
-
   .section-title {
     margin-bottom: $base-pad-hz / 4;
   }
-
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -73,7 +63,7 @@
     margin: 0;
     font-size: 1rem;
     padding: 2px 2rem;
-    color: $color-white;
+    color: $color-grey-text;
     p {
       font-size: 2em;
       line-height: 1.25;
@@ -93,12 +83,6 @@
       margin-left: auto;
       border-right: $textbox-bar-width solid $color-green;
     }
-    // @include for-tablet-portrait-down {
-    //   font-size: 2.2rem;
-    // }
-    // @include for-mobile-only {
-    //   font-size: 2rem;
-    // }
     @include for-tablet-portrait-down {
       margin: $base-pad-hz/8 0;
       font-size: 0.9rem;
@@ -115,12 +99,6 @@
     align-items: flex-start;
     gap: $base-pad-hz / 2;
     font-size: 1rem;
-    @include for-tablet-portrait-down {
-      li {
-        font-size: 1.6rem;
-      }
-      gap: $base-pad-hz / 8;
-    }
     .halftone {
       position: absolute;
       transform: translate(-50%, -50%);
@@ -130,33 +108,46 @@
       height: 150%;
       z-index: -5;
     }
+    @include for-tablet-portrait-down {
+      li {
+        font-size: 1.6rem;
+      }
+      gap: $base-pad-hz / 8;
+    }
+    @include for-mobile-only {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
   }
 
   &__card {
     font-size: 1rem;
     position: relative;
-    @include for-mobile-only {
-      font-size: 0.7rem;
-    }
     text-align: center;
+    @include for-mobile-only {
+      align-self: center;
+    }
 
     &__title {
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 2.4em;
+      font-size: 3em;
       font-weight: 400;
       line-height: 1;
+      @include for-tablet-portrait-down {
+        font-size: 2.4em;
+      }
     }
 
     ul {
       list-style: none;
       font-weight: 300;
       line-height: 1.2;
-      font-size: 2.2em;
+      font-size: 1rem;
       li {
+        font-size: 2em;
         &:not(:last-child) {
           padding-bottom: 1em;
-          // border-bottom: 1px solid lighten($color-black, 5%);
         }
       }
     }
@@ -174,34 +165,67 @@
 /* ----------------------------- Hire Me Section ---------------------------- */
 .hire-me {
   @include centre-on-tablet-portrait-down();
-  // margin-top: $section-begin-margin * 2;
 
-  .panel__title {
-    font-size: 4rem;
-    color: darken($color-white, 10%);
-    align-self: center;
+  .pane__title {
+    font-weight: 400;
+    text-align: center;
     text-transform: none;
   }
 
   .contact {
+    width: 100%;
+    margin-top: $base-pad-hz / 2;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: $base-pad-hz / 4;
+    @include for-tablet-portrait-down {
+      margin-top: $base-pad-hz / 8;
+      gap: $base-pad-hz / 6;
+    }
 
     &__links {
       display: flex;
-      gap: $panel-pad-h;
-      justify-content: space-evenly;
-      align-items: flex-end;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+      gap: 1rem;
+      .btn {
+        font-size: 3.2rem;
+        padding: 0.5em;
+      }
+      @include for-mobile-only {
+        padding: 0;
+        gap: 0.25rem;
+        .btn {
+          font-size: 2.4rem;
+        }
+      }
+    }
+
+    &__form-wrapper {
+      width: 100%;
     }
 
     &__message-form {
-      padding: $panel-pad-h $panel-pad-h * 2;
-      width: 100rem;
+      margin: 0 auto;
+      padding: $base-pad-hz / 4 $base-pad-hz / 2;
+      width: 55%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: $panel-pad-v;
+      gap: $base-pad-hz / 4;
+      @include for-laptop-down {
+        width: 66%;
+      }
+      @include for-tablet-portrait-down {
+        width: 90%;
+        padding: $base-pad-hz / 4 $base-pad-hz / 4;
+      }
+      @include for-mobile-only {
+        width: 100%;
+        padding: $base-pad-hz / 6 $base-pad-hz / 8;
+      }
     }
 
     .btn {

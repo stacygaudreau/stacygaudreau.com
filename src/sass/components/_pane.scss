@@ -71,7 +71,7 @@
         bottom: -5px;
         left: 0;
         background-color: $color-green-dark;
-        height: 1px;
+        height: 2px;
         width: 0%;
         transition: width $t-fast ease-out;
       }
@@ -84,6 +84,10 @@
       &:active {
         @include transform-button-down;
       }
+    }
+
+    @include for-mobile-only {
+      font-size: 3rem;
     }
   }
 
@@ -146,8 +150,4 @@ pre {
     overflow-x: scroll;
     @include disable-scrollbars;
   }
-}
-
-/* ---------------------------- Table of Contents --------------------------- */
-#TableOfContents {
 }

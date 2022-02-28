@@ -141,11 +141,12 @@
       <h2 class="section-title__text">Like what you see?</h2>
     </header>
     <section class="contact">
-      <div class="panel">
-        <h3 class="panel__title">Let's talk.</h3>
-        <div class="panel__body">
-          <div class="panel__shadow-effect"></div>
+      <div class="pane__wrapper">
+        <h3 class="pane__title">Let's talk.</h3>
+        <div class="pane">
           <div class="div contact__links">
+            <div class="pane__shadow pane__shadow--corner-t-l"></div>
+            <div class="pane__shadow pane__shadow--corner-t-l"></div>
             <a href="#email" class="btn btn--text-icon"
               ><img src="./img/i-email.svg" alt="Email" /> Email Me</a
             >
@@ -155,10 +156,11 @@
           </div>
         </div>
       </div>
-      <div class="panel">
-        <h3 class="panel__title">Send Message</h3>
-        <form class="panel__body contact__message-form">
-          <div class="panel__shadow-effect"></div>
+      <div class="pane__wrapper contact__form-wrapper">
+        <h3 class="pane__title">Send Message</h3>
+        <form class="pane contact__message-form">
+          <div class="pane__shadow pane__shadow--corner-t-r"></div>
+          <div class="pane__shadow pane__shadow--corner-t-r"></div>
           <div class="input__container">
             <label for="name" class="input__label">Name</label>
             <input type="text" name="name" id="name" class="input" />
@@ -182,6 +184,7 @@
             type="submit"
             action="submit"
           >
+            <img src="/img/i-send.svg" alt="send message icon" />
             Send Message
           </button>
         </form>

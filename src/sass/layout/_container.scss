@@ -33,8 +33,9 @@
 .section {
   max-width: $content-max-width;
   margin: 0 auto;
-  &:first-of-type {
-    margin-top: 0;
-  }
+  margin-bottom: $base-pad-hz;
   @include has-expanding-hz-padding;
+  @include for-mobile-only {
+    margin-bottom: $base-pad-hz / 2;
+  }
 }
