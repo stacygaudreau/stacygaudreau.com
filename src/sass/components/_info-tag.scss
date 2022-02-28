@@ -26,6 +26,12 @@
     font-size: 1.8rem;
     text-transform: none;
     font-weight: 400;
+    @include for-tablet-portrait-down {
+      font-size: 1.6rem;
+    }
+    @include for-mobile-only {
+      font-size: 1.2rem;
+    }
   }
 
   &--light {

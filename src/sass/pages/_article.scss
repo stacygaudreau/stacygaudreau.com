@@ -4,7 +4,8 @@
 
 .article {
   $p-top: 6rem;
-  $m-right: 3em;
+  $p-top-mobile: $p-top / 4;
+  $m-right: 3rem;
   $col-w: 70%;
   font-size: 1rem;
 
@@ -18,6 +19,9 @@
 
   &__intro {
     margin-top: $p-top;
+    @include for-mobile-only {
+      margin-top: $p-top-mobile;
+    }
   }
 
   &__bg {
@@ -39,6 +43,9 @@
     position: relative;
     font-size: 1em;
     padding-top: #{$navbar-height + $p-top};
+    @include for-mobile-only {
+      padding-top: #{$navbar-height + $p-top-mobile};
+    }
 
     h1 {
       letter-spacing: -0.5px;
@@ -46,6 +53,12 @@
       font-weight: 500;
       margin: 0.6em 0;
       line-height: 1;
+      @include for-tablet-portrait-down {
+        font-size: 4.2em;
+      }
+      @include for-mobile-only {
+        font-size: 2.8em;
+      }
     }
 
     p {
@@ -55,8 +68,11 @@
       padding-right: $m-right;
       @include for-tablet-portrait-down {
         padding-right: $m-right / 2;
+        width: 90%;
+        font-size: 2.2em;
       }
       @include for-mobile-only {
+        font-size: 1.6em;
         padding-right: $m-right / 3;
       }
       line-height: 1.125;
@@ -97,6 +113,9 @@
     font-size: 1.8em;
     color: $color-blue-bright;
     font-family: $heading-font;
+    @include for-mobile-only {
+      font-size: 1.4em;
+    }
   }
 
   &__categories,
@@ -135,6 +154,14 @@
       &--tags {
         order: 1;
       }
+    }
+    @include for-tablet-portrait-down {
+      width: 90%;
+    }
+    @include for-mobile-only {
+      width: 100%;
+      margin-bottom: $p-top-mobile * 2;
+      margin-top: 1.5em;
     }
     &--date {
       margin-right: $m-right;

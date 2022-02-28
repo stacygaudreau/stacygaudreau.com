@@ -10,14 +10,6 @@
   padding: 2em;
 }
 
-@mixin has-collapsing-hz-pane-margin {
-  // margin-right: 0.5rem;
-  // margin: 0 4rem;
-  @include for-tablet-portrait-down {
-    margin: 0;
-  }
-}
-
 .pane {
   font-size: 1rem;
   @include is-bordered-pane;
@@ -143,7 +135,6 @@ pre {
   p:last-child {
     margin-bottom: 0;
   }
-  @include has-collapsing-hz-pane-margin;
   margin-bottom: 2em;
 }
 

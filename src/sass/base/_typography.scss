@@ -28,12 +28,21 @@ h2 {
   font-size: 3.8em;
   margin-top: 1em;
   margin-bottom: 0.5em;
+  @include for-mobile-only {
+    font-size: 2.4em;
+  }
 }
 h3 {
   font-size: 2.4em;
+  @include for-mobile-only {
+    font-size: 2em;
+  }
 }
 h4 {
   font-size: 2em;
+  @include for-mobile-only {
+    font-size: 1.8em;
+  }
 }
 h5 {
   font-size: 1.8em;
@@ -59,13 +68,17 @@ h5 {
 code,
 .codeblock__title {
   font-family: $mono-font;
-  font-size: 1.6em;
+  font-size: 1.6rem;
 }
 code {
   font-weight: 300;
 }
 .codeblock__title {
   color: $color-primary-highlight;
+  @include for-mobile-only {
+    margin-bottom: 0.1em;
+    margin-left: 0.25em;
+  }
 }
 
 /* ------------------------------- Block Text ------------------------------- */
@@ -73,9 +86,6 @@ p {
   font-size: 1.6em;
   line-height: 1.5;
   margin: 0.5em 0;
-  &:last-of-type {
-    margin-bottom: 1.5em;
-  }
 }
 p + p {
   margin-top: 1em;
