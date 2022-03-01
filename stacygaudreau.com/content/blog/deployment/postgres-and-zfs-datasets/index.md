@@ -5,7 +5,7 @@ categories: ['Databases', 'Storage']
 tags: ['ZFS', 'PostgreSQL', 'Postgres', 'Performance']
 type: 'article'
 date: 2022-02-24T07:18:16-05:00
-draft: true
+draft: false
 ---
 
 ## Setup

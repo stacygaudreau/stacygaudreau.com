@@ -24,10 +24,14 @@ h6,
   margin: 0.5em 0;
   font-weight: 500;
 }
+.article {
+  h2 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+}
 h2 {
   font-size: 3.8em;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
   @include for-mobile-only {
     font-size: 2.4em;
   }
