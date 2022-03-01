@@ -7,7 +7,10 @@
 }
 
 @mixin has-pane-padding {
-  padding: 2em;
+  padding: 2.5em;
+  @include for-tablet-portrait-down {
+    padding: 1.5em;
+  }
 }
 
 .pane {

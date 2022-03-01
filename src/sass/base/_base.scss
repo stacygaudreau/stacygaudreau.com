@@ -36,6 +36,7 @@ html {
   @include for-mobile-only {
     scroll-padding-top: 2rem;
   }
+  scroll-behavior: smooth;
 }
 
 /* font/global properties in body selector */
@@ -44,8 +45,6 @@ body {
   margin: 0 auto;
   background-color: $color-black;
   color: $color-white;
-  // min-height: 100vh;
-  // max-width: $max-width;
 }
 
 main {
