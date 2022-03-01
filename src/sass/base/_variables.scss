@@ -60,7 +60,9 @@ $nav-max-width: 192rem + 1.5rem;
 $main-padding: 16rem;
 $base-pad-hz: 16rem;
 $navbar-height: 5.4rem;
-$mobile-navbar-height: $navbar-height * 1.2;
+$navbar-height-on-tablet: $navbar-height * 0.75;
+$navbar-height-on-mobile: $navbar-height * 2/3;
+$bottom-navbar-height: $navbar-height * 1.2;
 $textbox-bar-width: 5px;
 $section-begin-margin: $main-padding;
 

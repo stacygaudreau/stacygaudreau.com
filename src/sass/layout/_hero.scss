@@ -21,7 +21,7 @@
       padding-top: 8rem;
     }
     @include for-mobile-only {
-      padding: 2rem + $navbar-height 3rem 2rem + $mobile-navbar-height 3rem;
+      padding: 2rem + $navbar-height 3rem 2rem + $bottom-navbar-height 3rem;
     }
   }
 
@@ -113,8 +113,10 @@
       top: 0;
       content: '';
       display: block;
-      background: url('../img/spacebg.png') no-repeat center fixed;
-      opacity: 0.1;
+      background: $color-black-2;
+      background: url('../img/bg-1920x1200.jpg') no-repeat center fixed;
+      background-size: cover;
+      opacity: 0.2;
     }
   }
 }

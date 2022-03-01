@@ -31,7 +31,8 @@
     top: 0;
     left: 0;
     display: block;
-    background: url('../img/spacebg.png') no-repeat center fixed;
+    background: url('../img/bg-1920x1200.jpg') no-repeat center fixed;
+    background-size: cover;
     opacity: 0.1;
     height: 70%;
     @include for-tablet-portrait-down {

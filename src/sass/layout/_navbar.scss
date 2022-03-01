@@ -5,10 +5,10 @@
   height: $navbar-height;
   width: 100%;
   @include for-tablet-portrait-down {
-    height: $navbar-height * 3 / 4;
+    height: $navbar-height-on-tablet;
   }
   @include for-mobile-only {
-    height: $navbar-height * 2 / 3;
+    height: $navbar-height-on-mobile;
     position: absolute;
   }
   &__content {
@@ -99,7 +99,7 @@
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    height: $mobile-navbar-height;
+    height: $bottom-navbar-height;
   }
 
   &__item {

@@ -1,0 +1,6 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}" class="heading">
+  {{ .Text | safeHTML }}
+    <a href="#{{ .Anchor | safeURL }}">
+        <img src="/img/i-link.svg" alt="link icon">
+    </a>
+</h{{ .Level }}>

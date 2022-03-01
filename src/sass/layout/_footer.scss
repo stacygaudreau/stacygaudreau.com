@@ -22,7 +22,9 @@
     left: 0;
     top: 0;
     display: block;
-    background: url('../img/spacebg.png');
+    background: $color-black-2;
+    background: url('../img/bg-1920x1200.jpg');
+    background-size: cover;
     opacity: 0.2;
   }
 

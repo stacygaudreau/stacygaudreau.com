@@ -154,3 +154,12 @@ temp/
 # Ignore all local history of files
 .history
 .ionide
+
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/

@@ -27,6 +27,17 @@ body {
   box-sizing: border-box;
 }
 
+// adjust scrolled link pos. to account for navbar height
+html {
+  scroll-padding-top: $navbar-height + 2rem;
+  @include for-tablet-portrait-down {
+    scroll-padding-top: $navbar-height-on-tablet + 1.6rem;
+  }
+  @include for-mobile-only {
+    scroll-padding-top: 2rem;
+  }
+}
+
 /* font/global properties in body selector */
 body {
   font-size: 1rem;

@@ -26,8 +26,20 @@ h6,
 }
 .article {
   h2 {
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+    margin-top: 1.1em;
+    margin-bottom: 0.4em;
+  }
+  h3 {
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+  }
+  h4 {
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+  }
+  h5 {
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
   }
 }
 h2 {
@@ -60,6 +72,25 @@ h5 {
   margin-left: 1.5rem;
   margin-top: 1em;
   font-weight: 500;
+}
+
+/* ------------------ Anchor Link to Heading (Hugo Content) ----------------- */
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  a {
+    img {
+      height: 0.75em;
+    }
+    opacity: 0;
+    transition: opacity $t-med;
+  }
+  &:hover {
+    a {
+      opacity: 1;
+    }
+  }
 }
 
 /* ------------------------------ Block Quotes ------------------------------ */
