@@ -68,7 +68,7 @@
     padding: 2px 2rem;
     color: $color-grey-text;
     p {
-      font-size: 2em;
+      font-size: 1.9em;
       line-height: 1.25;
     }
     &--left {
@@ -120,6 +120,7 @@
     @include for-mobile-only {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(3, 1fr);
+      gap: $base-pad-hz / 10;
     }
   }
 
@@ -166,7 +167,7 @@
       margin-top: $base-pad-hz / 6;
     }
     @include for-mobile-only {
-      margin: $base-pad-hz / 8 0;
+      margin: $base-pad-hz / 4 0;
     }
   }
 }
@@ -189,7 +190,7 @@
     align-items: center;
     gap: $base-pad-hz / 4;
     @include for-tablet-portrait-down {
-      margin-top: $base-pad-hz / 8;
+      margin-top: $base-pad-hz / 4;
       gap: $base-pad-hz / 6;
     }
 

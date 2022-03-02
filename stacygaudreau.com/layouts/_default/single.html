@@ -9,24 +9,43 @@
     </div>
     <div class="article__header-content">
       <div class="article__categories">
-        {{ range .Params.Categories }}
-        <a href="">{{.}}</a>
+        {{ if eq .Type "article" }} 
+          {{ range .Params.Categories }}
+            <a href="" class="article__category">{{.}}</a>
+          {{ end }} 
+        {{ end }}
+        {{ if eq .Type "project" }}
+          <span class="article__category">{{ .Params.projectType }}</span>
         {{ end }}
       </div>
       <h1>{{ .Title }}</h1>
       <p>{{ .Description }}</p>
       <div class="article__meta">
         <div class="article__meta--tags">
-          {{ range .Params.Tags }}
-          <span class="info-tag info-tag--meta">{{.}}</span>
+          {{ if eq .Type "article" }}
+            {{ range .Params.Tags }}
+              <span class="info-tag info-tag--meta">{{.}}</span>
+            {{ end }}
+          {{ end }}
+          {{ if eq .Type "project" }}
+            {{ range .Params.stack }}
+              <span class="info-tag info-tag--meta">{{.}}</span>
+            {{ end }}
           {{ end }}
         </div>
         <span class="article__meta--date">
-          {{ .Date | time.Format ":date_long" }}
+          {{ if eq .Type "article" }} 
+            {{ .Date | time.Format ":date_long" }}
+          {{ end }}
+          {{ if eq .Type "project" }}
+            {{ if .Params.isWorkInProgress }}
+              Work in Progress
+            {{ end }}
+          {{ end }}
         </span>
       </div>
       <!-- Main Feature Image -->
-      {{ with .Resources.GetMatch "images/main.*" }}
+      {{ with .Resources.GetMatch "images/feature.*" }}
       <div class="article__image--main pane pane--has-image">
         <img src="{{.RelPermalink}}" alt="" />
         <div class="pane__shadow pane__shadow--corner-t-l"></div>

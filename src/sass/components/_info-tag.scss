@@ -18,9 +18,6 @@
   @include for-tablet-portrait-down {
     font-size: 1.6rem;
   }
-  @include for-mobile-only {
-    font-size: 1.5rem;
-  }
 
   &--meta {
     font-size: 1.8rem;

@@ -35,6 +35,7 @@ html {
   }
   @include for-mobile-only {
     scroll-padding-top: 2rem;
+    // scroll-padding-top: 0.5rem;
   }
   scroll-behavior: smooth;
 }

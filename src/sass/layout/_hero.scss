@@ -30,6 +30,9 @@
     justify-content: space-between;
     align-items: center;
     gap: 8rem;
+    @include for-laptop-down {
+      gap: 3rem;
+    }
     @include for-tablet-portrait-down {
       flex-direction: column;
       gap: 6rem;
@@ -82,7 +85,7 @@
       }
     }
     @include for-laptop-down {
-      max-width: 85%;
+      max-width: 60%;
     }
     @include for-tablet-portrait-down {
       align-self: flex-start;

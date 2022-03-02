@@ -34,16 +34,18 @@
     margin: $base-pad-hz/4 0;
   }
 
-  .pane {
-    font-size: 1.2rem;
-  }
-
   &__image {
     z-index: -1;
     width: 150%;
     padding: 0;
     img {
       width: 100%;
+    }
+    @include for-tablet-portrait-down {
+      margin-bottom: $base-pad-hz / 8;
+    }
+    @include for-mobile-only {
+      margin-bottom: $base-pad-hz / 16;
     }
   }
 
