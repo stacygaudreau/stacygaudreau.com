@@ -1,6 +1,6 @@
 baseURL = ''
 languageCode = 'en-us'
-title = 'Stacy Gaudreau'
+title = 'Software and DevOps Developer'
 assetDir = '../src'
 staticDir = '../static'
 disableKinds = ['skill']
