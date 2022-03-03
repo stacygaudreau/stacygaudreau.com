@@ -20,9 +20,11 @@ class Lightbox {
   /** Select a potential sibling <figcaption> element from the target */
   getCaptionIfExists() {
     let caption = this.target.nextElementSibling;
-    if (caption.nodeName === 'FIGCAPTION')
-      return caption !== 'undefined' ? caption : false;
-    else return false;
+    if (caption !== null) {
+      if (caption.nodeName === 'FIGCAPTION')
+        return caption !== 'undefined' ? caption : false;
+      else return false;
+    }
   }
 
   /** Returns a clone of the container element to be inserted into

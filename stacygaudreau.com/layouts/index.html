@@ -37,7 +37,6 @@
     {{ range (where .Site.Pages "Type" "project") }}
 
     <article class="project">
-      <!-- <div class="orbits"></div> -->
       <div class="halftone"></div>
       <div class="halftone"></div>
       <section class="pane__wrapper">
@@ -73,7 +72,7 @@
           {{ with .Resources.GetMatch "images/feature.*" }}
             src="{{.RelPermalink}}" 
           {{ end }} 
-          alt="{{ .Params.shortTitle }} project image" 
+          alt="{{ .Params.shortTitle }} project image"
         />
       </div>
     </article>
