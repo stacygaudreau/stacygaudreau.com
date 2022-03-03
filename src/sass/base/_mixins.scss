@@ -9,6 +9,12 @@
   }
 }
 
+@mixin for-mobile-landscape-only {
+  @media only screen and (max-height: 599.95px) and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin for-tablet-portrait-down {
   @media (max-width: 899.95px) {
     @content;

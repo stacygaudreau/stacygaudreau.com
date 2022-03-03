@@ -3,42 +3,105 @@
 /* -------------------------------------------------------------------------- */
 
 .lightbox {
-  // the target image (or container) to feature in the lightbox
-  &__target {
-    // width: 90%;
-    img {
-      // width: 100%;
+  $color-bg: $color-black;
+  $color-bg-light: lighten($color-bg, 5%);
+  // the displayed media (image, or div of other kind) within the lightbox
+  &__media {
+  }
+
+  &__caption {
+    font-family: $heading-font;
+    font-weight: 300;
+    @include for-tablet-landscape-down {
+      font-size: 1.6rem;
     }
   }
 
   &__close-btn {
-    position: absolute;
-    right: 0;
-    top: 0;
     @include is-svg-content-resizeable-as-bg('/img/i-close.svg');
-
+    border: none;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-color: transparent;
     width: 3rem;
     height: 3rem;
+    &:active {
+      transform: translate(2px, 2px) scale(0.98);
+    }
+    @include for-mobile-only {
+      width: 2rem;
+      height: 2rem;
+    }
+    @include for-mobile-landscape-only {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   // the backdrop element behind the target image/container
   &__backdrop {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     position: fixed;
+    padding: 4rem;
     top: 0;
     left: 0;
     z-index: 9998;
     height: 100vh;
     width: 100vw;
-    background-color: rgba($color-black, 0.8);
+    background-color: rgba($color-bg, 0.9);
+    background-image: linear-gradient(
+      135deg,
+      $color-bg 0,
+      $color-bg 50%,
+      $color-bg-light 100%
+    );
 
     &--hidden {
       opacity: 0;
       visibility: hidden;
       display: none;
+    }
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+      display: unset;
+    }
+    @include for-mobile-only {
+      padding: 0;
+    }
+    @include for-mobile-landscape-only {
+      padding: 0;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: $content-max-width;
+    @include for-tablet-portrait-down {
+      width: 95%;
+    }
+    @include for-mobile-landscape-only {
+      width: 66%;
+      max-height: 90%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    @include for-mobile-only {
+      padding: 1rem 0.5rem;
+    }
+    @include for-mobile-landscape-only {
+      padding: 1rem 0.5rem;
     }
   }
 }
