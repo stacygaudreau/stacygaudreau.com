@@ -8,8 +8,9 @@
   font-size: 2.4rem;
   font-family: $heading-font;
   text-transform: uppercase;
-  color: $color-panel-2;
-  background-color: $color-black-2;
+  // color: $color-panel-2;
+  color: lighten($color-panel, 25%);
+  background-color: $color-black-3;
   padding: 0rem 0.625em;
   margin: 0;
   @include for-laptop-down {
@@ -23,6 +24,7 @@
     font-size: 1.8rem;
     text-transform: none;
     font-weight: 400;
+    // color: $color-white;
     @include for-tablet-portrait-down {
       font-size: 1.6rem;
     }
@@ -33,7 +35,7 @@
 
   &--light {
     background-color: $color-black-3;
-    color: $color-panel-2;
+    color: lighten($color-panel, 20%);
     font-weight: 400;
   }
 }

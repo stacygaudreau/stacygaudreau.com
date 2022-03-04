@@ -92,8 +92,8 @@ class Lightbox {
 
   static _genBackdropElement() {
     let bd = document.createElement('div');
-    bd.classList.add('lightbox__backdrop');
-    // bd.classList.add('lightbox__backdrop', 'lightbox__backdrop--hidden');
+    // bd.classList.add('lightbox__backdrop');
+    bd.classList.add('lightbox__backdrop', 'lightbox__backdrop--hidden');
     return bd;
   }
 

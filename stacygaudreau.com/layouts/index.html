@@ -69,7 +69,7 @@
       <div class="project__image">
         <!-- prettier-ignore -->
         <img 
-          {{ with .Resources.GetMatch "images/feature.*" }}
+          {{ with .Resources.GetMatch "images/preview.*" }}
             src="{{.RelPermalink}}" 
           {{ end }} 
           alt="{{ .Params.shortTitle }} project image"

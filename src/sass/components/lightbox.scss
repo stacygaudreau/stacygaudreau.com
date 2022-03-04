@@ -5,9 +5,7 @@
 .lightbox {
   $color-bg: $color-black;
   $color-bg-light: lighten($color-bg, 5%);
-  // the displayed media (image, or div of other kind) within the lightbox
-  &__media {
-  }
+  $max-media-width: $content-max-width;
 
   &__caption {
     font-family: $heading-font;
@@ -82,7 +80,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
-    max-width: $content-max-width;
+    max-width: $max-media-width;
     @include for-tablet-portrait-down {
       width: 95%;
     }
