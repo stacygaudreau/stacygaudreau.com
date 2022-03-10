@@ -9,7 +9,7 @@
     </div>
     <div class="article__header-content">
       <div class="article__categories">
-        {{ if eq .Type "article" }} 
+        {{ if eq .Type "blog" }} 
           {{ range .Params.Categories }}
             <a href="" class="article__category">{{.}}</a>
           {{ end }} 
@@ -22,7 +22,7 @@
       <p>{{ .Description }}</p>
       <div class="article__meta">
         <div class="article__meta--tags">
-          {{ if eq .Type "article" }}
+          {{ if eq .Type "blog" }}
             {{ range .Params.Tags }}
               <span class="info-tag info-tag--meta">{{.}}</span>
             {{ end }}
@@ -34,7 +34,7 @@
           {{ end }}
         </div>
         <span class="article__meta--date">
-          {{ if eq .Type "article" }} 
+          {{ if eq .Type "blog" }} 
             {{ .Date | time.Format ":date_long" }}
           {{ end }}
           {{ if eq .Type "project" }}

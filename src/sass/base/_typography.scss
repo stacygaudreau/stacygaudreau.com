@@ -108,6 +108,11 @@ code,
 code {
   font-weight: 300;
 }
+p {
+  code {
+    color: $color-green;
+  }
+}
 .codeblock__title {
   color: $color-primary-highlight;
   @include for-mobile-only {
