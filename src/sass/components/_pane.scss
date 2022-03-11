@@ -120,8 +120,17 @@ blockquote,
 pre {
   @include is-bordered-pane;
   @include has-pane-padding;
-  p:last-child {
+  p {
+    margin: 0.5em 0;
+  }
+  p:first-of-type {
+    margin-top: 0;
+  }
+  p:last-of-type {
     margin-bottom: 0;
+  }
+  p:only-of-type {
+    margin: 0;
   }
   margin-bottom: 2em;
 }
