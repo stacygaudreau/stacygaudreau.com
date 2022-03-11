@@ -7,6 +7,12 @@
   $color-bg-light: lighten($color-bg, 5%);
   $max-media-width: $content-max-width;
 
+  &__target {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &__caption {
     font-family: $heading-font;
     font-weight: 300;
@@ -54,6 +60,10 @@
       $color-bg 50%,
       $color-bg-light 100%
     );
+
+    &:hover {
+      cursor: pointer;
+    }
 
     &--hidden {
       opacity: 0;

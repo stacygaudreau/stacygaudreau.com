@@ -49,6 +49,8 @@
     letter-spacing: 1px;
     font-weight: 500;
 
+    @include is-link-with-animated-underline($color-green-dark, 85%, 5px);
+
     &--for-project {
       position: relative;
       align-self: flex-start;
@@ -62,27 +64,6 @@
       }
       @include for-tablet-portrait-down {
         align-self: center;
-      }
-      &:before {
-        // horizontal animated rule under anchor text
-        z-index: -1;
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        background-color: $color-green-dark;
-        height: 2px;
-        width: 0%;
-        transition: width $t-fast ease-out;
-      }
-      &:hover,
-      &:active {
-        &:before {
-          width: 85%;
-        }
-      }
-      &:active {
-        @include transform-button-down;
       }
     }
 

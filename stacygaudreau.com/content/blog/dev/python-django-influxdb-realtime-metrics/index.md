@@ -7,9 +7,15 @@ date: 2022-03-10T16:11:00-05:00
 draft: true
 ---
 
-## First Heading After ToC
+## Requirements
 
-Do dee doo write some stuff here.
+Setting up an InfluxDB deployment is out of the scope of this guide, but you can check out my how-to here [link].
+
+The quickest way to get up and running is to [sign up for a free account](https://cloud2.influxdata.com/signup) with InfluxData. They offer a limited but very useful free cloud tier of InfluxDB.
+
+\Note: InfluxDB Versions
+
+> This guide is for **Influxdb v2.0**, _not_ an older version like v1.6. The query language (Flux) and infrastructure changed significantly, along with the Python client.
 
 \This is how to make a Code block title
 

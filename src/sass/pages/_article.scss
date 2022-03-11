@@ -174,4 +174,10 @@
       }
     }
   }
+
+  // links
+  a {
+    color: $color-green-highlight;
+    @include is-link-with-animated-underline($color-green-dark, 100%, 2px);
+  }
 }

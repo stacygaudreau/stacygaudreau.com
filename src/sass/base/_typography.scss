@@ -191,3 +191,29 @@ p + p {
     left: 102%;
   }
 }
+
+/* ---------------------- Links With Animated Underline --------------------- */
+@mixin is-link-with-animated-underline($color, $underline_w, $underline_dY) {
+  position: relative;
+  &:before {
+    // horizontal animated rule under anchor text
+    z-index: -1;
+    content: '';
+    position: absolute;
+    bottom: -$underline_dY;
+    left: 0;
+    background-color: $color;
+    height: 2px;
+    width: 0%;
+    transition: width $t-fast ease-out;
+  }
+  &:hover,
+  &:active {
+    &:before {
+      width: $underline_w;
+    }
+  }
+  &:active {
+    @include transform-button-down;
+  }
+}
