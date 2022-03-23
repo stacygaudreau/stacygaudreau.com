@@ -121,14 +121,35 @@ p {
   }
 }
 
+/* ---------------------------------- Lists --------------------------------- */
+ul,
+ol {
+  font-size: 1.6rem;
+  margin: 0.7em 0;
+  margin-left: 3em;
+  @include for-mobile-only {
+    margin-left: 1.8em;
+  }
+}
+
 /* ------------------------------- Block Text ------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  p {
+    margin-top: 1em;
+  }
+}
 p {
   font-size: 1.6em;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0.5em 0;
 }
 p + p {
-  margin-top: 1em;
+  margin-top: 0.65em;
 }
 
 /* ----------------------------- Section Titles ----------------------------- */
