@@ -49,9 +49,8 @@
     letter-spacing: 1px;
     font-weight: 500;
 
-    @include is-link-with-animated-underline($color-green-dark, 85%, 5px);
-
     &--for-project {
+      @include is-link-with-animated-underline($color-green-dark, 85%, 5px);
       position: relative;
       align-self: flex-start;
       a {
