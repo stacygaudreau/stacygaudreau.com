@@ -12,6 +12,37 @@ date: 2022-02-25T10:06:03-05:00
 draft: false
 ---
 
+## Technical Features
+
+RateMyDerp is a full stack web application.
+
+#### Backend
+
+Written in Python using the [Django web framework](https://www.djangoproject.com/), the backend features
+
+- Test-driven development through unit testing with `pytest`
+- Relational data via a PostgreSQL database
+- Authorisation flow with emails, password reset, etc.
+- Async and periodic task scheduling via [Celery](https://docs.celeryq.dev/)
+- Industry best practices for a production grade Django application
+
+#### Frontend
+
+In addition to the Django template language/HTML, the presentation layer is comprised of
+
+- JavaScript ES6 modules, bundled with [rollup.js](https://rollupjs.org/guide/en/)
+- Sass compiled into CSS
+- A build and transpilation pipeline run by the [Gulp](https://gulpjs.com/) task runner
+
+#### Monitoring & Dashboarding
+
+#### Deployment
+
+- Backend written in Python using the [Django web framework](https://www.djangoproject.com/)
+- a PostgreSQL database
+-
+- [InfluxDB OSS v2.1](https://docs.influxdata.com/influxdb/v2.1/)
+
 ## Deployment
 
 Deployment consists of a couple major parts: initial provisioning of infrastructure and then the actual software deployment.
