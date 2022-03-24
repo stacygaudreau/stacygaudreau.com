@@ -184,4 +184,18 @@
       @include is-link-with-animated-underline($color-green-dark, 100%, 2px);
     }
   }
+
+  /* ---------------------------------- Lists --------------------------------- */
+  ul,
+  ol {
+    font-size: 1.6rem;
+    margin: 0.7em 0;
+    margin-left: 3em;
+    @include for-mobile-only {
+      margin-left: 1.8em;
+    }
+    li {
+      margin: 0.15em 0;
+    }
+  }
 }

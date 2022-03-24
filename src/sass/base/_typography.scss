@@ -108,9 +108,10 @@ code,
 code {
   font-weight: 300;
 }
-p {
+p,
+li {
   code {
-    color: $color-green;
+    color: darken($color-blue-bright, 5%);
   }
 }
 .codeblock__title {
@@ -118,17 +119,6 @@ p {
   @include for-mobile-only {
     margin-bottom: 0.1em;
     margin-left: 0.25em;
-  }
-}
-
-/* ---------------------------------- Lists --------------------------------- */
-ul,
-ol {
-  font-size: 1.6rem;
-  margin: 0.7em 0;
-  margin-left: 3em;
-  @include for-mobile-only {
-    margin-left: 1.8em;
   }
 }
 

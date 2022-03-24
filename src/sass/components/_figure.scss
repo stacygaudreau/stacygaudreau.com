@@ -5,6 +5,7 @@
 figure {
   text-align: right;
   width: 45%;
+  margin: 4rem auto;
 
   figcaption {
     font-family: $heading-font;
@@ -12,25 +13,9 @@ figure {
     font-size: 1.4em;
     margin-top: 0.3em;
   }
+
   img {
     width: 100%;
-  }
-
-  &:nth-of-type(odd),
-  &:nth-of-type(even) {
-    margin: 2rem 4rem;
-  }
-
-  &:nth-of-type(odd) {
-    float: left;
-    text-align: left;
-    margin-left: 0;
-  }
-
-  &:nth-of-type(even) {
-    float: right;
-    text-align: right;
-    margin-right: 0;
   }
 
   @include for-laptop-down {
@@ -41,18 +26,11 @@ figure {
   }
   @include for-tablet-portrait-down {
     width: 60%;
-    &:nth-of-type(odd),
-    &:nth-of-type(even) {
-      float: unset;
-      margin: 2rem auto;
-      text-align: center;
-    }
+    margin: 2rem auto;
+    text-align: center;
   }
   @include for-mobile-only {
     width: 100%;
-    &:nth-of-type(odd),
-    &:nth-of-type(even) {
-      margin: 2rem auto;
-    }
+    margin: 2rem auto;
   }
 }
