@@ -8,7 +8,7 @@ demoUrl: 'https://ratemyderp.com'
 isWorkInProgress: false
 projectType: 'Full Stack Web Application'
 type: 'project'
-date: 2022-02-25T10:06:03-05:00
+date: 2022-03-01T10:06:03-05:00
 draft: false
 ---
 

@@ -1,3 +1,5 @@
-RateMyDerp.com is a full-stack web application. It's an homage to the "Rating Sites" of the early 2000's (HotOrNot, RateMyFace, etc.)
+RateMyDerp.com is a production-level full stack web application, with a backend written in Python.
 
-Users vote on "derps" that others have submitted in order to see the next image from the database. The site currently has over 1000 users, with more than 500 user submissions.
+Visitors -- anonymous, or registered users -- rate photos of pet animals which others have submitted, in order to be rewarded with a new image from the database.
+
+An InfluxDB timeseries database provides real-time application monitoring and KPI dashboard functionality.

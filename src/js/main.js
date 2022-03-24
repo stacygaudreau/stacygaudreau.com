@@ -2,14 +2,16 @@
 /*                                MAIN SCRIPTS                                */
 /* -------------------------------------------------------------------------- */
 
+import HugoContentHelpers from './HugoContentHelpers';
+import Lightbox from './SimpleLightbox';
+import TableOfContents from './TableOfContents';
+
 /* ------------------------------ NavBar State ------------------------------ */
 let state = {
   isScrolled: false,
 };
 let navBar;
-
-import HugoContentHelpers from './HugoContentHelpers';
-import Lightbox from './SimpleLightbox';
+let toc = new TableOfContents();
 
 /* ------------------------------ Document Load ----------------------------- */
 window.addEventListener('DOMContentLoaded', e => {
@@ -21,6 +23,7 @@ window.addEventListener('DOMContentLoaded', e => {
     setScrollTrue();
   }
   Lightbox.initAll();
+  toc.init();
 });
 
 /* ----------------------------- Scroll Handler ----------------------------- */

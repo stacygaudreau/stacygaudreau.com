@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/*                          Hugo SSG Content Helpers                          */
+/* -------------------------------------------------------------------------- */
 //  Custom <blockquote> and <code> block content helpers for
 //  rendering Hugo static content pages
 

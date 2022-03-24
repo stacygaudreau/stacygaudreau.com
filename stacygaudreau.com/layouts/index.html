@@ -54,9 +54,13 @@
               <a href="{{ .Permalink }}" class="btn btn--small btn--green"
                 >Documentation</a
               >
-              <a href="{{ .Params.codeUrl }}" class="btn btn--small btn--blue"
-                >Code</a
+              {{ with .Params.codeUrl }}
+              <a href="{{ . }}" class="btn btn--small btn--blue">Code</a>
+              {{ else }}
+              <a href="{{ .Params.demoUrl }}" class="btn btn--small btn--blue"
+                >Demo</a
               >
+              {{ end }}
             </div>
             <div class="project__tags">
               {{ range .Params.stack }}

@@ -9,6 +9,7 @@
   }
   padding-left: 4rem;
   .btn {
+    line-height: 1;
     font-size: 1.8rem;
     img {
       height: 0.3em;
@@ -16,6 +17,26 @@
     padding: 0;
   }
   margin-top: 2rem;
+  &--is-open {
+    .btn {
+      img {
+        transform: rotateZ(0deg);
+      }
+    }
+    #TableOfContents {
+      display: unset;
+    }
+  }
+  &--is-closed {
+    .btn {
+      img {
+        transform: rotateZ(-90deg);
+      }
+    }
+    #TableOfContents {
+      display: none;
+    }
+  }
 }
 
 #TableOfContents {
@@ -31,6 +52,9 @@
     li {
       line-height: 1.2;
       margin: 0;
+    }
+    &:first-child {
+      margin-top: 1em;
     }
   }
 }
