@@ -13,6 +13,6 @@ disableKinds = ['skill']
     noClasses=false
 
 [params]
-  cvDownloadUrl = ''
+  cvDownloadUrl = '/CV-StacyGaudreau.pdf'
   linkedinUrl = 'https://www.linkedin.com/in/stacy-gaudreau'
   contactEmail = 'contact@stacygaudreau.com'

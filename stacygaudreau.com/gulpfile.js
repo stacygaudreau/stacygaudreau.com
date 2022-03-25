@@ -71,4 +71,10 @@ function images(cb) {
   cb();
 }
 
-exports.build = series(clean, parallel(css, js, markup, images, xml));
+function etc(cb) {
+  // copy remaining filetypes over
+  src([`${BASE_DIR.SRC}/**/*.pdf`]).pipe(dest(BASE_DIR.OUT));
+  cb();
+}
+
+exports.build = series(clean, parallel(css, js, markup, images, xml, etc));
