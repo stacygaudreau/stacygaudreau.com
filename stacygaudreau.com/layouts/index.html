@@ -65,12 +65,14 @@
       </section>
       <div class="project__image">
         <!-- prettier-ignore -->
-        <img 
-          {{ with .Resources.GetMatch "images/preview.*" }}
-            src="{{.RelPermalink}}" 
-          {{ end }} 
-          alt="{{ .Params.shortTitle }} project image"
-        />
+        <a href="{{ .RelPermalink }}">
+          <img 
+            {{ with .Resources.GetMatch "images/preview.*" }}
+              src="{{.RelPermalink}}" 
+            {{ end }} 
+            alt="{{ .Params.shortTitle }} project image"
+          />
+        </a>
       </div>
     </article>
     {{ end }}
