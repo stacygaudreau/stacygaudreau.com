@@ -1,3 +1,4 @@
 # messy hugo/html template files with hugo pipes syntax
 stacygaudreau.com/layouts/partials/stylesheets.html
 stacygaudreau.com/layouts/_default/single.html
+stacygaudreau.com/layouts/index.html

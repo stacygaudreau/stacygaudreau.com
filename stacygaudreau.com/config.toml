@@ -11,3 +11,8 @@ disableKinds = ['skill']
     endLevel = 4
   [markup.highlight]
     noClasses=false
+
+[params]
+  cvDownloadUrl = ''
+  linkedinUrl = 'https://www.linkedin.com/in/stacy-gaudreau'
+  contactEmail = 'contact@stacygaudreau.com'

@@ -6,6 +6,7 @@ stack: ['Hugo', 'JavaScript', 'Sass', 'CSS', 'HTML']
 codeUrl: '#url-to-code-repo'
 demoUrl: 'https://www.hexinverter.net'
 isWorkInProgress: false
+disableDemoBtn: true
 projectType: 'An Application'
 type: 'project'
 date: 2022-02-26T10:04:03-05:00

@@ -6,6 +6,7 @@ stack: ['C++', 'JUCE']
 codeUrl: ''
 demoUrl: 'https://youtu.be/2jdJ26DcbAA'
 isWorkInProgress: false
+disableDemoBtn: false
 projectType: 'Desktop Application'
 type: 'project'
 date: 2022-03-03T10:07:03-05:00

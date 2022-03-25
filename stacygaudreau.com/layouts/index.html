@@ -4,26 +4,22 @@
   <header class="hero">
     <div class="hero__bg"></div>
     <section class="hero__content">
-      <h1 class="hero__headline">
-        I turn ideas into <em>reality</em> with code
-      </h1>
-      <div class="hero__content-row">
-        <div class="hero__textbox with-textbar--left">
-          <p>
-            I'm a software developer with deep understanding of hardware systems
-          </p>
-          <p>
-            In a past life, I founded an audio synthesizer company, developing
-            and manufacturing over a dozen consumer electronic devices
-          </p>
+      {{ with .Site.GetPage "hero.md" }}
+        <h1 class="hero__headline">
+          {{ .Params.headline | safeHTML }}
+        </h1>
+        <div class="hero__content-row">
+          <div class="hero__textbox with-textbar--left">
+            {{ .Content }}
+          </div>
+          <div class="hero__cta">
+            <a href="/#projects" class="btn btn--green btn--large">
+              <img src="/img/i-eye-blk.svg" alt="see my projects" />
+              <span>See My Projects</span>
+            </a>
+          </div>
         </div>
-        <div class="hero__cta">
-          <a href="/#projects" class="btn btn--green btn--large">
-            <img src="/img/i-eye-blk.svg" alt="see my projects" />
-            <span>See My Projects</span>
-          </a>
-        </div>
-      </div>
+      {{ end }}
     </section>
   </header>
 
@@ -35,7 +31,6 @@
     </header>
     <!-- Project Features List -->
     {{ range (where .Site.Pages "Type" "project") }}
-
     <article class="project">
       <div class="halftone"></div>
       <div class="halftone"></div>
@@ -51,15 +46,13 @@
           }}
           <div class="project__meta">
             <div class="project__btns">
-              <a href="{{ .Permalink }}" class="btn btn--small btn--green"
-                >READ MORE</a
-              >
-              {{ with .Params.codeUrl }}
-              <a href="{{ . }}" class="btn btn--small btn--blue">Code</a>
-              {{ else }}
-              <a href="{{ .Params.demoUrl }}" class="btn btn--small btn--blue"
-                >Demo</a
-              >
+              <a href="{{ .Permalink }}" class="btn btn--small btn--green">READ MORE</a>
+              {{ if eq .Params.disableDemoBtn false }} 
+                {{ with .Params.codeUrl }}
+                  <a href="{{ . }}" class="btn btn--small btn--blue">Code</a>
+                {{ else }}
+                  <a href="{{ .Params.demoUrl }}" class="btn btn--small btn--blue">Demo</a>
+                {{ end }} 
               {{ end }}
             </div>
             <div class="project__tags">
@@ -92,21 +85,16 @@
       </header>
       <div class="skills__grid">
         <div class="skills__body skills__body--left">
-          <p>
-            With a decade of first-hand business experience, I'm especially
-            interested in the finance, business logic and infrastructure
-            monitoring sectors.
-          </p>
-          <p>
-            Some of my favourite languages to work in include <b>Python</b>,
-            <b>C, C++</b> and <b>JavaScript</b>. I'm currently working on
-            becoming more proficient with <b>Scala</b>.
-          </p>
+          {{ with .Site.GetPage "/skills-top.md" }}
+            {{ .Content }}
+          {{ end }}
         </div>
+        {{ if eq .Params.hasCheese true }}
+          CHEESEY
+        {{ end }}
         <section class="skills__cards">
           <!-- Skills Cards -->
           {{ range .Site.Data.skills.cards.cards }}
-
           <div class="skills__card pane__wrapper">
             <div class="halftone halftone--card halftone--dark"></div>
             <h4 class="skills__card__title pane__title">{{ .heading }}</h4>
@@ -122,19 +110,16 @@
           </div>
           {{ end }}
         </section>
-        <a href="#download-cv" class="btn btn--large btn--green">
-          <img src="./img/i-download.svg" alt="download symbol" />
-          <span>Download CV</span>
-        </a>
+        {{ with .Site.Params.cvDownloadUrl }}
+          <a href="{{ . }}" class="btn btn--large btn--green">
+            <img src="./img/i-download.svg" alt="download symbol" />
+            <span>Download CV</span>
+          </a>
+        {{ end }}
         <div class="skills__body skills__body--right">
-          <p>
-            I'm an avid "homelabber" and operate a moderate sized server rack of
-            compute and storage technology for learning and enjoyment.
-          </p>
-          <p>
-            When I'm not writing code I can be found gardening, hiking and
-            riding motorcycles.
-          </p>
+          {{ with .Site.GetPage "/skills-bottom.md" }}
+            {{ .Content }}
+          {{ end }}
         </div>
       </div>
     </div>
@@ -153,16 +138,20 @@
           <div class="div contact__links">
             <div class="pane__shadow pane__shadow--corner-t-l"></div>
             <div class="pane__shadow pane__shadow--corner-t-l"></div>
-            <a
-              href="mailto:contact@stacygaudreau.com"
-              class="btn btn--text-icon"
-              ><img src="./img/i-email.svg" alt="Email" /> Email Me</a
-            >
-            <a
-              href="https://www.linkedin.com/in/stacy-gaudreau"
-              class="btn btn--text-icon"
-              ><img src="./img/i-linkedin.svg" alt="LinkedIn" />My Profile</a
-            >
+            {{ with .Site.Params.contactEmail }}
+              <a
+                href="mailto:{{ . }}"
+                class="btn btn--text-icon"
+                ><img src="./img/i-email.svg" alt="Email" /> Email Me</a
+              >
+            {{ end }}
+            {{ with .Site.Params.linkedinUrl }}
+              <a
+                href="{{ . }}"
+                class="btn btn--text-icon"
+                ><img src="./img/i-linkedin.svg" alt="LinkedIn" />My Profile</a
+              >
+            {{ end }}
           </div>
         </div>
       </div>

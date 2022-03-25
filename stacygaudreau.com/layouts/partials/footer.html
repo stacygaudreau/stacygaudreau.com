@@ -17,16 +17,15 @@
     </div>
   </div>
   <div class="contact__links">
-    <a
-      href="mailto:contact@stacygaudreau.com"
-      class="btn btn--text-icon btn--small"
+    {{ with .Site.Params.contactEmail }}
+    <a href="mailto:{{ . }}" class="btn btn--text-icon btn--small"
       ><img src="/img/i-email.svg" alt="Email" /> Email Me</a
     >
-    <a
-      href="https://www.linkedin.com/in/stacy-gaudreau"
-      class="btn btn--text-icon btn--small"
+    {{ end }} {{ with .Site.Params.linkedinUrl }}
+    <a href="{{ . }}" class="btn btn--text-icon btn--small"
       ><img src="/img/i-linkedin.svg" alt="LinkedIn" />My Profile</a
     >
+    {{ end }}
   </div>
   <div class="span footer__copy" id="footer-copy">&copy2021 Stacy Gaudreau</div>
 </footer>
