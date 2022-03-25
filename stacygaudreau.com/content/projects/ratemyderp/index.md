@@ -2,7 +2,7 @@
 title: 'RateMyDerp!'
 shortTitle: 'RateMyDerp!'
 description: 'A full-stack web application with a Python backend. An accompanying timeseries database provides real-time application metrics and KPI dashboard.'
-stack: ['Python', 'InfluxDB', 'Django', 'JavaScript', 'Sass']
+stack: ['Python', 'InfluxDB', 'Django', 'PostgreSQL', 'JavaScript', 'CSS']
 codeUrl: 'https://gitlab.com/hibouambigu/ratemyderp'
 demoUrl: 'https://ratemyderp.com'
 isWorkInProgress: false
@@ -77,7 +77,7 @@ This concept was popular back before social media -- when we actually had to go 
 
 ### Rating
 
-The premise is pretty simple --
+The premise is straightforward --
 
 1. A visitor lands on the main app view and is shown a **random image** of a creature from the database. They are asked to vote for its "derpiness" on a scale of 1-10
 2. The user is **rewarded for their vote** with a new _fresh_ image from the database
@@ -85,7 +85,7 @@ The premise is pretty simple --
 
 ### Users
 
-In addition to basic authorisation requirements, user accounts feature a public profile and numerous settings for the app. All of the submissions a user has contributed appear on their profile for all to see, as well as some statistics about the number of ratings they've cast, how long they've been a member for, etc.
+In addition to basic authorisation requirements, user accounts feature a public profile and numerous settings for the app. All of the submissions a user has contributed appear on their profile, as well as some statistics about the number of ratings they've cast, how long they've been a member for, etc.
 
 \ Anonymous Ratings
 

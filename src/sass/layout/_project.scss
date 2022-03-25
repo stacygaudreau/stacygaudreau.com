@@ -82,9 +82,11 @@
   }
 
   &__btns {
+    white-space: nowrap;
     display: flex;
     gap: 2rem;
     @include for-tablet-portrait-down {
+      white-space: unset;
       margin-bottom: $base-pad-hz/8;
     }
     @include for-mobile-only {
@@ -117,6 +119,7 @@
       margin-right: 0rem;
       justify-self: flex-end;
     }
+
     .pane {
       box-shadow: 12px 1px 22px 0px rgba($color-black, 0.3);
     }

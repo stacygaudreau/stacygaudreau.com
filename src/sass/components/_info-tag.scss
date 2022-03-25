@@ -5,7 +5,7 @@
 .info-tag {
   display: inline-block;
   font-weight: 500;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-family: $heading-font;
   text-transform: uppercase;
   // color: $color-panel-2;
@@ -14,9 +14,6 @@
   padding: 0rem 0.625em;
   margin: 0;
   @include for-laptop-down {
-    font-size: 2rem;
-  }
-  @include for-tablet-portrait-down {
     font-size: 1.6rem;
   }
 

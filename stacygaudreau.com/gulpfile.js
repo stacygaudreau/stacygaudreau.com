@@ -66,6 +66,7 @@ function images(cb) {
     `${BASE_DIR.SRC}/**/*.svg`,
     `${BASE_DIR.SRC}/**/*.jpg`,
     `${BASE_DIR.SRC}/**/*.jpeg`,
+    `${BASE_DIR.SRC}/**/*.ico`,
   ]).pipe(dest(BASE_DIR.OUT));
   cb();
 }

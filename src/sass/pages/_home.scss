@@ -18,6 +18,7 @@
   }
   &__cta-btn {
     margin: 7rem 0;
+    white-space: nowrap;
   }
 }
 
@@ -240,6 +241,7 @@
 
     .btn {
       margin-top: calc($panel-pad-v/2);
+      white-space: nowrap;
     }
   }
 }
