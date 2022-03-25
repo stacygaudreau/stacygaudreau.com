@@ -27,11 +27,26 @@
   @include centre-on-tablet-portrait-down();
 }
 
+/* -------------------------- Section Edge Highlighting -------------------------- */
+/*
+  Wraps and adds a little graphical top and bottom edge highlight to a section.
+*/
+@mixin has-edge-highlight {
+  filter: drop-shadow(0px 2px 0px darken($color-black-dark, 1%))
+    drop-shadow(0px 4px 0px lighten($color-black-dark, 4%))
+    drop-shadow(0px -2px 0px darken($color-black-dark, 1%))
+    drop-shadow(0px -4px 0px lighten($color-black-dark, 4%));
+}
+.edge-highlight-wrapper {
+  @include has-edge-highlight;
+}
+
 /* ----------------------------- Skills Section ----------------------------- */
 .skills {
   @mixin clip-polygon($skew) {
     clip-path: polygon(0 0, 100% $skew, 100% 100%, 0 100%-$skew);
   }
+
   &__wrapper {
     position: relative;
     background-color: $color-black-dark;

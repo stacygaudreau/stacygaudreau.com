@@ -77,7 +77,7 @@
     transition: background-color $t-slow;
     background-color: rgba(lighten($color-black, 1%), 1);
     border-bottom: 1px solid rgba(darken($color-panel, 12%), 1);
-    box-shadow: 0 2px 24px 0 rgba($color-pure-black, 0.2);
+    box-shadow: 0 2px 12px 0 rgba($color-pure-black, 0.5);
   }
 
   &--is-article-width {
@@ -94,7 +94,7 @@
   bottom: 0;
   left: 0;
   padding: $main-padding / 10;
-  box-shadow: 0 -2px 12px 0 rgba($color-pure-black, 0.5);
+  box-shadow: 0 -4px 12px 0 rgba($color-pure-black, 0.6);
   @include for-mobile-only {
     display: flex;
     justify-content: space-around;

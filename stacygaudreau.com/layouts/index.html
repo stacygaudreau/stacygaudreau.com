@@ -15,7 +15,7 @@
           <div class="hero__cta">
             <a href="/#projects" class="btn btn--green btn--large">
               <img src="/img/i-eye-blk.svg" alt="see my projects" />
-              <span>See My Projects</span>
+              <span>{{ .Params.btnText }}</span>
             </a>
           </div>
         </div>
@@ -77,49 +77,51 @@
   </section>
 
   <!-- SKILLS -->
-  <div class="skills__wrapper">
-    <div class="skills section">
-      <header class="section-title" id="skills">
-        <div class="halftone halftone--fade-hz-right halftone--dark"></div>
-        <h2 class="section-title__text">Skills & Technologies</h2>
-      </header>
-      <div class="skills__grid">
-        <div class="skills__body skills__body--left">
-          {{ with .Site.GetPage "/skills-top.md" }}
-            {{ .Content }}
-          {{ end }}
-        </div>
-        {{ if eq .Params.hasCheese true }}
-          CHEESEY
-        {{ end }}
-        <section class="skills__cards">
-          <!-- Skills Cards -->
-          {{ range .Site.Data.skills.cards.cards }}
-          <div class="skills__card pane__wrapper">
-            <div class="halftone halftone--card halftone--dark"></div>
-            <h4 class="skills__card__title pane__title">{{ .heading }}</h4>
-            <div class="pane">
-              <div class="pane__shadow pane__shadow--corner-t-r"></div>
-              <div class="pane__shadow pane__shadow--corner-t-r"></div>
-              <ul>
-                {{ range .skills }}
-                <li>{{ . }}</li>
-                {{ end }}
-              </ul>
-            </div>
+  <div class="edge-highlight-wrapper">
+    <div class="skills__wrapper">
+      <div class="skills section">
+        <header class="section-title" id="skills">
+          <div class="halftone halftone--fade-hz-right halftone--dark"></div>
+          <h2 class="section-title__text">Skills & Technologies</h2>
+        </header>
+        <div class="skills__grid">
+          <div class="skills__body skills__body--left">
+            {{ with .Site.GetPage "/skills-top.md" }}
+              {{ .Content }}
+            {{ end }}
           </div>
+          {{ if eq .Params.hasCheese true }}
+            CHEESEY
           {{ end }}
-        </section>
-        {{ with .Site.Params.cvDownloadUrl }}
-          <a href="{{ . }}" class="btn btn--large btn--green">
-            <img src="./img/i-download.svg" alt="download symbol" />
-            <span>Download CV</span>
-          </a>
-        {{ end }}
-        <div class="skills__body skills__body--right">
-          {{ with .Site.GetPage "/skills-bottom.md" }}
-            {{ .Content }}
+          <section class="skills__cards">
+            <!-- Skills Cards -->
+            {{ range .Site.Data.skills.cards.cards }}
+            <div class="skills__card pane__wrapper">
+              <div class="halftone halftone--card halftone--dark"></div>
+              <h4 class="skills__card__title pane__title">{{ .heading }}</h4>
+              <div class="pane">
+                <div class="pane__shadow pane__shadow--corner-t-r"></div>
+                <div class="pane__shadow pane__shadow--corner-t-r"></div>
+                <ul>
+                  {{ range .skills }}
+                  <li>{{ . }}</li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+            {{ end }}
+          </section>
+          {{ with .Site.Params.cvDownloadUrl }}
+            <a href="{{ . }}" class="btn btn--large btn--green">
+              <img src="./img/i-download.svg" alt="download symbol" />
+              <span>Download CV</span>
+            </a>
           {{ end }}
+          <div class="skills__body skills__body--right">
+            {{ with .Site.GetPage "/skills-bottom.md" }}
+              {{ .Content }}
+            {{ end }}
+          </div>
         </div>
       </div>
     </div>

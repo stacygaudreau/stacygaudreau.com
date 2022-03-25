@@ -2,6 +2,6 @@
 render: false
 ---
 
-I'm an avid "homelabber" and operate a moderate sized server rack of compute and storage technology for learning and enjoyment.
+I'm an avid "homelabber" and operate a moderate sized server rack stuffed full of Linux servers, for learning and development.
 
-When I'm not writing code I can be found gardening, hiking and riding motorcycles.
+When not writing code I can be found gardening, hiking and riding motorcycles through the countryside.

@@ -25,8 +25,8 @@ It was the best of high notes to end on, and I am looking forward to the next ad
 
 Every new product comes with its own unique set of learning challenges and experiences during development. Some highlights and technical achievements of Mindphaser include --
 
-- A core made of analog circuitry, controlled and enhanced by a 32bit **ARM Cortex** microcontroller
-- An [interactive product demonstration](https://mindphaser-preorder.hexinverter.net/), written in **JavaScript** and using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+- A core made of analog circuitry, with digital control enhanced by a 32bit **ARM Cortex** microcontroller
+- An [interactive audio and visual product demonstration](https://mindphaser-preorder.hexinverter.net/), written in **JavaScript** and using the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 - **Embedded C firmware** provides intuitive, modern user amenities and visual feedback
 - Streamlined workflows between graphic user interface design and engineering software with automation
 
