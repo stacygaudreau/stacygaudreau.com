@@ -4,7 +4,7 @@ description: 'Database workloads can benefit from some special considerations wh
 categories: ['Databases', 'Storage']
 tags: ['ZFS', 'PostgreSQL', 'Postgres', 'Performance']
 date: 2022-02-24T07:18:16-05:00
-draft: false
+draft: true
 ---
 
 ## Setup

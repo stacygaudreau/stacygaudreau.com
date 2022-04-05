@@ -1,6 +1,6 @@
 baseURL = ''
 languageCode = 'en-us'
-title = 'Software and DevOps Developer'
+title = 'Software and Full Stack Developer'
 assetDir = '../src'
 staticDir = '../static'
 disableKinds = ['skill']
