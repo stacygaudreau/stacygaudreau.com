@@ -14,4 +14,16 @@ Create with: `hugo new --kind blog-bundle blog/<dir>/<slug>`
 
 This creates a new blog post bundle @ `content/blog/<dir>/<slug>`.
 
+## Dev
+
+`npm i`
+
 ## Build & Deployment
+
+1. Login to firebase cli and activate project
+
+`firebase use stacygaudreau-com`
+
+(`firebase projects:list` if you don't know the project name)
+
+2. run `deploy.sh` from root repo folder to build and deploy to firebase hosting
