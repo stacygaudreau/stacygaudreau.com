@@ -1,10 +1,11 @@
 cards:
   - heading: 'Development Technologies'
     skills:
-      - 'Full stack web applications'
-      - 'Development in Python, C++, JavaScript, C, CSS/Sass'
+      - 'Full stack web, desktop and mobile applications'
+      - 'Development in JavaScript, C++, Python, CSS/Sass'
       - 'Relational and NoSQL databases'
-      - 'Web frameworks including Django, Node and React'
+      - 'Mobile development in React Native'
+      - 'Web frameworks including Next.js, Django, Node and React'
   - heading: 'Infrastructure & Ops'
     skills:
       - 'Debian and RHEL-based Linux machines'

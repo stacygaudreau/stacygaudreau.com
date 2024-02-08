@@ -1,12 +1,12 @@
-const { src, dest, series, parallel } = require('gulp');
-const del = require('del'),
-  autoprefix = require('gulp-autoprefixer'),
-  babel = require('gulp-babel'),
-  cleanCSS = require('gulp-clean-css'),
-  minifyHtml = require('gulp-htmlmin');
+const { src, dest, series, parallel } = require("gulp");
+const del = require("del"),
+  autoprefix = require("gulp-autoprefixer"),
+  babel = require("gulp-babel"),
+  cleanCSS = require("gulp-clean-css"),
+  minifyHtml = require("gulp-htmlmin");
 const BASE_DIR = {
-  SRC: './public',
-  OUT: './dist',
+  SRC: "./public",
+  OUT: "./dist",
 };
 
 function clean(cb) {
@@ -32,7 +32,7 @@ function js(cb) {
   src(`${BASE_DIR.SRC}/**/*.js`)
     .pipe(
       babel({
-        presets: ['@babel/env'],
+        presets: ["@babel/env"],
       })
     )
     .pipe(dest(BASE_DIR.OUT));

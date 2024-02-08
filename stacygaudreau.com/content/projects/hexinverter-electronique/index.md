@@ -2,7 +2,7 @@
 title: 'Hexinverter Électronique'
 shortTitle: 'Hexinverter Électronique'
 description: ''
-stack: ['C', 'Python', 'JavaScript', 'SPICE']
+stack: ['C++', 'C', 'Python', 'JavaScript', 'SPICE']
 codeUrl: ''
 demoUrl: 'https://hexinverter.net'
 isWorkInProgress: false

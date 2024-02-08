@@ -124,6 +124,7 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    max-width: 70%;
   }
 
   &__category {
@@ -152,6 +153,7 @@
       gap: 1.5em;
       &--tags {
         order: 1;
+        max-width: 100%;
       }
     }
     @include for-tablet-portrait-down {
