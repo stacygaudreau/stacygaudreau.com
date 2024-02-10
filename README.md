@@ -1,8 +1,16 @@
 # stacygaudreau.com
 
-My portfolio website.
+My portfolio website: [Stacy Gaudreau](https://stacygaudreau.com).
 
-XD design link: https://xd.adobe.com/view/ac208648-c2f4-4e1f-a81c-5394236575ff-f973/
+Written in plain ol' `CSS` (`Sass`), `JavaScript` and `HTML`, using the excellent [Hugo](https://gohugo.io/) static site generator.
+
+## Why no React, Next.js, tailwind, etc.?
+
+Too easy! The idea here was to grow and nurture native CSS/Sass skills and design something unique from scratch. It was a lot of fun and I actually enjoy CSS now.
+
+## Design
+
+The website was designed and prototyped in Adobe XD. Nowadays I use Figma, but it was still a great learning experience.s
 
 ## Content Creation
 
@@ -14,9 +22,12 @@ Create with: `hugo new --kind blog-bundle blog/<dir>/<slug>`
 
 This creates a new blog post bundle @ `content/blog/<dir>/<slug>`.
 
-## Dev
+## Dev/build
 
-`npm i`
+`npm i` -> install packages
+
+`cd stacygaudreau.com` -> hugo project directory
+`hugo server` for local dev
 
 ## Build & Deployment
 
