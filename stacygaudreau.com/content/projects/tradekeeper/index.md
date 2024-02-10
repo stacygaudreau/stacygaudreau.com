@@ -8,13 +8,26 @@ codeUrl: ''
 demoUrl: 'https://stacygaudreau.com/projects/tradekeeper'
 isWorkInProgress: true
 disableDemoBtn: true
-projectType: 'React Native finance application'
+projectType: 'React Native mobile finance application'
 type: 'project'
 date: 2024-01-05T10:03:03-05:00
 draft: false
 ---
 
 ## Features
+
+TradeKeeper features an intuitive UX that focuses on doing one thing well: letting a user track their financial trades and assets over time. The user can quickly add assets and trades on the go, pulling live market data from a 3rd party stock API. Its primary features include
+
+- **Recording and editing transactions** of financial assets (stocks, ETFs and indices as well as cash deposits and withdrawals)
+- **Automatic market data** pulled from an API as well as the ability to record manual trade prices
+- Computing and tracking a portfolio's **valuation and performance** over time, including
+  - Profit & loss (day, month, year and other time ranges)
+  - Annualised returns
+  - Diversification
+  - Best and worst performing assets
+  - Asset summaries, and records of trading activity
+- **Graphs** and other visual representations of portfolio assets
+- User **accounts/authorization**, so a portfolio is private and can be recovered in case of loss of the user's mobile device
 
 ## Development Stack
 
@@ -30,6 +43,16 @@ TradeKeeper features a serverless, full-stack architecture using React Native as
 - User authorization (Firebase)
 - 3rd party stock market API (Tiingo)
 - Figma for UI/UX design
+
+### Reasoning for technology choices
+
+**React Native** has become a standard for building cross-platform mobile apps for good reason! It's great for small teams to develop cross-platform mobile applications on, due to not needing to know numerous native languages (Objective C for iOS and Java or Kotlin for Android, etc.). React Native's appeal is that it compiles down and packages code written in JS into device-native code (Java, etc.) for each mobile device.
+
+In addition, many developers are already familiar with the component-driven and virtual DOM architecture of React and can use some of their existing knowledge to transpose their skillset into mobile development.
+
+**Firebase** is a great choice for developing serverless and rapidly scalable systems on. Different components can be mixed and matched to create the system needed, and scaling is practically automatic since you are billed according to usage. In this case, it was the best choice for a hobby/learning project, since it has a very generous and full-featured free tier.
+
+In a production application with many users, more care would need to be given to the chosen architecture and its forward-projected costs.
 
 ## Design (UI & UX)
 
@@ -60,3 +83,7 @@ The typography of any application is pretty important, so I spent a good bit of 
 All of the application's screens/views and components were designed and mocked up in Figma.
 
 ![UI and UX being designed in Figma](./images/figma.png 'UI and UX being designed in Figma')
+
+## What's next?
+
+TradeKeeper will **soon be feature complete** and available to demo fully on your mobile device. This project page will be updated with a demo link when the deployment is available to check out!

@@ -6,6 +6,14 @@ cards:
       - 'Relational and NoSQL databases'
       - 'Mobile development in React Native'
       - 'Web frameworks including Next.js, Django, Node and React'
+  - heading: 'Auxiliary & Soft Skills'
+    skills:
+      - 'Leadership and task management in distributed development teams'
+      - 'Business & financial logic'
+      - 'End-to-end product lifecycle & development'
+      - 'Test and debugging'
+      - 'Low-level understanding of computers & embedded systems'
+      - 'Highly motivated and enthusiastic learner'
   - heading: 'Infrastructure & Ops'
     skills:
       - 'Debian and RHEL-based Linux machines'
@@ -13,9 +21,3 @@ cards:
       - 'Timeseries metrics, eg: InfluxDB, Prometheus'
       - 'Virtualization & storage technologies including KVM, ZFS and Ceph'
       - 'Deployment operations, shell scripting'
-  - heading: 'Auxiliary Skills'
-    skills:
-      - 'Financial & business logic'
-      - 'End-to-end product lifecycle & development'
-      - 'Low-level test and debugging'
-      - 'Independent & rapid self-teaching'

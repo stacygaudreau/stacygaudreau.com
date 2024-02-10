@@ -8,4 +8,4 @@ cd ./stacygaudreau.com
 hugo
 npm run build
 cd ..
-firebase deploy
+firebase -P "stacygaudreau-com" deploy
