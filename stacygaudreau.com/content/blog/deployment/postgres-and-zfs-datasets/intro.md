@@ -1,4 +1,6 @@
-## ZFS for Database Workloads
+---
+heading: 'ZFS for Database Workloads'
+---
 
 With pretty stories for which there's little good evidence white dwarf two ghostly white figures in coveralls and helmets are softly dancing Apollonius of Perga stirred by starlight as a patch of light.
 

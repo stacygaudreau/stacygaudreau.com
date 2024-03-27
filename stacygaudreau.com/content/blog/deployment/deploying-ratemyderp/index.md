@@ -1,11 +1,11 @@
 ---
 title: 'Deploying RateMyDerp to Production'
 description: ''
-categories: ['category1', 'category2']
-tags: ['tag1', 'tag2']
-type: 'article'
+categories: ['deployment']
+tags: ['Python', 'Django', 'Linux', 'systemd']
+type: 'blog'
 date: 2022-03-23T16:14:00-04:00
-draft: true
+draft: false
 ---
 
 ## Deployment
@@ -636,12 +636,6 @@ pg_dump ratemyderpdb -U ratemyderp -h localhost -Ft -w > ./bak.tar
 
 Periodic backups are handled with a shell script: `utility/db-backup.sh`. This script does basic pruning and rotation and is run on a daily cron schedule.
 
-\ crontab -e
-
-```bash
-
-```
-
 #### File Backups
 
 User image files located in the application media directory are backed up at regular intervals.
@@ -649,17 +643,3 @@ User image files located in the application media directory are backed up at reg
 #### Off-site Duplication
 
 All local backups are sent to an off-site target each day via a remote `rsync` pull. The remote pull isn't documented here, for security reasons.
-
-### Test Deployment
-
-Now that everything is setup on our VM, let's configure and test an initial deployment.
-
-### Deployment
-
-GitLab's CI/CD pipeline and runners are used to build new versions of the application and deploy the built source to our VM.
-
-#### Overview
-
-`Git Push -> GitLab runner: npm build -> cp src .py and frontend -> backup postgres -> run migrations -> restart server`
-
-### Continuous Delivery

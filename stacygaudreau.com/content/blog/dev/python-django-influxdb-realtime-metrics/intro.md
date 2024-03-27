@@ -1,4 +1,6 @@
-## Introduction
+---
+heading: 'Introduction'
+---
 
 Real time monitoring has many uses in modern application infrastructure. It can be used for everything from ensuring a fleet of server hardware is operating correctly, to monitoring key performance indicators & statistics for sales and support teams.
 

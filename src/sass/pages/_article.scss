@@ -17,6 +17,13 @@
     @include has-expanding-hz-padding;
   }
 
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 4rem;
+  }
+
   &__intro {
     margin-top: $p-top;
     @include for-mobile-only {

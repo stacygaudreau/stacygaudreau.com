@@ -5,6 +5,7 @@ categories: ['Monitoring', 'Databases']
 tags: ['InfluxDB', 'Python', 'Django']
 date: 2022-03-10T16:11:00-05:00
 draft: true
+type: 'blog'
 ---
 
 ## Requirements

@@ -2,8 +2,8 @@
 render: false
 ---
 
-My favourite languages to work with include **Python**, **C++**, and **JavaScript**. There are others, but it's easier to say I'm a **polyglot** who loves to use whatever tools are right for the work at hand!
+My favourite languages to work with are **C++** and **Python** but you can also find me writing a fair amount of **JavaScript** when it's the right tool for the job.
 
-With a history of first-hand business experience, I'm especially interested in the **finance**, **business logic** and **KPI/infrastructure** monitoring sectors.
+With a history of first-hand business experience and expertise in **low-level systems**, I'm especially interested in the **finance**, **business logic** and **KPI/infrastructure** monitoring sectors.
 
 I'm available for work that leverages any of the following skills, as long as there are interesting problems to solve --

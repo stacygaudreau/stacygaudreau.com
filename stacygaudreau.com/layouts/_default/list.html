@@ -1,1 +1,56 @@
-{{ define "main" }} list default {{ end }}
+{{ define "main" }}
+<main class="article">
+  <!-- Header -->
+  <header class="article__header">
+    <div class="article__bg"></div>
+    <div class="article__graphics">
+      <div class="halftone halftone--wide"></div>
+      <div class="halftone halftone--wide"></div>
+    </div>
+    <div class="article__header-content">
+      <div class="article__categories">
+        {{ if eq .Type "blog" }} {{ range .Params.Categories }}
+        <a href="" class="article__category">{{.}}</a>
+        {{ end }} {{ end }} {{ if eq .Type "project" }}
+        <span class="article__category">{{ .Params.projectType }}</span>
+        {{ end }}
+      </div>
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Description }}</p>
+    </div>
+  </header>
+  <section class="article__intro"></section>
+  <section class="article__content article__list">
+    <!-- Content -->
+    {{ range .Pages }}
+    <section class="pane__wrapper">
+      <div class="pane">
+        <div class="pane__shadow pane__shadow--corner-t-l"></div>
+        <div class="pane__shadow pane__shadow--corner-t-l"></div>
+        <h3 class="pane__title pane__title--for-blog">
+          <a href="{{ .Permalink }}" class="">{{ .Title }}</a>
+        </h3>
+        <span class="article__meta--date">{{ .Date | time.Format ":date_long" }}</span>
+        <!-- Blog post intro/summary text  -->
+        <div class="pane__body">
+          {{ with .Resources.GetMatch "intro.md" }} 
+            {{ .Content }} 
+          {{ end }}
+        </div>
+        </article>
+        <div class="project__meta">
+          <div class="project__tags">
+            {{ range .Params.tags }}
+              <span class="info-tag info-tag--light">{{ . }}</span>
+            {{ end }}
+          </div>
+          <div class="project__btns">
+            <a href="{{ .Permalink }}" class="btn btn--small btn--green">READ MORE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    {{ end }}
+  </section>
+</main>
+{{ end }}

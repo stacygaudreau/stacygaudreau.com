@@ -30,7 +30,6 @@
           {{ if eq .Type "project" }}
             {{ range .Params.stack }}
               <span class="info-tag info-tag--meta">{{.}}</span>
-
             {{ end }}
           {{ end }}
         </div>
@@ -56,7 +55,12 @@
     </div>
   </header>
   <section class="article__intro">
-    {{ with .Resources.GetMatch "intro.md" }} {{ .Content }} {{ end }}
+    {{ with .Resources.GetMatch "intro.md" }} 
+      {{ if eq .Type "blog" }} 
+        <h2 class="heading">{{ .Params.heading }}</h2>
+      {{ end }}
+      {{ .Content }} 
+    {{ end }}
     <section class="toc toc--is-closed pane">
       <header>
         <a class="btn btn--text-icon btn--small">
