@@ -1,5 +1,5 @@
 ---
-heading: 'Intro Heading Text'
+heading: 'Heading before ToC'
 ---
 
 Intro body text goes here. Est occaecat exercitation labore sit anim officia id. Anim ut enim velit magna amet proident nostrud duis Lorem consequat. Ut amet ea irure ex irure Lorem incididunt ut.

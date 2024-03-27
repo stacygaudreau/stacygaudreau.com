@@ -1,6 +1,6 @@
 ---
 title: 'Deploying RateMyDerp to Production'
-description: ''
+description: 'Deploying a production-grade Django/Python web application on Linux'
 categories: ['deployment']
 tags: ['Python', 'Django', 'Linux', 'systemd']
 type: 'blog'

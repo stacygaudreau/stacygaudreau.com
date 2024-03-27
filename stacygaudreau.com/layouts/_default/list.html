@@ -19,7 +19,6 @@
       <p>{{ .Description }}</p>
     </div>
   </header>
-  <section class="article__intro"></section>
   <section class="article__content article__list">
     <!-- Content -->
     {{ range .Pages }}
@@ -30,6 +29,7 @@
         <h3 class="pane__title pane__title--for-blog">
           <a href="{{ .Permalink }}" class="">{{ .Title }}</a>
         </h3>
+        <h4 class="pane__subtitle">{{ .Description }}</h4>
         <span class="article__meta--date">{{ .Date | time.Format ":date_long" }}</span>
         <!-- Blog post intro/summary text  -->
         <div class="pane__body">
