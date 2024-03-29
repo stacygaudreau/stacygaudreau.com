@@ -34,7 +34,9 @@ A common application of HFT is in profit-taking or market-making algorithms in e
 
 For the majority of low latency C++ applications, we are measuring performance in `uS`, very often tens or hundreds of uS. Modern advances in FPGA-accelerated networking hardware has meant that HFT can now operate in the nanosecond (`nS`) realm, ie: sub 1uS. 
 
-Does this mean C++ for HFT is dead? _No, not at all._. FPGAs are effectively programmable logic gates, and thus aren't generally carrying out complex application logic. Yes, they make the latency of trade executions or broadcasting to consumers incredibly fast (< 1uS), but so far, we still require something like C++ to carry out the majority of complex application logic surrounding the FPGA's lightning-fast but relatively simple algorithms. [David Gross' talk at _Meeting C++ 2022_ goes into detail about this @ 10:30](https://www.youtube.com/watch?v=8uAW5FQtcvE)
+Do FPGAs mean that C++ for HFT is dead? _No, not at all!_ 
+
+FPGAs are effectively programmable logic gates, and thus aren't generally carrying out complex application logic. Yes, they make the latency of trade executions or broadcasting to consumers incredibly fast (< 1uS), but so far, we still require something like C++ to carry out the majority of complex application logic surrounding the FPGA's lightning-fast but relatively simple algorithms. [David Gross' talk at _Meeting C++ 2022_ goes into detail about this @ 10:30](https://www.youtube.com/watch?v=8uAW5FQtcvE)
 
 ## Guiding principles
 
@@ -77,8 +79,6 @@ The author emphasises this with numerous examples of how the compiler tries to p
 > Things are now easier and less compiler-specific, as `C++20` introduced a standardised way of describing branch hints to the compiler with the `[[likely]]` and `[[unlikely]]` attributes. 
 > 
 > _([More detail at cppreference.com](https://en.cppreference.com/w/cpp/language/attributes/likely))_
-
-The GNU C++ compiler provided some non-standard ways of 
 
 #### Code arrangement
 
