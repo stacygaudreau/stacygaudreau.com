@@ -45,9 +45,10 @@
         </span>
       </div>
       <!-- Main Feature Image -->
-      {{ with .Resources.GetMatch "images/feature.*" }}
+      {{ with $feature := .Resources.GetMatch "images/feature.*" }}
+      {{ $feature := $feature.Fit "1440x600" }}
       <div class="article__image--main pane pane--has-image">
-        <img src="{{.RelPermalink}}" alt="" />
+        <img src="{{ $feature.RelPermalink }}" alt="" />
         <div class="pane__shadow pane__shadow--corner-t-l"></div>
         <div class="pane__shadow pane__shadow--corner-t-l"></div>
       </div>

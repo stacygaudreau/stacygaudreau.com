@@ -1,26 +1,28 @@
 ---
-title: "Low Latency C++ for HFT - Part 1"
-description: "The first in a series documenting my learning ventures in developing low-latency, performant C++ for High Frequency Trading"
-categories: ['C++', 'Finance']
+title: "Low Latency C++ for HFT - Part 1 - Introduction"
+description: "The first in a series documenting my learnings while developing a low-latency, performant C++ application for High Frequency Trading"
+categories: ['Programming', 'C++']
 tags: ['C++', 'Low Latency', 'HFT', 'Finance', 'Compiler Optimization']
 type: 'blog'
 date: 2024-02-12T16:37:11-04:00
-draft: true
+draft: false
 ---
 
 ## The goal - learning outcomes
 
 The goal of this series is to gain further understanding of the C++ compiler, its idiosyncracies, and ultimately grow my expertise with the language, while deepening understanding of some of the mechanisms that power our global financial markets.
 
-Throughout this series, I'll be **standing on the shoulders of giants** as we build an HFT system from scratch, beginning with the basic building blocks to develop low latency systems from.
+Throughout this series, I'll be **standing on the shoulders of giants** as we build an HFT system from scratch, starting with the basic building blocks required to develop the majority of generic low latency systems from.
 
 HFT is a fairly mature field, so the plan is to learn from experts in the field, supplementing their teachings with my own experiments and investigation along the way. I'll be documenting my journey here, complete with any mistakes, learning tangents and discoveries made along the way.
 
-\Primary reference material chosen
+\Primary reference material, aka **"The Book"**
 
-> I have chosen the text **[_Building Low Latency Applications with C++_](https://www.packtpub.com/product/building-low-latency-applications-with-c/9781837639359)**, by **_Sourav Ghosh_** _(Packt Publishing, 2023)_ as the primary reference of choice -- though you will see more references appear throughout as the series progresses. 
+> The text **[_Building Low Latency Applications with C++_](https://www.packtpub.com/product/building-low-latency-applications-with-c/9781837639359)**, by **_Sourav Ghosh_** _(Packt Publishing, 2023)_ has been chosen as the primary reference of choice -- though you will see more references appear throughout as the series progresses. 
+>
+> (This text will at times be referred to as _The Book_ throughout this series, as a shorthand)
 
-Not only does the author describe generic techniques for low-latency systems in C++, but their particular field of interest is in High Frequency Trading. Perfect!  
+Not only does the author describe generic techniques for low-latency systems in C++, but their particular field of expertise is in High Frequency Trading. 
 
 ## HFT - the most brief of introductions
 
@@ -59,31 +61,38 @@ Sometimes, the theoretically "better" data structure is not the most performant 
 
 ### Compiler hints
 
-The C++ compiler is an incredibly sophisticated piece of engineering with over 40 years of development worked into it. There are dozens of sophisticated techniques and multiple iterations carried out by the compiler to optimise code.
+The C++ compiler is an incredibly sophisticated piece of engineering with over 40 years of development worked into it. The modern C++ compiler has many tricks up its sleeve, deploying vast array of techniques over multiple iterations in order to optimise code.
 
-Despite this, there are times when large gains in latency performance can be made by providing hints to the compiler. Dozens of compiler optimisations are detailed in this chapter, but we will focus on the most strongly emphasised gains to be made and refer the curious reader to Chapter 3 of the text.
+Despite this, there are times when sizeable gains in latency performance can be made by providing hints to the compiler or arranging code in a way that takes advantage of the compiler's idiosyncracies. Many compiler optimisation techniques are detailed in this chapter, so I'll summarise only a handful of the most important details here.
 
 #### Branch prediction
 
-Modern CPUs and the C++ compiler have sophisticated ways to try and guess at the most likely branch (if, else, or some other branching logic) a piece of software might take, but the enormous expense of getting branch prediction wrong is enough reason to spend the extra time providing hints to the compiler about which path your code might take. 
+Modern CPUs and the C++ compiler have sophisticated ways to try and predict the most likely branch (if, else, or some other logic) a piece of software might take, but the enormous expense of getting branch prediction wrong is enough reason to occasionally spend the extra time providing hints to the compiler about which path your code might take. 
 
 The author emphasises this with numerous examples of how the compiler tries to predict branches, and how costly it can be for the CPU to unwind the call stack and registers when it makes a mistake in branch prediction.
 
+\ Branch prediction attributes
+> The author describes a GNU-compiler-specific way of using macros and directives to provide branch suggestions.
+>
+> Things are now easier and less compiler-specific, as `C++20` introduced a standardised way of describing branch hints to the compiler with the `[[likely]]` and `[[unlikely]]` attributes. 
+> 
+> _([More detail at cppreference.com](https://en.cppreference.com/w/cpp/language/attributes/likely))_
+
+The GNU C++ compiler provided some non-standard ways of 
+
 #### Code arrangement
 
-Member and non-member functions and data members are generally arranged by the compiler in memory, in the order they are encountered during compilation.
+Member and non-member functions, data members and variable instantiation are generally arranged by the compiler in memory, in the order they are encountered during compilation.
 
-This means that declaring functions and data variables next to each other that are most used is an ideal way to try and improve caching.
+This means that declaring functions and data variables next to each other (in groups that are most used together) is an ideal way to try and improve caching.
 
-#### Compile-time vs. runtime
+#### Functions - `inline` and `virtual`
 
-Broadly speaking, anything that can be evaluated during compile time instead of at runtime will likely help lower latency. `constexpr` evaluations and template metaprogramming can be helpful techniques. 
+Functions should be `inline` whenever possible. The compiler will try to do this as much as possible when optimising.
 
-#### `inline` and `virtual` functions
+In general, `virtual` functions should be avoided, and compile-time polymorphism should be preferred instead. 
 
-Inline functions whenever possible. The compiler also tries to do this whenever it can when optimising.
-
-In general, virtual functions should be avoided, and compile-time polymorphism should be preferred instead. This is because the compiler cannot infer which virtual function will be called at runtime (unless there is only one instance). Virtual functions come with added overhead and mean that the compiler cannot perform other valuable optimisations which depend on knowing which function is called at runtime, eg: inlining the function.
+This is because the compiler cannot infer which virtual function will be called at runtime (unless there is only one instance). Virtual functions come with added overhead and mean that the compiler cannot perform other valuable optimisations which depend on knowing which function is called at runtime, eg: inlining the function.
 
 #### Dynamic memory allocation
 
@@ -91,31 +100,96 @@ Best avoided at all costs in LL applications. Leads to memory fragmentation, poo
 
 #### Multithreading
 
-A common misconception is more threads means lower latency. In reality, more threads deliver more throughput, and concurrency. 
+A common misconception is that adding more threads means lower latency. In reality, more threading will deliver more throughput, and concurrency. 
 
-The cost of switching contexts, ie: locking a thread and switching to another one, can be costly enough that it is often best avoided in low latency applications. For this reason, a number of techniques are often used in LLCPP, including but not limited to --
+The cost of switching contexts, ie: locking a thread and switching to another one, can be costly enough that it is often best avoided in low latency applications. For this reason, a number of techniques are often used in LLCPP, including but not limited to
 
-- pinning threads to specific CPU cores
-- avoiding locks and context switching altogether 
-- developing custom thread pools and threading constructs especially for low latency
+- Pinning threads to specific CPU cores
+- Avoiding locks and context switching altogether 
+- Developing custom thread pools and threading constructs especially for low latency
 
+#### Compile-time vs. runtime
 
+Broadly speaking, anything that can be evaluated during compile time instead of at runtime will likely help lower latency. `constexpr` evaluations and template metaprogramming can be helpful techniques. 
 
+#### The CRTP (Curiously Recurring Template Pattern)
 
+A template programming technique to achieve compile-time polymorphism. Essentially a drop-in replacement for a `virtual` function. 
 
- 
+\Replacing a virtual fn with equivalent use of the CRTP at compile-time
 
-\This is how to make a Code block title
+```cpp
+// adapted from Chapter3/crtp.cpp of "The Book" by Ghosh, S.
 
-```bash
-$ echo '#!/bin/sh' > my-script.sh
-$ echo 'echo Hello World' >> my-script.sh
-$ cat my-script.sh
-echo Hello World
-$ chmod 755 my-script.sh
-$ ./my-script.sh Hello World
+#include <iostream>
 
+class RuntimeBase {
+public:
+    virtual void place_order() {
+        std::cout << "RuntimeBase::place_order()\n";
+    }
+};
+
+class RuntimeImplementation: public RuntimeBase {
+public:
+    void place_order() override {
+        std::cout << "RuntimeImplementation::place_order()\n";
+    }
+};
+
+template<typename actual_type>
+class CRTPBase {
+public:
+    void place_order() {
+        static_cast<actual_type*>(this)->actual_place_order();
+    }
+
+    void actual_place_order() {
+        std::cout << "CRTPBase::actual_place_order()\n";
+    }
+};
+
+class CRTPImplementation: public CRTPBase<CRTPImplementation> {
+public:
+    void actual_place_order() {
+        std::cout << "CRTPImplementation::actual_place_order()\n";
+    }
+};
+
+int main() {
+    // runtime polymorphism
+    auto runtime_example = RuntimeImplementation{ };
+    runtime_example.place_order();
+
+    // compile-time polymorphism
+    CRTPBase<CRTPImplementation> crtp_example;
+    crtp_example.place_order();
+
+    return 0;
+}
+
+/*
+Output:
+
+RuntimeImplementation::place_order()
+CRTPImplementation::actual_place_order()
+
+Process finished with exit code 0
+*/
 ```
 
-Images can be figures with captions and alt text, eg:
-![An image alt text](./images/1.png 'A caption for an image/figure.')
+\ If you (like me) disassemble this example - beware, devirtualization!
+> The performance gains to be had are not obvious until more than one implementation of the base class exists. This is because the compiler tries to infer (via a technique called `Devirtualization`) which virtual function(s) will be called at runtime. 
+>
+>With such a simple example, it is trivial for the compiler to determine that `RuntimeImplementation::place_order()` is the only instance of the virtual function called at runtime. The compiler then inlines the method, saving a `vtable` lookup and negating the extra overhead of calling a virtual function at runtime.
+
+## Summary, and next time
+
+In this first part, I've glossed over the basics of C++ programming for HFT and given a bird's eye view (my takeaway) of some of the low-hanging fruit to look out for when developing low latency systems with C++. This takeaway is after reading Chapters 1-3 of Sourav Ghosh's book **[_Building Low Latency Applications with C++_](https://www.packtpub.com/product/building-low-latency-applications-with-c/9781837639359)**, which I highly recommend to check out if you're interested in learning more.
+
+#### In Part 2
+
+We'll be starting to code along with the author and put together some of the basic building blocks for developing low latency systems with.
+
+
+

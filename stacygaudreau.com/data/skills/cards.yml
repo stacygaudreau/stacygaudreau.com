@@ -10,14 +10,13 @@ cards:
     skills:
       - 'Financial and business logic'
       - 'Task management and autonomy in distributed development teams'
-      - 'Low-level test and debugging'
+      - 'Low-level test and debugging (oscilloscopes, logic analysers, function generators)'
       - 'Understanding of financial market terminology and statistics'
       - 'End-to-end product lifecycle & development'
-      - 'Highly motivated and enthusiastic self-learning'
   - heading: 'Infrastructure & Ops'
     skills:
       - 'Debian and RHEL-based Linux machines'
       - 'Server hardware, network and cloud infrastructure'
       - 'Timeseries metrics and monitoring, eg: InfluxDB, Grafana'
-      - 'Virtualization & storage technologies including KVM, ZFS and Ceph'
+      - 'Virtualization & storage technologies including KVM and ZFS'
       - 'Shell scripting, VCS and deployment operations'
