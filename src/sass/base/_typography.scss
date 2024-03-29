@@ -104,6 +104,14 @@ code,
 .codeblock__title {
   font-family: $mono-font;
   font-size: 1.6rem;
+
+  @include for-tablet-portrait-down {
+    font-size: 1.4rem;
+  }
+
+  @include for-mobile-only {
+    font-size: 1.2rem;
+  }
 }
 code {
   font-weight: 300;
