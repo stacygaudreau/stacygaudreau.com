@@ -187,7 +187,7 @@ Process finished with exit code 0
 
 In this first part, I've glossed over the basics of C++ programming for HFT and given a bird's eye view (my takeaway) of some of the low-hanging fruit to look out for when developing low latency systems with C++. This takeaway is after reading Chapters 1-3 of Sourav Ghosh's book **[_Building Low Latency Applications with C++_](https://www.packtpub.com/product/building-low-latency-applications-with-c/9781837639359)**, which I highly recommend to check out if you're interested in learning more.
 
-#### In Part 2
+### In Part 2
 
 We'll be starting to code along with the author and put together some of the basic building blocks for developing low latency systems with.
 

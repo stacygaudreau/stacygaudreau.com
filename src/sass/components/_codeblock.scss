@@ -5,7 +5,7 @@ $color-comment: lighten($color-panel-3, 5%);
 $yellow: #eec459;
 $purple-1: #5C4D7B;
 $purple-2: #ae56c9;
-$teal: lighten(#2bbbb6, 20%);
+$teal: lighten(#08b6b0, 20%);
 $blue: lighten(#218abb, 20%);
 $bg: #292A2F;
 $pink: #e23c76;
@@ -259,11 +259,11 @@ $white: lighten(#A6AEA1, 10%);
 }
 /* Operator */
 .chroma .o {
-  color: #5bc4bf;
+  color: $teal;
 }
 /* OperatorWord */
 .chroma .ow {
-  color: #5bc4bf;
+  color: $teal;
 }
 /* Punctuation */
 .chroma .p {
