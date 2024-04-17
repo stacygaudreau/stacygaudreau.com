@@ -5,7 +5,7 @@ categories: ['Programming', 'C++']
 tags: ['C++', 'Low Latency', 'HFT', 'Finance', 'Multithreading']
 type: 'blog'
 date: 2024-03-22T12:09:58-04:00
-draft: true
+draft: false
 ---
 
 ## What we're building
