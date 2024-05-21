@@ -429,4 +429,4 @@ Finally, we developed a lock-free queue to use with our threading utilities, and
 
 ### In the next part
 
-In the next part 3 of this series, I'll be diving into Unix socket and network programming while adding TCP and UDP server/client functionality to the library.
+In the next [part 3](/blog/cpp/low-latency-cpp-for-hft-part3-network-programming/) of this series, I dive into Unix socket and network programming while adding TCP and UDP server/client functionality to the library.

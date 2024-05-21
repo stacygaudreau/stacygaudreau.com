@@ -5,7 +5,7 @@ categories: ['Programming', 'C++']
 tags: ['C++', 'Networking', 'Sockets', 'Low Latency']
 type: 'blog'
 date: 2024-04-08T07:12:20-04:00
-draft: true
+draft: false
 ---
 
 ## Introduction
@@ -184,6 +184,225 @@ The network card is only part of the path in an ethernet frame's journey through
 
 ## 2 - A wrapper for TCP sockets
 
+The next module is a `TCPSocket` class, which contains and manages the lifecycle of a Berkeley networking socket configured to operate in TCP stream mode.
+
+\ Usage examples
+> The [test suite demonstrates some examples](https://github.com/stacygaudreau/nitek/blob/e0e7d30fbc9d806c998d4c7fec62728ba480aae8/tests/test_tcp_socket.cpp) of how to use this class as well as a suite of tests for ensuring the module works well.
+
+The module also manages a send (`tx`) and receive (`rx`) buffer which are each simply a `std::vector`. These buffers are passed to system socket calls for reading and writing data over the network.
+
+> Some of the more interesting methods are examined below. The [full module source code](https://github.com/stacygaudreau/nitek/blob/e0e7d30fbc9d806c998d4c7fec62728ba480aae8/source/llbase/tcp_socket.h) can be found in `<llbase/tcp_socket.h>` and `.cpp` files in the repository.
+
+### Connecting a TCP socket
+
+Calling this method is what actually creates the system socket. The process is made easy thanks to the `create_socket()` function and `SocketConfig` configuration structure built earlier in this article.
+
+```cpp
+int TCPSocket::connect(const std::string& ip, const std::string& iface,
+                       int port, bool is_listening) {
+    // configure and create socket
+    const SocketConfig conf{
+            ip, iface, port, false, is_listening, true };
+    fd = create_socket(conf, logger);
+    // set connection attributes and return descriptor
+    in_inaddr.sin_addr.s_addr = INADDR_ANY;
+    in_inaddr.sin_port = htons(port);
+    in_inaddr.sin_family = AF_INET;
+    return fd;
+}
+```
+
+### Send & receive data over TCP
+
+Sending data over the `TCPSocket` is a two step process. The programmer first loads the transmit buffer with the `load_tx()` method.
+
+```cpp
+void TCPSocket::load_tx(const void* data, size_t len) noexcept {
+    // simply copy the given data into the buffer
+    memcpy(tx_buffer.data() + i_tx_next, data, len);
+    i_tx_next += len;
+    ASSERT(i_tx_next < TCP_BUFFER_SIZE,
+           "<TCPSocket> tx buffer overflow! Have you called tx_and_rx()?");
+}
+```
+
+Next, the `tx_and_rx()` method is called, which encapsulates the socket functions needed to both send and receive data over the network. First, some data structures are configured to pass to the `recvmsg()` call. You can read more about this system call [at the manpages](https://man7.org/linux/man-pages/man2/recvmsg.2.html) but suffice to say in this case it returns the number of bytes waiting to be read in the TCP buffer configured by the `iov{ }` structure.
+
+A non-blocking read is performed on any pending data and a software kernel timestamp is transformed into a normalised form suitable for logging and measurement. The socket receive callback is then executed.
+
+\ Performance improvement
+
+> The socket receive callback `rx_callback()` is a `std::function` instance. These work a lot like `virtual` functions, and present some overhead when being called. The compiler is smart enough to preprocess trivial single instance examples of them, but performance gains can potentially be had by using a the [Curiously recurring template pattern](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern) instead. Since this callback is called within a path critical to the TCP socket (its `tx_and_rx()` method) this could be an avenue worth exploring later.
+
+Writing data out is a more simple affair. If there's data in the `tx_buffer` then the `send()` function is called on the socket and told to not wait around. The method quickly exits and expects the underlying system socket do its job sending the data passed to it.
+
+```cpp
+
+bool TCPSocket::tx_and_rx() noexcept {
+    char ctrl[CMSG_SPACE(sizeof(struct timeval))];
+    auto cmsg = reinterpret_cast<struct cmsghdr*>(&ctrl);
+
+    iovec iov{ rx_buffer.data() + i_rx_next, TCP_BUFFER_SIZE - i_rx_next };
+    msghdr msg{ &in_inaddr, sizeof(in_addr),
+                &iov, 1, ctrl,
+                sizeof(ctrl), 0 };
+
+    // non-blocking read of data
+    const auto rx_size = recvmsg(fd, &msg, MSG_DONTWAIT);
+    if (rx_size > 0) {
+        i_rx_next += rx_size;
+        Nanos t_kernel{ };
+        timeval kernel_timeval{ };
+        if (cmsg->cmsg_level == SOL_SOCKET && cmsg->cmsg_type == SCM_TIMESTAMP
+                && cmsg->cmsg_len == CMSG_LEN(sizeof(kernel_timeval))) {
+            memcpy(&kernel_timeval, CMSG_DATA(cmsg), sizeof(kernel_timeval));
+            // timestamp converted to nanoseconds
+            t_kernel = kernel_timeval.tv_sec * NANOS_TO_SECS
+                    + kernel_timeval.tv_usec * NANOS_TO_MICROS;
+        }
+        const auto t_user = get_time_nanos();
+        logger.logf("% <TCPSocket::%> RX at socket %, len: %,"
+                    " t_user: %, t_kernel: %, delta: %\n",
+                    LL::get_time_str(&t_str), __FUNCTION__, fd, i_rx_next,
+                    t_user, t_kernel, (t_user - t_kernel));
+        // finally, the receive data callback is executed
+        rx_callback(this, t_kernel);
+    }
+
+    // non-blocking write out of data in tx buffer
+    if (i_tx_next > 0) {
+        const auto n = send(fd, tx_buffer.data(),
+                            i_tx_next, MSG_DONTWAIT | MSG_NOSIGNAL);
+        logger.logf("% <TCPSocket::%> TX at socket %, size: %\n",
+                    LL::get_time_str(&t_str), __FUNCTION__, fd, n);
+    }
+    i_tx_next = 0;
+    return (rx_size > 0);
+}
+```
+
 ## 3 - Server module for TCP connections
 
+The `TCPSocket` module created in the last section is used to create a low latency TCP server capable of handling many simultaneous client connections. This is the module where we see `epoll()` multiplexing used in practise, since the server has to manage many different stateful TCP connections. 
+
+\ Source code
+> This module is quite large and so the source is not copied here. The [full module source code](https://github.com/stacygaudreau/nitek/blob/e0e7d30fbc9d806c998d4c7fec62728ba480aae8/source/llbase/tcp_server.cpp) can be found in `<llbase/tcp_server.h>` and `.cpp` files in the repository.
+
+### TCP server anatomy
+
+The server is really just a collection of `TCPSocket` instances which serve different purposes in the server module. The basic working principle is --
+
+1. The server is instantiated with its `listen()` method, which binds it to a local interface and port. 
+2. A single `TCPSocket` is listened on for new incoming connection requests (member `listening_socket`)
+3. New clients have a dedicated `TCPSocket` created and maintained for them in the `rx_sockets` vector, which tracks all sockets being received upon by the server.
+4. Clients which can be written back to are added to the `tx_sockets` vector, and disconnected sockets are similarly tracked in the `dx_sockets` vector.
+5. Similar to the `TCPSocket` module, a `tx_and_rx()` method is called periodically by the application which in turn calls the non-blocking read and write methods of each of the `TCPSocket` instances the server is managing.
+
+\ Usage examples
+> The [test suite](https://github.com/stacygaudreau/nitek/blob/e0e7d30fbc9d806c998d4c7fec62728ba480aae8/tests/test_tcp_server.cpp) for the `TCPServer` module demonstrates how to use the module in practise. A number of examples are shown including sending messages back and forth from multiple clients connecting, sending and receiving to and from the TCP server (see test `multiple_clients_communicate`).
+
+It's clear from inspection that a lot of the instructions in this method relate to tracking and maintaining all of the sockets relating to the server. Hence why we concerned ourselves with choosing the fastest multiplexing method to use, ie: `epoll()`. 
+
+If you take a look at the `poll()` method, you'll see that the `epoll()` interface is being used to respond to edge-triggered events detected by the system, whenever a monitored socket calls for it and we are passing through the `poll()` routine, ie --
+
+```cpp
+void TCPServer::poll() noexcept {
+    // ...
+    if (e.events & EPOLLIN) {
+        // epoll input event triggered, we have a 
+        // -> receive data ...
+    }
+    if (e.events & EPOLLOUT) {
+        // epoll output event triggered
+        // -> transmit data ...
+    }
+
+    if (e.events & (EPOLLERR | EPOLLHUP | EPOLLRDHUP)) {
+        // EPOLLERR or EPOLLHUP -> socket was disconnected
+        //  (error or signal hang up) 
+        //  -> add to dx_sockets ...
+    }
+    // ...
+}
+```
+
 ## 4 - Streaming over UDP multicast
+
+In this section, an `McastSocket` container is built to provide a UDP multicast socket for streaming data to/from market participants.
+
+### When to use UDP
+
+Being that TCP is a **stateful** protocol, it spends time maintaining those connections at the server and protocol level. This was demonstrated in the `TCPServer` module, which by inspection of its methods does indeed spend an obvious amount of time and resources multiplexing all of the connecting sockets. TCP also spends time **handshaking and acknowledging connections** at the transport layer of the networking model.  
+
+For this and other reasons, the **stateless** UDP protocol is preferred in situations where the application can afford some packet loss, and/or packets arriving out of order.
+
+UDP becomes especially useful when a **single producer is broadcasting the same data** over a network in order to be consumed by multiple consumers. Instead of needing a managed TCP connection for each consumer, the exchange can broadcast over a single [UDP multicast stream](https://en.wikipedia.org/wiki/Multicast), saving an enormous amount of **processing power and bandwidth**.
+
+In a trading exchange, the **public market data** which is disseminated to exchange participants is a suitable candidate for a UDP multicast stream.
+
+### The multicast socket class
+
+The multicast UDP socket module wraps a Unix socket in a way similar to the `TCPSocket` class. Again, the transmit and receive buffers' pointers are passed to and from the Berkeley socket API's send and receive functions. 
+
+\ Source code
+> Like the other socket modules, only select areas of the code are presented here. The [full source code](https://github.com/stacygaudreau/nitek/blob/e0e7d30fbc9d806c998d4c7fec62728ba480aae8/source/llbase/mcast_socket.h) can be found in `<llbase/mcast_socket.h>` and `.cpp` files in the repository.
+
+#### Multicast group membership
+
+The main difference between this and the TCP class is that instead of connecting directly to a specific socket to communicate, the multicast socket joins a multicast group, which is simply an address that it subscribes to receive and transmit network data on. Multicast group membership is just a socket option, set once again by the `setsockopt()` function.
+
+\ McastSocket::join_group()
+```cpp
+/**
+ * @brief Join a given multicast stream group on the
+ * given socket and ip address
+ * @param fd Socket file descriptor
+ * @param ip String rep'n of iface's IP address
+ * @return True when successful
+ */
+bool McastSocket::join_group(const std::string& ip) {
+    const ip_mreq mreq{{ inet_addr(ip.c_str()) },
+                       { htonl(INADDR_ANY) }};
+    return (setsockopt(fd, IPPROTO_IP, IP_ADD_MEMBERSHIP,
+                       &mreq, sizeof(mreq)) != -1);
+}
+```
+
+### Sending and receiving multicast messages
+
+Inspecting the `load_tx()` and `tx_and_rx()` methods of the multicast socket class reveals that they are much simpler than that of the `TCPSocket` class. This is due to the simplicity of UDP compared to TCP.
+
+In the `tx_and_rx()` method, it's worth noting that ordinarily it is common to use the `sendto()` socket function with UDP sockets. But, in this implementation, it's not needed, for reasons explained in the code comments --
+
+\ 
+```cpp
+bool McastSocket::tx_and_rx() noexcept {
+    // non-blocking read
+    // ...
+    // write out to stream
+    if (i_tx_next > 0) {
+        // we don't have to use sendto() with this multicast socket since
+        //  the call to create_socket() already calls connect() on the
+        //  multicast group this socket belongs to. If the design changes
+        //  it may be necessary to use sendto() here instead.
+        const auto n = send(fd, tx_buffer.data(), i_tx_next,
+                            MSG_DONTWAIT | MSG_NOSIGNAL);
+        logger.logf("% <McastSocket::%> TX at socket %, size: %\n",
+                    LL::get_time_str(&t_str), __FUNCTION__, fd, n);
+    }
+    // ...
+}
+```
+
+\ Usage examples
+> As with the other modules built in this article, [a test suite exists](https://github.com/stacygaudreau/nitek/blob/e0e7d30fbc9d806c998d4c7fec62728ba480aae8/tests/test_mcast_socket.cpp) for the UDP socket container. Examples of publishing and consuming to/from the stream are presented to get a better understanding of how to use this class.
+
+## Summary and next time
+
+This article presented an overview of low latency networking principles in C++ and built some useful modules around the Unix sockets API. 
+
+First, the Unix socket creation and configuration functions was abstracted into some helper methods. Then, a TCP server and TCP/UDP socket containers were built. A suite of tests ensures all of these modules are working correctly.
+
+### In the next part
+
+The fourth part of this series will put all the pieces to work and begin building out the heart of the exchange system resonsible for matching traders' orders with one-another: the **Order Matching Engine**.
