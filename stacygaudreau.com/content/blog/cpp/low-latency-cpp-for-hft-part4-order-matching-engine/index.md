@@ -42,7 +42,7 @@ In the interest of digesting the most from the book, I've interpreted the author
 
 ![Overview diagram of exchange system](./images/exchange-overview.png 'My interpretation of the exchange system design')
 
-As you can see, the **exchange** itself is separated from the market **participant**. Only one participant is shown, but in reality, many market participants are usually connected to on market component (which itself may be distributed across many instances to serve more clients).
+As you can see, the **exchange** itself is separated from the market **participant**. Only one participant is shown, but in reality, many market participants are usually connected to a single market component (which itself may be distributed across many instances to serve more clients).
 
 Both **UDP** and **TCP** protocols are used to connect the participants to the client, depending on the requirements for the data being communicated.
 

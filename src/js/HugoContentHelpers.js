@@ -1,10 +1,37 @@
 /* -------------------------------------------------------------------------- */
 /*                          Hugo SSG Content Helpers                          */
 /* -------------------------------------------------------------------------- */
-//  Custom <blockquote> and <code> block content helpers for
+//  Custom content helpers for
 //  rendering Hugo static content pages
 
 class HugoContentHelpers {
+  /**
+   * Wrap a specified element in the DOM with a given element type,
+   * and optional classname.
+   */
+  static wrapInElementWithClass(element, className='', wrapperType='div') {
+    let parent = element.parentNode;
+    let wrapper = document.createElement(wrapperType);
+    wrapper.classList.add(className);
+    parent.replaceChild(wrapper, element);
+    wrapper.appendChild(element);
+  }
+
+  /**
+   * Wrap all of the <table> elements in a container
+   * to apply styling to them. Table elemenet are 
+   * deceptively hard to center and size properly 
+   * otherwise.
+   */
+  static wrapTablesInContainer() {
+    let tables = Array.from(
+      document.getElementsByTagName('table')
+    ).forEach(table => {
+      this.wrapInElementWithClass(table, 'table__container');
+      console.log(table);
+    })
+  }
+
   static replaceBlockquoteTitles() {
     let blockquotes = Array.from(
       document.getElementsByTagName('blockquote')

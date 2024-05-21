@@ -15,7 +15,17 @@ $white: lighten(#A6AEA1, 10%);
 /* Background */
 .chroma {
   color: $color-white;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
+.codeblock__title {
+  + .highlight {
+    .chroma {
+      margin-top: 1em;
+    }
+  }
+}
+
 /* Other */
 .chroma .x {
 }

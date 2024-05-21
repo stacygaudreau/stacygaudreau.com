@@ -1,0 +1,39 @@
+/* -------------------------------------------------------------------------- */
+/*                                 Tables                                     */
+/* -------------------------------------------------------------------------- */
+
+table, th, td {
+    border: 1px solid $color-panel-3;
+    border-collapse: collapse;
+    background-color: $color-black-2;
+}
+
+table {
+  font-family: $heading-font;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 3em auto;
+  th, td {
+    font-size: 1.4em;
+    padding: .3em .6em;
+  }
+  th {
+    font-size: 1.6em;
+    color: $color-white;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+  }
+  td {
+    font-family: $mono-font;
+    font-weight: 400;
+    color: $color-blue;
+  }
+}
+
+.table {
+  &__container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

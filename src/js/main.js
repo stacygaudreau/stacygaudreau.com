@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', e => {
   navBar = document.getElementById('navbar');
   window.onscroll = scrollHandler;
   HugoContentHelpers.replaceBlockquoteTitles();
+  HugoContentHelpers.wrapTablesInContainer();
   if (scrollY > 0) {
     setScrollTrue();
   }
