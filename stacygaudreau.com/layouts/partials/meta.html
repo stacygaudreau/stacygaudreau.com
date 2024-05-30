@@ -1,48 +1,85 @@
-<!-- OpenGraph meta properties -->
-<meta
-  name="description"
-  content="Hey, I'm Stacy.
+{{ if or (eq .Type "blog") (eq .Type "project") }}
 
-  I'm a full stack software and systems developer who specializes in C++. I work with desktops, Linux servers and the web.
-  
-  In a past life, I founded an audio synthesizer company and developed electronic hardware."
-/>
+{{ if eq .Type "project" }}
+  {{/*  project uses "feature" text  */}}
+  {{ with .Resources.GetMatch "feature_text.md" }}
+    <meta
+    name="description"
+    content="{{ .Content }}"/>
+  {{ end }}
+  {{/*  blog uses "intro" text */}}
+{{ else }}
+  {{ with .Resources.GetMatch "intro.md" }}
+    <meta
+    name="description"
+    content="{{ .Content }}"/>
+  {{ end }}
+{{ end }}
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://stacygaudreau.com/" />
+<meta property="og:url" content="{{ .Permalink }}" />
 <meta
   property="og:title"
-  content="Stacy Gaudreau | C++ Software & Systems Developer"
+  content="{{ .Title }} | Stacy Gaudreau"
 />
-<meta
-  property="og:description"
-  content="Hey, I'm Stacy.
+{{ if eq .Type "project" }}
+  {{/*  project uses "feature" text  */}}
+  {{ with .Resources.GetMatch "feature_text.md" }}
+    <meta
+    property="og:description"
+    content="{{ .Content }}"/>
+  {{ end }}
+  {{/*  blog uses "intro" text */}}
+{{ else }}
+  {{ with .Resources.GetMatch "intro.md" }}
+    <meta
+    name="og:description"
+    content="{{ .Content }}"/>
+  {{ end }}
+{{ end }}
 
-  I'm a full stack software and systems developer who specializes in C++. I work with desktops, Linux servers and the web.
-  
-  In a past life, I founded an audio synthesizer company and developed electronic hardware."
-/>
-<meta
-  property="og:image"
-  content="https://stacygaudreau.com/img/stacy-gaudreau.png"
-/>
+{{ with $feature := .Resources.GetMatch "images/feature.*" }}
+  {{ $feature := $feature.Fit "1200x500" }}
+    <meta
+      property="og:image"
+      content="{{ $feature.Permalink }}"
+    />
+{{ end }}
+
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://stacygaudreau.com/" />
+<meta property="twitter:url" content="{{ .Permalink }}" />
 <meta
   property="twitter:title"
-  content="Stacy Gaudreau | C++ Software & Systems Developer"
+  content="{{ .Title }} | Stacy Gaudreau"
 />
-<meta
-  property="twitter:description"
-  content="Hey, I'm Stacy.
+{{ if eq .Type "project" }}
+  {{/*  project uses "feature" text  */}}
+  {{ with .Resources.GetMatch "feature_text.md" }}
+    <meta
+    property="twitter:description"
+    content="{{ .Content }}"/>
+  {{ end }}
+  {{/*  blog uses "intro" text */}}
+{{ else }}
+  {{ with .Resources.GetMatch "intro.md" }}
+    <meta
+    name="twitter:description"
+    content="{{ .Content }}"/>
+  {{ end }}
+{{ end }}
 
-  I'm a full stack software and systems developer who specializes in C++. I work with desktops, Linux servers and the web.
-  
-  In a past life, I founded an audio synthesizer company and developed electronic hardware."
-/>
-<meta
-  property="twitter:image"
-  content="https://stacygaudreau.com/img/stacy-gaudreau.png"
-/>
+{{ with $feature := .Resources.GetMatch "images/feature.*" }}
+  {{ $feature := $feature.Fit "1200x500" }}
+    <meta
+      property="twitter:image"
+      content="{{ $feature.Permalink }}"
+    />
+{{ end }}
+{{ else }}
+  {{/*  default meta template for any other types  */}}
+  {{ partial "meta_default.html" . }}
+{{ end }}
+
