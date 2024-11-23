@@ -6,4 +6,4 @@ Working in a tight-knit, distributed, worldwide team spanning numerous timezones
 
 Polyverse's products are known throughout the industry for their amazing sound, and in particular, their **beautiful and intuitive design and UX**, so it was a real honour to write code for numerous projects there!
 
-Working closely with our Lead UI/UX/graphics designer, I worked on the "frontend" of desktop software projects including [**Filtron**](https://polyversemusic.com/products/filtron/), [**Supermodal**](https://polyversemusic.com/products/supermodal/) and the upcoming [**Filterverse**](https://polyversemusic.com/products/filterverse-coming-soon/) effect plugins for digital audio.
+Working closely with our Lead UI/UX/graphics designer, I worked on the "frontend" of desktop software projects including [**Filtron**](https://polyversemusic.com/products/filtron/), [**Supermodal**](https://polyversemusic.com/products/supermodal/) and the upcoming [**Filterverse**](https://polyversemusic.com/products/filterverse/) effect plugins for digital audio.

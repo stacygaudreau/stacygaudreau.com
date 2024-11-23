@@ -66,7 +66,7 @@ In our system, the trading engine is the **client-side application**. While it d
 
 The TE could run a variety of trading algorithms and strategies, as well as compute simple **statistics and risk management metrics** for either trading algorithms or a user to interpret.
 
-In a desktop trading client, this is the area where we might begin to develop a trading client for a user to interact with, or transpose incoming data into metrics which drive charts and graphs for technical analysis.
+In a desktop trading application, this is the area where we might begin to develop a trading client with a user interface for a user to interact with, or transpose incoming data into metrics which drive charts and graphs for technical analysis.
 
 #### Market Data - Publisher and Consumer (MDP & MDC)
 
@@ -75,7 +75,7 @@ Market data is dispatched to numerous participating market clients over UDP thro
 \ Why UDP?
 > UDP (via multicast grouping) is the chosen protocol here, since an enormous amount of data is sent out to many clients at once, and we do not care if a packet or two is lost here and there. 
 > 
-> TCP unnecessary in this circumstance and would seriously **degrade the latency of the system**.
+> The data integrity provisions of TCP are unnecessary in this circumstance and would seriously **degrade the latency** of the system.
 
 The **market data consumer (MDC)** on the participant's side receives the data from the exchange, decoding it into a local format that the Trading Engine can use to do its job. 
 
@@ -89,6 +89,8 @@ The **client (OGC) sends new orders** received from the Trading Engine and the *
 > For client orders coming into the exchange, it is critical to make sure that they are processed and dealt with reliably, and in the order that they arrive. For this reason, UDP would generally be pretty unsuitable for the order gateway.
 >
 > **TCP is chosen for its reliability** and concern over the **time and order which packets arrive in**, in the case of order handling.
+
+
 
 
 

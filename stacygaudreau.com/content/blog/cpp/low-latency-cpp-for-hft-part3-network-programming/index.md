@@ -234,7 +234,7 @@ A non-blocking read is performed on any pending data and a software kernel times
 
 > The socket receive callback `rx_callback()` is a `std::function` instance. These work a lot like `virtual` functions, and present some overhead when being called. The compiler is smart enough to preprocess trivial single instance examples of them, but performance gains can potentially be had by using a the [Curiously recurring template pattern](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern) instead. Since this callback is called within a path critical to the TCP socket (its `tx_and_rx()` method) this could be an avenue worth exploring later.
 
-Writing data out is a more simple affair. If there's data in the `tx_buffer` then the `send()` function is called on the socket and told to not wait around. The method quickly exits and expects the underlying system socket do its job sending the data passed to it.
+Writing data out is a more simple affair. If there's data in the `tx_buffer` then the `send()` function is called on the socket and told to not wait around. The method quickly exits and expects the underlying system socket to do its job sending the data passed to it.
 
 ```cpp
 

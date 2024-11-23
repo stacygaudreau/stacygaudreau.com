@@ -59,7 +59,7 @@ In general, we want our data to be packed into **contiguous memory blocks** by t
 
 Sometimes, the theoretically "better" data structure is not the most performant one in reality. 
 
-> Take, for example, the `std::unordered_map`. This is implemented with a linked-list under the hood, which means it excels at random memory access. The theoretical average time complexity of accessing members in this DS is linear, which is nice, but in the context of low latency, random memory access means _memory fragmentation_ and more than likely poor cache performance. This turns out to be quite undesirable in practice, and a more simple data structure with contigious memory will wind up performing better.
+> Take, for example, the `std::unordered_map`. This is implemented with a linked-list under the hood, which means it excels at random memory access. The theoretical average time complexity of accessing members in this DS is constant time, which is nice, but in the context of low latency, random memory access means _memory fragmentation_ and more than likely poor cache performance. This turns out to be quite undesirable in practice, and a more simple data structure with contiguous memory will wind up performing better.
 
 ### Compiler hints
 
@@ -189,7 +189,7 @@ In this first part, I've glossed over the basics of C++ programming for HFT and 
 
 ### In Part 2
 
-We'll be starting to code along with the author and put together some of the basic building blocks for developing low latency systems with.
+We'll be starting to code and put together some of the basic building blocks for developing low latency systems with. Check out [part 2 here](/blog/cpp/low-latency-cpp-for-hft-part2/), now that it's published.
 
 
 
