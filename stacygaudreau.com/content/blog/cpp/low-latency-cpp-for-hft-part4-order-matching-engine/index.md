@@ -10,7 +10,7 @@ draft: true
 
 ## What is an Order Matching Engine?
 
-The OME is an important part of any market exchange system. One might call it the **core of the exchange**, since it is responsible for **matching buyers bids to sellers asks**, and executing orders on their behalf.
+The matching engine is an important part of any market exchange system. One might call it the **core of the exchange**, since it is responsible for **matching buyers bids to sellers asks**, and executing orders on their behalf.
 
 Back when exchanges relied on having actual humans on a trading floor (aka: [open outcry trading](https://en.wikipedia.org/wiki/Open_outcry)), human traders acted as the heart of the exchange. Using a system of hand signals, buyers and sellers were represented by a person who acted on their behalf to match and execute their orders.
 
@@ -62,7 +62,7 @@ The order book is a ledger of all bids and asks open at a given point in time. T
 
 #### Trading Engine (TE)
 
-In our system, the trading engine is the **client-side application**. While it does not match orders like the OME does, it **does** maintain its own version of the Order Book (OB), based on publicly disseminated market data from the exchange. 
+In our system, the trading engine is the **client-side application**. While it does not match orders like the OME does, it **does** maintain its own version of the Order Book (OB), based on publicly disseminated market data from the exchange.
 
 The TE could run a variety of trading algorithms and strategies, as well as compute simple **statistics and risk management metrics** for either trading algorithms or a user to interpret.
 
@@ -89,13 +89,6 @@ The **client (OGC) sends new orders** received from the Trading Engine and the *
 > For client orders coming into the exchange, it is critical to make sure that they are processed and dealt with reliably, and in the order that they arrive. For this reason, UDP would generally be pretty unsuitable for the order gateway.
 >
 > **TCP is chosen for its reliability** and concern over the **time and order which packets arrive in**, in the case of order handling.
-
-
-
-
-
-
-
 
 
 ## Implementation
