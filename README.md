@@ -2,6 +2,12 @@
 
 My portfolio website: [Stacy Gaudreau](https://stacygaudreau.com).
 
+![Website preview](/preview-sm-1.png)
+
+![Website preview](/preview-md-1.png)
+
+![Website preview](/preview-1.png)
+
 Written in plain ol' `CSS` (`Sass`), `JavaScript` and `HTML`, using the excellent [Hugo](https://gohugo.io/) static site generator.
 
 ## Why no React, Next.js, tailwind, etc.?
